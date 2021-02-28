@@ -3,6 +3,7 @@
     "target": "es2019",
     "lib": ["dom"],
     "types": ["node", "jest"],
+    "baseUrl": "./lib",
     "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
@@ -18,6 +19,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["actions", "bin", "commands", "lib"],
+  "include": ["lib"],
   "exclude": ["dist/**/*", "*/tests/**/*"]
 }
