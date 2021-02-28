@@ -10,9 +10,11 @@
     "test": "jest --config test/jest-config.json",
     "copydist": "ts-node --project scripts/tsconfig.ts-node.json scripts/copy-dist",
     "postbuild": "yarn copydist",
-    "postinstall": "husky install",
+    "husky:install": "husky install",
     "gpr:setup": "ts-node --project scripts/tsconfig.ts-node.json scripts/gpr-setup",
     "postversion": "git push && git push --follow-tags",
+    "publish:beta": "yarn && yarn build && npm publish --folder dist --tag beta",
+    "release:beta": "npm version prerelease -m \"chore(update): prelease %s β\"",
     "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
     "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥 \""
