@@ -39,7 +39,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "cross-fetch": "^3.0.6",
+    "cross-fetch": "^3.1.4",
     "jsdom": "^16.4.0"
   },
   "devDependencies": {
