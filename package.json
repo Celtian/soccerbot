@@ -1,6 +1,6 @@
 {
   "name": "soccerbot",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Library for scraping soccer data from the internet",
   "main": "index.js",
   "scripts": {
