@@ -10,7 +10,7 @@
     "test": "jest --config test/jest-config.json",
     "copydist": "ts-node --project scripts/tsconfig.ts-node.json scripts/copy-dist",
     "postbuild": "yarn copydist",
-    "prepare": "husky install",
+    "husky:install": "husky install",
     "gpr:setup": "ts-node --project scripts/tsconfig.ts-node.json scripts/gpr-setup",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "postversion": "git push && git push --follow-tags",
