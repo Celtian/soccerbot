@@ -33,7 +33,7 @@ yarn add soccerbot
 _Go to command line and type_
 
 ```terminal
-import { soccerway, transfermarkt } from 'soccerbot';
+import { soccerway, transfermarkt, fotbalunas } from 'soccerbot';
 
 console.log(soccerway.teamUrl('533')); // show url
 
@@ -44,9 +44,14 @@ console.log(transfermarkt.teamUrl('62')); // show url
 
 transfermarkt.team('62')
   .then(res => console.log(res));
+
+console.log(fotbalunas.teamUrl('62')); // show url
+
+fotbalunas.team('62')
+  .then(res => console.log(res));
 ```
 
-_Note: Soccerway is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average)._
+_Note: Soccerway is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average). Fotbalunas uses redirect. It means that data are downloded from 2 pages and there is also a little delay._
 
 ## License
 

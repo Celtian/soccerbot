@@ -1,5 +1,5 @@
 import { argv } from 'process';
-import { soccerway, transfermarkt } from './lib';
+import { fotbalunas, soccerway, transfermarkt } from './lib';
 
 const selector = argv[2];
 
@@ -28,6 +28,16 @@ const soccerwayDemo = (): void => {
   soccerway.player('193498').then((res) => console.log(res)); // player
 };
 
+const fotbalunasDemo = (): void => {
+  console.log('⚽⚽⚽ Fotbalunas demo ⚽⚽⚽');
+
+  console.log(fotbalunas.leagueUrl('31')); // CZE-4
+  fotbalunas.league('31').then((res) => console.log(res));
+
+  console.log(fotbalunas.teamUrl('62')); // SK Klatovy 1898
+  fotbalunas.team('62').then((res) => console.log(res));
+};
+
 const main = (selector: string): void => {
   switch (selector) {
     case 'transfermarkt':
@@ -36,9 +46,13 @@ const main = (selector: string): void => {
     case 'soccerway':
       soccerwayDemo();
       break;
+    case 'fotbalunas':
+      fotbalunasDemo();
+      break;
     default:
       transfermarktDemo();
       soccerwayDemo();
+      fotbalunasDemo();
       break;
   }
 };
