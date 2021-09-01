@@ -1,4 +1,3 @@
-
 export enum SoccerBotCountryUefa {
   ALBANIA = 'ALBANIA',
   ANDORRA = 'ANDORRA',
@@ -253,12 +252,12 @@ export const SoccerBotCountry = {
 };
 
 export type SoccerBotCountry =
-  SoccerBotCountryUefa |
-  SoccerBotCountryCaf |
-  SoccerBotCountryAfc |
-  SoccerBotCountryOfc |
-  SoccerBotCountryConmebol |
-  SoccerBotCountryConcacaf;
+  | SoccerBotCountryUefa
+  | SoccerBotCountryCaf
+  | SoccerBotCountryAfc
+  | SoccerBotCountryOfc
+  | SoccerBotCountryConmebol
+  | SoccerBotCountryConcacaf;
 
 export enum SoccerBotFoot {
   RIGHT = 'RIGHT',
@@ -289,19 +288,20 @@ export interface SoccerBotPlayer {
   firstName?: string;
   lastName?: string;
   jerseyNumber?: number;
-  position?: SoccerBotPositionGroup,
-  birthdate?: string,
-  height?: number,
-  weight?: number,
-  foot?: SoccerBotFoot,
-  joined?: string,
-  contractExpires?: string,
-  marketValue?: number,
+  position?: SoccerBotPositionGroup;
+  birthdate?: string;
+  height?: number;
+  weight?: number;
+  foot?: SoccerBotFoot;
+  joined?: string;
+  contractExpires?: string;
+  marketValue?: number;
   country?: SoccerBotCountry;
   minutesPlayed?: number;
 }
 
 export enum SoccerBotProvider {
   TRANSFERMARKT = 'TRANSFERMARKT',
-  SOCCERWAY = 'SOCCERWAY'
-};
+  SOCCERWAY = 'SOCCERWAY',
+  FOTBALUNAS = 'FOTBALUNAS'
+}
