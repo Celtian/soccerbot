@@ -1,5 +1,6 @@
 import { SoccerBotTransfermarktClient } from '../../lib/clients/transfermarkt';
-import { LEAGUE_DATA, LEAGUE_HTML, TEAM_DATA, TEAM_HTML } from '../mocks/transfermarkt';
+import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/transfermarkt/league';
+import { TEAM_DATA, TEAM_HTML } from '../mocks/transfermarkt/team';
 
 describe('SoccerBotTransfermarktClient', () => {
   let client: SoccerBotTransfermarktClient;

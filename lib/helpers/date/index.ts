@@ -1,4 +1,4 @@
-import { SoccerBotProvider } from '../../shared';
+import { SoccerBotProvider } from '../../shared/interfaces';
 
 const MONTH_SHORT: { [key: string]: number } = {
   Jan: 1,

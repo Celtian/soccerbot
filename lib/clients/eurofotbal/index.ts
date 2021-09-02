@@ -1,21 +1,13 @@
-import {
-  coerceCoutry,
-  coerceDate,
-  coerceHeight,
-  coerceJerseyNumber,
-  coercePositionGroup,
-  coerceWeight
-} from '../../helpers';
-import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared';
+import { coerceCountry } from '../../helpers/country';
+import { coerceDate } from '../../helpers/date';
+import { coerceHeight, coerceJerseyNumber, coerceWeight } from '../../helpers/number';
+import { coercePositionGroup } from '../../helpers/position';
+import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient } from '../shared';
 
 const BASE_URL = 'https://www.eurofotbal.cz';
 
 export class SoccerBotEurofotbalClient extends SoccerBotClient {
-  constructor(private sleepMs: number = 500) {
-    super();
-  }
-
   public leagueUrl(id: string): string {
     if (!id) {
       return undefined;
@@ -61,10 +53,6 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
       const virtualNode = this.nodeDOM(html);
       const list: SoccerBotPlayer[] = [];
 
-      // div:contains('Brankáři') + table > tbody > tr
-      // #screen > div.all > div > div.middle > div.col-center > div.box.green > div
-      // #screen > div.all > div > div.middle > div.col-center > div.box.green > div > table:nth-child(2)
-
       const table = this.selectArray(
         virtualNode,
         '#screen > div.all > div > div.middle > div.col-center > div.box.green > div'
@@ -80,7 +68,7 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
           if (classAttr === 'bar') {
             position = this.getTextAndTrim(section);
           } else {
-            const players = [].slice.call(table.querySelectorAll('tr'));
+            const players = [].slice.call(section.querySelectorAll('tr'));
             for (const player of players) {
               const link = player.querySelector('td.name > a');
               const hw = this.getTextAndTrim(player.querySelector('td.hw')).match(
@@ -97,7 +85,7 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
                 ),
                 height: coerceHeight(hw.groups.height),
                 weight: coerceWeight(hw.groups.weight),
-                country: coerceCoutry(
+                country: coerceCountry(
                   this.getAttributeAndTrim(player.querySelector('td.flag > img'), 'alt'),
                   SoccerBotProvider.EUROFOTBAL
                 )

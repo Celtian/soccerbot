@@ -1,13 +1,10 @@
-import {
-  coerceCoutry,
-  coerceDate,
-  coerceFoot,
-  coerceHeight,
-  coerceJerseyNumber,
-  coerceMarketValue,
-  coercePositionGroup
-} from '../../helpers';
-import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared';
+import { coerceCountry } from '../../helpers/country';
+import { coerceDate } from '../../helpers/date';
+import { coerceFoot } from '../../helpers/foot';
+import { coerceMarketValue } from '../../helpers/market-value';
+import { coerceHeight, coerceJerseyNumber } from '../../helpers/number';
+import { coercePositionGroup } from '../../helpers/position';
+import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient } from '../shared';
 
 const BASE_URL = 'https://www.transfermarkt.com';
@@ -87,7 +84,7 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
             SoccerBotProvider.TRANSFERMARKT
           ),
           marketValue: coerceMarketValue(this.getTextAndTrim(item.querySelector('td:nth-child(10)'))),
-          country: coerceCoutry(
+          country: coerceCountry(
             flagSrc && flagSrc.groups ? flagSrc.groups.id : undefined,
             SoccerBotProvider.TRANSFERMARKT
           )

@@ -1,4 +1,10 @@
-import { SoccerBotCountry, SoccerBotFoot, SoccerBotPlayer, SoccerBotPositionGroup, SoccerBotResponse } from "../../../lib/shared";
+import {
+  SoccerBotCountry,
+  SoccerBotFoot,
+  SoccerBotPlayer,
+  SoccerBotPositionGroup,
+  SoccerBotResponse
+} from '../../../lib/shared/interfaces';
 
 export const TEAM_HTML = `
 <!DOCTYPE html>

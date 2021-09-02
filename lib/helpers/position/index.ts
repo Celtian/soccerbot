@@ -1,4 +1,4 @@
-import { SoccerBotPositionGroup } from '../../shared';
+import { SoccerBotPositionGroup } from '../../shared/interfaces';
 
 export const coercePositionGroup = (position: string): SoccerBotPositionGroup => {
   if (['Goalkeeper', 'Brankář', 'Brankáři'].includes(position)) {

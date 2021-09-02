@@ -1,4 +1,4 @@
-import { SoccerBotFoot } from '../../shared';
+import { SoccerBotFoot } from '../../shared/interfaces';
 
 export const coerceFoot = (foot: string): SoccerBotFoot => {
   if (['right', 'Right'].includes(foot)) {

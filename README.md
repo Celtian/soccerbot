@@ -33,7 +33,7 @@ yarn add soccerbot
 _Go to command line and type_
 
 ```terminal
-import { soccerway, transfermarkt, fotbalunas } from 'soccerbot';
+import { soccerway, transfermarkt, fotbalunas, eurofotbal } from 'soccerbot';
 
 console.log(soccerway.teamUrl('533')); // show url
 
@@ -48,6 +48,11 @@ transfermarkt.team('62')
 console.log(fotbalunas.teamUrl('62')); // show url
 
 fotbalunas.team('62')
+  .then(res => console.log(res));
+
+console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // show url
+
+eurofotbal.team('cesko/sparta-praha')
   .then(res => console.log(res));
 ```
 

@@ -1,5 +1,7 @@
-import { coerceJerseyNumber, coercePositionGroup, sleep } from '../../helpers';
-import { SoccerBotPlayer, SoccerBotResponse, SoccerBotTeam } from '../../shared';
+import { coerceJerseyNumber } from '../../helpers/number';
+import { coercePositionGroup } from '../../helpers/position';
+import { sleep } from '../../helpers/shared';
+import { SoccerBotPlayer, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient } from '../shared';
 
 const BASE_URL = 'https://fotbalunas.cz';

@@ -1,4 +1,10 @@
-import { SoccerBotCountry, SoccerBotFoot, SoccerBotPlayer, SoccerBotPositionGroup, SoccerBotResponse } from "../../../lib/shared";
+import {
+  SoccerBotCountry,
+  SoccerBotFoot,
+  SoccerBotPlayer,
+  SoccerBotPositionGroup,
+  SoccerBotResponse
+} from '../../../lib/shared/interfaces';
 
 export const PLAYER_HTML = `
 <!DOCTYPE html>
@@ -3044,4 +3050,4 @@ export const PLAYER_DATA: SoccerBotResponse<SoccerBotPlayer> = {
     weight: 81,
     foot: SoccerBotFoot.RIGHT
   }
-}
+};
