@@ -44,6 +44,6 @@ export abstract class SoccerBotClient {
   }
 
   protected getAttributeAndTrim(element: Element, attribute: string): string {
-    return element.getAttribute(attribute).trim();
+    return element.getAttribute(attribute)?.trim();
   }
 }

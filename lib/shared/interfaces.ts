@@ -303,5 +303,6 @@ export interface SoccerBotPlayer {
 export enum SoccerBotProvider {
   TRANSFERMARKT = 'TRANSFERMARKT',
   SOCCERWAY = 'SOCCERWAY',
-  FOTBALUNAS = 'FOTBALUNAS'
+  FOTBALUNAS = 'FOTBALUNAS',
+  EUROFOTBAL = 'EUROFOTBAL'
 }

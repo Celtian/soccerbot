@@ -1,9 +1,9 @@
 import { SoccerBotPositionGroup } from '../../shared';
 
 export const coercePositionGroup = (position: string): SoccerBotPositionGroup => {
-  if (['Goalkeeper', 'Brankář'].includes(position)) {
+  if (['Goalkeeper', 'Brankář', 'Brankáři'].includes(position)) {
     return SoccerBotPositionGroup.GOALKEEPER;
-  } else if (['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce'].includes(position)) {
+  } else if (['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce', 'Obránci'].includes(position)) {
     return SoccerBotPositionGroup.DEFENDER;
   } else if (
     [
@@ -13,11 +13,12 @@ export const coercePositionGroup = (position: string): SoccerBotPositionGroup =>
       'Left Midfield',
       'Attacking Midfield',
       'Midfielder',
-      'Záložník'
+      'Záložník',
+      'Záložníci'
     ].includes(position)
   ) {
     return SoccerBotPositionGroup.MIDFIELDER;
-  } else if (['Left Winger', 'Right Winger', 'Centre-Forward', 'Attacker', 'Útočník'].includes(position)) {
+  } else if (['Left Winger', 'Right Winger', 'Centre-Forward', 'Attacker', 'Útočník', 'Útočníci'].includes(position)) {
     return SoccerBotPositionGroup.ATTACKER;
   }
   return undefined;
