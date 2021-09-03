@@ -1,4 +1,4 @@
-import { SoccerBotResponse, SoccerBotTeam } from "../../../lib/shared";
+import { SoccerBotResponse, SoccerBotTeam } from '../../../lib/shared/interfaces';
 
 export const LEAGUE_HTML = `
 <!DOCTYPE html>
@@ -3307,4 +3307,4 @@ export const LEAGUE_DATA: SoccerBotResponse<SoccerBotTeam[]> = {
     { id: '541', name: 'Příbram' },
     { id: '542', name: 'Opava' }
   ]
-}
+};

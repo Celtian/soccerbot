@@ -1,17 +1,17 @@
-import { SoccerBotFotbalunasClient } from '../../lib/clients/fotbalunas';
-import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/fotbalunas/league';
-import { CLUB_HTML, TEAM_DATA, TEAM_HTML } from '../mocks/fotbalunas/team';
+import { SoccerBotEurofotbalClient } from '../../lib/clients/eurofotbal';
+import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/eurofotbal/league';
+import { TEAM_DATA, TEAM_HTML } from '../mocks/eurofotbal/team';
 
-describe('SoccerBotFotbalunasClient', () => {
-  let client: SoccerBotFotbalunasClient;
+describe('SoccerBotEurofotbalClient', () => {
+  let client: SoccerBotEurofotbalClient;
 
   beforeEach(() => {
-    client = new SoccerBotFotbalunasClient();
+    client = new SoccerBotEurofotbalClient();
   });
 
   describe('leagueUrl', () => {
     it('should return correct value', () => {
-      expect(client.leagueUrl('31')).toEqual('https://fotbalunas.cz/tabulky/soutez/31');
+      expect(client.leagueUrl('1-fotbalova-liga')).toEqual('https://www.eurofotbal.cz/1-fotbalova-liga');
     });
 
     it('should return undefined', () => {
@@ -23,7 +23,9 @@ describe('SoccerBotFotbalunasClient', () => {
 
   describe('teamUrl', () => {
     it('should return correct value', () => {
-      expect(client.teamUrl('62')).toEqual('https://fotbalunas.cz/tym/62');
+      expect(client.teamUrl('cesko/sparta-praha')).toEqual(
+        'https://www.eurofotbal.cz/kluby/cesko/sparta-praha/soupiska'
+      );
     });
 
     it('should return undefined', () => {
@@ -35,7 +37,7 @@ describe('SoccerBotFotbalunasClient', () => {
 
   describe('league', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotFotbalunasClient.prototype as any, 'fetchPage');
+      const handleSpy = jest.spyOn(SoccerBotEurofotbalClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(LEAGUE_HTML);
@@ -50,23 +52,16 @@ describe('SoccerBotFotbalunasClient', () => {
 
   describe('team', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotFotbalunasClient.prototype as any, 'fetchPage');
-      handleSpy
-        .mockImplementationOnce(() => {
-          return new Promise((resolve) => {
-            resolve(TEAM_HTML);
-          });
-        })
-        .mockImplementationOnce(() => {
-          return new Promise((resolve) => {
-            resolve(CLUB_HTML);
-          });
-        })
-        .mockReturnValue(undefined);
+      const handleSpy = jest.spyOn(SoccerBotEurofotbalClient.prototype as any, 'fetchPage');
+      handleSpy.mockImplementation(() => {
+        return new Promise((resolve) => {
+          resolve(TEAM_HTML);
+        });
+      });
     });
 
     it('should return team', async () => {
-      expect(await client.team('62')).toEqual(TEAM_DATA);
+      expect(await client.team('cesko/sparta-praha')).toEqual(TEAM_DATA);
     });
   });
 });

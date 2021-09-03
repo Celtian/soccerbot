@@ -1,5 +1,5 @@
-import { SoccerBotPlayer, SoccerBotResponse } from "../../../lib/shared";
-import { PLAYER_DATA } from "./player";
+import { SoccerBotPlayer, SoccerBotResponse } from '../../../lib/shared/interfaces';
+import { PLAYER_DATA } from './player';
 
 export const TEAM_HTML = `
 <!DOCTYPE html>
@@ -2789,7 +2789,7 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       id: '295384',
       jerseyNumber: 4,
       minutesPlayed: 212,
-      ...PLAYER_DATA.data,
+      ...PLAYER_DATA.data
     },
     {
       id: '574460',
@@ -2918,4 +2918,4 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       ...PLAYER_DATA.data
     }
   ]
-}
+};

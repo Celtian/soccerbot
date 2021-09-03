@@ -1,5 +1,5 @@
-import { coerceDate } from '../../lib/helpers';
-import { SoccerBotProvider } from '../../lib/shared';
+import { coerceDate } from '../../lib/helpers/date';
+import { SoccerBotProvider } from '../../lib/shared/interfaces';
 
 describe('coerceDate', () => {
   describe('transfermarkt', () => {
@@ -32,6 +32,19 @@ describe('coerceDate', () => {
   describe('fotbalunas', () => {
     it('should return undefined', () => {
       expect(coerceDate('whatever', SoccerBotProvider.FOTBALUNAS)).toEqual(undefined);
+    });
+  });
+
+  describe('eurofotbal', () => {
+    it('should return correct value', () => {
+      expect(coerceDate('18.03.1995', SoccerBotProvider.EUROFOTBAL)).toEqual('1995-03-18');
+    });
+
+    it('should return undefined', () => {
+      expect(coerceDate('xxx', SoccerBotProvider.EUROFOTBAL)).toEqual(undefined);
+      expect(coerceDate('', SoccerBotProvider.EUROFOTBAL)).toEqual(undefined);
+      expect(coerceDate(null, SoccerBotProvider.EUROFOTBAL)).toEqual(undefined);
+      expect(coerceDate(undefined, SoccerBotProvider.EUROFOTBAL)).toEqual(undefined);
     });
   });
 });

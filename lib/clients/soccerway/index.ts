@@ -1,15 +1,10 @@
-import {
-  coerceCoutry,
-  coerceDate,
-  coerceFoot,
-  coerceHeight,
-  coerceJerseyNumber,
-  coerceMinutesPlayed,
-  coercePositionGroup,
-  coerceWeight,
-  sleep
-} from '../../helpers';
-import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared';
+import { coerceCountry } from '../../helpers/country';
+import { coerceDate } from '../../helpers/date';
+import { coerceFoot } from '../../helpers/foot';
+import { coerceHeight, coerceJerseyNumber, coerceMinutesPlayed, coerceWeight } from '../../helpers/number';
+import { coercePositionGroup } from '../../helpers/position';
+import { sleep } from '../../helpers/shared';
+import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient } from '../shared';
 
 const BASE_URL = 'https://int.soccerway.com';
@@ -115,7 +110,7 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
           name: `${firstName} ${lastName}`,
           firstName,
           lastName,
-          country: coerceCoutry(
+          country: coerceCountry(
             this.getTextAndTrim(data.querySelector('dd[data-nationality="nationality"]')),
             SoccerBotProvider.SOCCERWAY
           ),
