@@ -30,7 +30,7 @@ yarn add soccerbot
 
 ## Quick start
 
-_Go to command line and type_
+_Type this into your ts file._
 
 ```terminal
 import { soccerway, transfermarkt, fotbalunas, eurofotbal } from 'soccerbot';
@@ -55,6 +55,15 @@ console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // show url
 eurofotbal.team('cesko/sparta-praha')
   .then(res => console.log(res));
 ```
+
+## Sources
+
+| Source            | Speed  | Stability | Coverage       |
+| ----------------- | ------ | --------- | -------------- |
+| **transfermarkt** | ⚽⚽⚽ | ⚽⚽⚽    | World          |
+| **soccerway**     | ⚽     | ⚽        | World          |
+| **fotbalunas**    | ⚽     | ⚽⚽⚽    | Czech Republic |
+| **eurofotbal**    | ⚽⚽   | ⚽⚽      | Europe         |
 
 _Note: Soccerway is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average). Fotbalunas uses redirect. It means that data are downloded from 2 pages and there is also a little delay._
 
