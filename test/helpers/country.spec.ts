@@ -49,4 +49,18 @@ describe('coerceCountry', () => {
       expect(coerceCountry(undefined, SoccerBotProvider.EUROFOTBAL)).toEqual(undefined);
     });
   });
+
+  describe('sportnet', () => {
+    it('should return correct value', () => {
+      expect(coerceCountry('Afganistan', SoccerBotProvider.SPORTNET)).toEqual(SoccerBotCountry.AFGHANISTAN);
+    });
+
+    it('should return undefined', () => {
+      expect(coerceCountry('xxx', SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceCountry('', SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceCountry('999999', SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceCountry(null, SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceCountry(undefined, SoccerBotProvider.SPORTNET)).toEqual(undefined);
+    });
+  });
 });
