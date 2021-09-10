@@ -6,7 +6,7 @@ describe('SoccerBotFotbalunasClient', () => {
   let client: SoccerBotFotbalunasClient;
 
   beforeEach(() => {
-    client = new SoccerBotFotbalunasClient();
+    client = new SoccerBotFotbalunasClient(5);
   });
 
   describe('leagueUrl', () => {
