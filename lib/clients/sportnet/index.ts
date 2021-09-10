@@ -1,3 +1,4 @@
+import { coercePositionGroup } from '../../helpers';
 import { coerceCountry } from '../../helpers/country';
 import { coerceDate } from '../../helpers/date';
 import { sleep } from '../../helpers/shared';
@@ -63,24 +64,38 @@ export class SoccerBotSportnetClient extends SoccerBotClient {
       const virtualNode = this.nodeDOM(html);
       const links = this.selectArray(virtualNode, 'div:nth-child(2) > div.dropdown-body > a');
       const list: SoccerBotPlayer[] = [];
-      const playerIds = new Set<string>();
+      const players = new Map<string, string>();
       for (const link of links) {
         const href = this.getAttributeAndTrim(link, 'href');
         await sleep(this.sleepMs); // sleep for a moment because of rare limit
         const htmlParams = await this.fetchPage(BASE_URL + href);
         const virtualNodeParams = this.nodeDOM(htmlParams);
-        const playerLinks = this.selectArray(virtualNodeParams, 'table > tbody > tr > td > a[href]');
+        const playerLinks = this.selectArray(
+          virtualNodeParams,
+          'table > tbody > tr > td > a[href], table > thead > tr > th:nth-child(1)'
+        );
+        let position = 'Brankári';
         for (const playerLink of playerLinks) {
-          playerIds.add(
-            this.getAttributeAndTrim(playerLink, 'href').match(/^\/futbalnet\/clen\/\b(?<id>.*)\b(\/)?$/).groups.id
-          );
+          const text = this.getTextAndTrim(playerLink);
+          if (['Brankári', 'Obrancovia', 'Záložníci', 'Útočníci'].includes(text)) {
+            position = text;
+          } else {
+            players.set(
+              this.getAttributeAndTrim(playerLink, 'href').match(/^\/futbalnet\/clen\/\b(?<id>.*)\b(\/)?$/).groups.id,
+              position
+            );
+          }
         }
       }
-      for (const playerId of playerIds.keys()) {
+      for (const key of players.keys()) {
         await sleep(this.sleepMs); // sleep for a moment because of rare limit
-        const player = await this.player(playerId);
+        const value = players.get(key);
+        const player = await this.player(key);
         if (player.ok) {
-          list.push(player.data);
+          list.push({
+            position: coercePositionGroup(value),
+            ...player.data
+          });
         }
       }
       return {
