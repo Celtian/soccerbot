@@ -1,8 +1,8 @@
-import { coercePositionGroup } from '../../helpers';
 import { coerceCountry } from '../../helpers/country';
 import { coerceDate } from '../../helpers/date';
+import { coercePositionGroup } from '../../helpers/position';
 import { sleep } from '../../helpers/shared';
-import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared';
+import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient } from '../shared';
 
 const BASE_URL = 'https://sportnet.sme.sk';

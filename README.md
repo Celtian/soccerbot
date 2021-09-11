@@ -54,6 +54,11 @@ console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // show url
 
 eurofotbal.team('cesko/sparta-praha')
   .then(res => console.log(res));
+
+console.log(sportnet.teamUrl('fk-inter-bratislava/tim/46770')); // show url
+
+sportnet.team('fk-inter-bratislava/tim/46770')
+  .then(res => console.log(res));
 ```
 
 ## Sources
@@ -64,8 +69,9 @@ eurofotbal.team('cesko/sparta-praha')
 | **soccerway**     | ⚽     | ⚽        | World          |
 | **fotbalunas**    | ⚽     | ⚽⚽⚽    | Czech Republic |
 | **eurofotbal**    | ⚽⚽   | ⚽⚽      | Europe         |
+| **sportnet**      | ⚽     | ⚽        | Slovakia       |
 
-_Note: Soccerway is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average). Fotbalunas uses redirect. It means that data are downloded from 2 pages and there is also a little delay._
+_Note: Soccerway, Fotbalunas and sportnet is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average)._
 
 ## License
 
