@@ -1,5 +1,5 @@
 import { argv } from 'process';
-import { eurofotbal, fotbalunas, soccerway, transfermarkt } from './lib';
+import { eurofotbal, fotbalunas, soccerway, sportnet, transfermarkt } from './lib';
 
 const selector = argv[2];
 
@@ -48,6 +48,19 @@ const eurofotbalDemo = async (): Promise<void> => {
   console.log(await eurofotbal.team('cesko/sparta-praha'));
 };
 
+const sportnetDemo = async (): Promise<void> => {
+  console.log('⚽⚽⚽ Sportnet demo ⚽⚽⚽');
+
+  console.log(sportnet.leagueUrl('sfz/s/3528'));
+  console.log(await sportnet.league('sfz/s/3528'));
+
+  console.log(sportnet.teamUrl('fk-inter-bratislava/tim/46770'));
+  console.log(await sportnet.team('fk-inter-bratislava/tim/46770'));
+
+  console.log(sportnet.playerUrl('1306959'));
+  console.log(await sportnet.player('1306959'));
+};
+
 // tslint:disable-next-line: no-shadowed-variable
 const main = async (selector: string): Promise<void> => {
   switch (selector) {
@@ -63,11 +76,15 @@ const main = async (selector: string): Promise<void> => {
     case 'eurofotbal':
       await eurofotbalDemo();
       break;
+    case 'sportnet':
+      await sportnetDemo();
+      break;
     default:
       await transfermarktDemo();
       await soccerwayDemo();
       await fotbalunasDemo();
       await eurofotbalDemo();
+      await sportnetDemo();
       break;
   }
 };

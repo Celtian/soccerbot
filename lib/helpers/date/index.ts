@@ -79,6 +79,9 @@ export const coerceDate = (date: string, type: SoccerBotProvider): string => {
     case SoccerBotProvider.EUROFOTBAL:
       regExp = new RegExp('(?<day>\\d{1,2}).(?<month>\\d{1,2}).(?<year>\\d{4})');
       return corceDateByRegExp(date, regExp, MONTH_NUMBER);
+    case SoccerBotProvider.SPORTNET:
+      regExp = new RegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})');
+      return corceDateByRegExp(date, regExp, MONTH_NUMBER);
     default:
       return undefined;
   }

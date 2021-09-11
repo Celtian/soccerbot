@@ -1,9 +1,11 @@
 import { SoccerBotPositionGroup } from '../../shared/interfaces';
 
 export const coercePositionGroup = (position: string): SoccerBotPositionGroup => {
-  if (['Goalkeeper', 'Brankář', 'Brankáři'].includes(position)) {
+  if (['Goalkeeper', 'Brankář', 'Brankáři', 'Brankári'].includes(position)) {
     return SoccerBotPositionGroup.GOALKEEPER;
-  } else if (['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce', 'Obránci'].includes(position)) {
+  } else if (
+    ['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce', 'Obránci', 'Obrancovia'].includes(position)
+  ) {
     return SoccerBotPositionGroup.DEFENDER;
   } else if (
     [

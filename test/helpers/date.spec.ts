@@ -47,4 +47,17 @@ describe('coerceDate', () => {
       expect(coerceDate(undefined, SoccerBotProvider.EUROFOTBAL)).toEqual(undefined);
     });
   });
+
+  describe('sportnet', () => {
+    it('should return correct value', () => {
+      expect(coerceDate('1995-03-18', SoccerBotProvider.SPORTNET)).toEqual('1995-03-18');
+    });
+
+    it('should return undefined', () => {
+      expect(coerceDate('xxx', SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceDate('', SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceDate(null, SoccerBotProvider.SPORTNET)).toEqual(undefined);
+      expect(coerceDate(undefined, SoccerBotProvider.SPORTNET)).toEqual(undefined);
+    });
+  });
 });
