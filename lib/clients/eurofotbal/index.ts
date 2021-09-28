@@ -60,15 +60,16 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
 
       if (table) {
         let position = 'Brankáři';
-        const sections: (HTMLDivElement | HTMLTableSectionElement)[] = [].slice.call(
-          table.querySelectorAll(`div.bar, table > tbody`)
+        const sections: (HTMLDivElement | HTMLTableSectionElement)[] = this.selectArray(
+          table,
+          'div.bar, table > tbody'
         );
         for (const section of sections) {
           const classAttr = this.getAttributeAndTrim(section, 'class');
           if (classAttr === 'bar') {
             position = this.getTextAndTrim(section);
           } else {
-            const players = [].slice.call(section.querySelectorAll('tr'));
+            const players = this.selectArray(section, 'tr');
             for (const player of players) {
               const link = player.querySelector('td.name > a');
               const hw = this.getTextAndTrim(player.querySelector('td.hw')).match(
