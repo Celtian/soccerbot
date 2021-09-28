@@ -33,7 +33,7 @@ yarn add soccerbot
 _Type this into your ts file._
 
 ```terminal
-import { soccerway, transfermarkt, fotbalunas, eurofotbal } from 'soccerbot';
+import { soccerway, transfermarkt, fotbalunas, eurofotbal, sportnet } from 'soccerbot';
 
 console.log(soccerway.teamUrl('533')); // show url
 

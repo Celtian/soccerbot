@@ -35,8 +35,11 @@ export abstract class SoccerBotClient {
     return new JSDOM(response).window.document;
   }
 
-  protected selectArray(virtualNode: Document, selector: string): HTMLTableRowElement[] {
-    return [].slice.call(virtualNode.querySelectorAll(selector));
+  protected selectArray(
+    element: Document | HTMLDivElement | HTMLTableSectionElement,
+    selector: string
+  ): HTMLTableRowElement[] {
+    return [].slice.call(element.querySelectorAll(selector));
   }
 
   protected getTextAndTrim(element: Element): string {
