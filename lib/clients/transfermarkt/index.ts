@@ -31,10 +31,12 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
       const items = this.selectArray(virtualNode, '#yw1 > table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
-        const link = item.querySelector('td.hauptlink.no-border-links.show-for-small.show-for-pad > a');
+        const link = item.querySelector('td.hauptlink.no-border-links > a');
         list.push({
-          id: link.id,
-          name: this.getTextAndTrim(link)
+          id: this.getAttributeAndTrim(link, 'href')?.match(
+            /^\/(\S+)\/startseite\/verein\/(?<id>\d+)\/saison_id\/(\d+)/
+          )?.groups?.id,
+          name: this.getAttributeAndTrim(link, 'title')
         });
       }
       return {
@@ -56,14 +58,12 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
       const items = this.selectArray(virtualNode, '#yw1 > table > tbody > tr');
       const list: SoccerBotPlayer[] = [];
       for (const item of items) {
-        const link = item.querySelector(
-          'td:nth-child(2) > table > tbody > tr:nth-child(1) > td.hauptlink > div:nth-child(1) > span > a'
-        );
+        const link = item.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td.hauptlink > a');
         const flagSrc = this.getAttributeAndTrim(item.querySelector('td:nth-child(4) > img:nth-child(1)'), 'src').match(
           /^https:\/\/(.+)\/(?<id>\d+)\.png/
         );
         list.push({
-          id: link.id,
+          id: this.getAttributeAndTrim(link, 'href').match(/\/(\S+)\/profil\/spieler\/(?<id>\d+)$/)?.groups?.id,
           name: this.getTextAndTrim(link),
           jerseyNumber: coerceJerseyNumber(this.getTextAndTrim(item.querySelector('td:nth-child(1) > div.rn_nummer'))),
           position: coercePositionGroup(
