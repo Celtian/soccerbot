@@ -13,6 +13,7 @@
     "husky:install": "husky install",
     "gpr:setup": "ts-node --project scripts/tsconfig.ts-node.json scripts/gpr-setup",
     "version": "auto-changelog -p && git add CHANGELOG.md",
+    "preinstall": "npx only-allow yarn",
     "postversion": "git push && git push --follow-tags",
     "publish:beta": "yarn && yarn build && npm publish --folder dist --tag beta",
     "release:beta": "npm version prerelease -m \"chore(update): prelease %s β\"",
@@ -44,6 +45,8 @@
     "jsdom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@types/jest": "^29.2.4",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.18.10",
