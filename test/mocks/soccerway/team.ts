@@ -1,4 +1,4 @@
-import { SoccerBotPlayer, SoccerBotResponse } from '../../../lib/shared/interfaces';
+import { SoccerBotPlayer, SoccerBotResponse } from '../../../src/shared/interfaces';
 import { PLAYER_DATA } from './player';
 
 export const TEAM_HTML = `

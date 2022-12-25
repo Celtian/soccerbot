@@ -1,5 +1,5 @@
-import { coerceDate } from '../../lib/helpers/date';
-import { SoccerBotProvider } from '../../lib/shared/interfaces';
+import { coerceDate } from '../../src/helpers/date';
+import { SoccerBotProvider } from '../../src/shared/interfaces';
 
 describe('coerceDate', () => {
   describe('transfermarkt', () => {

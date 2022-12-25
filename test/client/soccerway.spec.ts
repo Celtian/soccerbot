@@ -1,4 +1,4 @@
-import { SoccerBotSoccerwayClient } from '../../lib/clients/soccerway';
+import { SoccerBotSoccerwayClient } from '../../src/clients/soccerway';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/soccerway/league';
 import { PLAYER_DATA, PLAYER_HTML } from '../mocks/soccerway/player';
 import { TEAM_DATA, TEAM_HTML } from '../mocks/soccerway/team';
