@@ -1,4 +1,4 @@
-import { SoccerBotTransfermarktClient } from '../../lib/clients/transfermarkt';
+import { SoccerBotTransfermarktClient } from '../../src/clients/transfermarkt';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/transfermarkt/league';
 import { TEAM_DATA, TEAM_HTML } from '../mocks/transfermarkt/team';
 

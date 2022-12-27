@@ -1,4 +1,4 @@
-import { coerceMarketValue } from '../../lib/helpers/market-value';
+import { coerceMarketValue } from '../../src/helpers/market-value';
 
 describe('coerceMarketValue', () => {
   it('should return millions', () => {

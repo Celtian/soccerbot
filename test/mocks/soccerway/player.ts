@@ -4,7 +4,7 @@ import {
   SoccerBotPlayer,
   SoccerBotPositionGroup,
   SoccerBotResponse
-} from '../../../lib/shared/interfaces';
+} from '../../../src/shared/interfaces';
 
 export const PLAYER_HTML = `
 <!DOCTYPE html>

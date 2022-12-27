@@ -1,4 +1,4 @@
-import { SoccerBotEurofotbalClient } from '../../lib/clients/eurofotbal';
+import { SoccerBotEurofotbalClient } from '../../src/clients/eurofotbal';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/eurofotbal/league';
 import { TEAM_DATA, TEAM_HTML } from '../mocks/eurofotbal/team';
 

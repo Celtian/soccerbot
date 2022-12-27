@@ -1,4 +1,4 @@
-import { SoccerBotFotbalunasClient } from '../../lib/clients/fotbalunas';
+import { SoccerBotFotbalunasClient } from '../../src/clients/fotbalunas';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/fotbalunas/league';
 import { CLUB_HTML, TEAM_DATA, TEAM_HTML } from '../mocks/fotbalunas/team';
 

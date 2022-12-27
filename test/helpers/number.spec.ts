@@ -4,7 +4,7 @@ import {
   coerceMinutesPlayed,
   coerceNumber,
   coerceWeight
-} from '../../lib/helpers/number';
+} from '../../src/helpers/number';
 
 describe('coerceNumber', () => {
   it('should return correct value', () => {

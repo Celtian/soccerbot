@@ -3,7 +3,7 @@ import {
   SoccerBotPlayer,
   SoccerBotPositionGroup,
   SoccerBotResponse
-} from '../../../lib/shared/interfaces';
+} from '../../../src/shared/interfaces';
 
 export const TEAM_HTML = `
 

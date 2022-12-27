@@ -1,5 +1,5 @@
-import { SoccerBotSportnetClient } from '../../lib/clients/sportnet';
-import { SoccerBotPlayer, SoccerBotPositionGroup, SoccerBotResponse } from '../../lib/shared/interfaces';
+import { SoccerBotSportnetClient } from '../../src/clients/sportnet';
+import { SoccerBotPlayer, SoccerBotPositionGroup, SoccerBotResponse } from '../../src/shared/interfaces';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/sportnet/league';
 import { PLAYER_DATA, PLAYER_HTML } from '../mocks/sportnet/player';
 import { TEAM_COMPETITION_1_HTML, TEAM_COMPETITION_2_HTML, TEAM_HTML } from '../mocks/sportnet/team';

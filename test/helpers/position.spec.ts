@@ -1,5 +1,5 @@
-import { coercePositionGroup } from '../../lib/helpers/position';
-import { SoccerBotPositionGroup } from '../../lib/shared/interfaces';
+import { coercePositionGroup } from '../../src/helpers/position';
+import { SoccerBotPositionGroup } from '../../src/shared/interfaces';
 
 describe('coercePositionGroup', () => {
   it('should return goalkeeper', () => {

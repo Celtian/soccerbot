@@ -1,5 +1,5 @@
 import { argv } from 'process';
-import { eurofotbal, fotbalunas, soccerway, sportnet, transfermarkt } from './lib';
+import { eurofotbal, fotbalunas, soccerway, sportnet, transfermarkt } from './src';
 
 const selector = argv[2];
 

@@ -1,5 +1,5 @@
-import { coerceCountry } from '../../lib/helpers/country';
-import { SoccerBotCountry, SoccerBotProvider } from '../../lib/shared/interfaces';
+import { coerceCountry } from '../../src/helpers/country';
+import { SoccerBotCountry, SoccerBotProvider } from '../../src/shared/interfaces';
 
 describe('coerceCountry', () => {
   describe('transfermarkt', () => {

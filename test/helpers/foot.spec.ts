@@ -1,5 +1,5 @@
-import { coerceFoot } from '../../lib/helpers/foot';
-import { SoccerBotFoot } from '../../lib/shared/interfaces';
+import { coerceFoot } from '../../src/helpers/foot';
+import { SoccerBotFoot } from '../../src/shared/interfaces';
 
 describe('coerceFoot', () => {
   it('should return right', () => {
