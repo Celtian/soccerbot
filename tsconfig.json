@@ -17,7 +17,8 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "downlevelIteration": true
   },
   "include": ["src"],
   "exclude": ["dist/**/*", "*/tests/**/*"]
