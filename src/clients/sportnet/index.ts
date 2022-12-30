@@ -1,3 +1,4 @@
+import parse from 'node-html-parser';
 import { coerceCountry } from '../../helpers/country';
 import { coerceDate } from '../../helpers/date';
 import { coercePositionGroup } from '../../helpers/position';
@@ -35,15 +36,17 @@ export class SoccerBotSportnetClient extends SoccerBotClient {
 
   public async league(id: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const html = await this.fetchPage(this.leagueUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, 'table > tbody > tr');
+      const html = parse(await this.fetchPage(this.leagueUrl(id)));
+      const items = html.querySelectorAll('table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
         const link = item.querySelector('td:nth-child(3) > a');
         list.push({
-          id: this.getAttributeAndTrim(link, 'href').match(/^\/futbalnet\/k\/\b(?<id>.*)\b(\/)?$/).groups.id,
-          name: this.getTextAndTrim(link)
+          id: link
+            .getAttribute('href')
+            .trim()
+            .match(/^\/futbalnet\/k\/\b(?<id>.*)\b(\/)?$/).groups.id,
+          name: link.text.trim()
         });
       }
       return {
@@ -60,28 +63,29 @@ export class SoccerBotSportnetClient extends SoccerBotClient {
 
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
-      const html = await this.fetchPage(this.teamUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const links = this.selectArray(virtualNode, 'div:nth-child(2) > div.dropdown-body > a');
+      const html = parse(await this.fetchPage(this.teamUrl(id)));
+      const links = html.querySelectorAll('div:nth-child(2) > div.dropdown-body > a');
       const list: SoccerBotPlayer[] = [];
       const players = new Map<string, string>();
       for (const link of links) {
-        const href = this.getAttributeAndTrim(link, 'href');
+        const href = link.getAttribute('href').trim();
         await sleep(this.sleepMs); // sleep for a moment because of rare limit
-        const htmlParams = await this.fetchPage(BASE_URL + href);
-        const virtualNodeParams = this.nodeDOM(htmlParams);
-        const playerLinks = this.selectArray(
-          virtualNodeParams,
+        const htmlParams = parse(await this.fetchPage(BASE_URL + href));
+
+        const playerLinks = htmlParams.querySelectorAll(
           'table > tbody > tr > td > a[href], table > thead > tr > th:nth-child(1)'
         );
         let position = 'Brankári';
         for (const playerLink of playerLinks) {
-          const text = this.getTextAndTrim(playerLink);
+          const text = playerLink.text.trim();
           if (['Brankári', 'Obrancovia', 'Záložníci', 'Útočníci'].includes(text)) {
             position = text;
           } else {
             players.set(
-              this.getAttributeAndTrim(playerLink, 'href').match(/^\/futbalnet\/clen\/\b(?<id>.*)\b(\/)?$/).groups.id,
+              playerLink
+                .getAttribute('href')
+                .trim()
+                .match(/^\/futbalnet\/clen\/\b(?<id>.*)\b(\/)?$/).groups.id,
               position
             );
           }
