@@ -1,3 +1,4 @@
+import parse from 'node-html-parser';
 import { coerceJerseyNumber } from '../../helpers/number';
 import { coercePositionGroup } from '../../helpers/position';
 import { sleep } from '../../helpers/shared';
@@ -33,15 +34,17 @@ export class SoccerBotFotbalunasClient extends SoccerBotClient {
 
   public async league(id: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const html = await this.fetchPage(this.leagueUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, '#content > div > div > table > tbody > tr');
+      const html = parse(await this.fetchPage(this.leagueUrl(id)));
+      const items = html.querySelectorAll('#content > div > div > table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
         const link = item.querySelector('td > a');
         list.push({
-          id: this.getAttributeAndTrim(link, 'href').match(/^\/tym\/(?<id>\d+)(\/)?$/).groups.id,
-          name: this.getTextAndTrim(link)
+          id: link
+            .getAttribute('href')
+            .trim()
+            .match(/^\/tym\/(?<id>\d+)(\/)?$/).groups.id,
+          name: link?.text?.trim()
         });
       }
       return {
@@ -58,25 +61,32 @@ export class SoccerBotFotbalunasClient extends SoccerBotClient {
 
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
-      const html = await this.fetchPage(this.teamUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const page = this.selectArray(virtualNode, '#content > div > div > h3 > a')[0];
+      const html = parse(await this.fetchPage(this.teamUrl(id)));
+      const page = html.querySelector('#content > div > div > h3 > a');
       const list: SoccerBotPlayer[] = [];
       if (page) {
-        const clubId = this.getAttributeAndTrim(page, 'href').match(/^\/klub\/(?<id>\d+)(\/)?$/).groups.id;
+        const clubId = page
+          .getAttribute('href')
+          .trim()
+          .match(/^\/klub\/(?<id>\d+)(\/)?$/).groups.id;
         if (clubId) {
           await sleep(this.sleepMs); // sleep for a moment because of rare limit
-          const clubHtml = await this.fetchPage(this.clubUrl(clubId));
-          const clubVirtualNode = this.nodeDOM(clubHtml);
-          const items = this.selectArray(clubVirtualNode, '#content > div > div > table > tbody > tr');
+          const clubHtml = parse(await this.fetchPage(this.clubUrl(clubId)));
+          // const items = clubHtml.querySelectorAll('#content > div > div > table > tbody > tr');
+          const items = clubHtml.querySelectorAll('#content > div > div > table tr');
           for (const item of items) {
             const link = item.querySelector('td:nth-child(2) > a');
-            list.push({
-              id: this.getAttributeAndTrim(link, 'href').match(/^\/hrac\/(?<id>\d+)(\/)?$/).groups.id,
-              name: this.getTextAndTrim(link),
-              jerseyNumber: coerceJerseyNumber(this.getTextAndTrim(item.querySelector('td:nth-child(1)'))),
-              position: coercePositionGroup(this.getTextAndTrim(item.querySelector('td:nth-child(4)')))
-            });
+            if (link) {
+              list.push({
+                id: link
+                  .getAttribute('href')
+                  ?.trim()
+                  ?.match(/^\/hrac\/(?<id>\d+)(\/)?$/).groups.id,
+                name: link?.text?.trim(),
+                jerseyNumber: coerceJerseyNumber(item.querySelector('td:nth-child(1)')?.text?.trim()),
+                position: coercePositionGroup(item.querySelector('td:nth-child(4)')?.text?.trim())
+              });
+            }
           }
         }
       }

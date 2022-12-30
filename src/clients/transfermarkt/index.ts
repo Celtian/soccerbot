@@ -1,3 +1,4 @@
+import parse from 'node-html-parser';
 import { coerceCountry } from '../../helpers/country';
 import { coerceDate } from '../../helpers/date';
 import { coerceFoot } from '../../helpers/foot';
@@ -26,17 +27,18 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
 
   public async league(id: string, season?: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const html = await this.fetchPage(this.leagueUrl(id, season));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, '#yw1 > table > tbody > tr');
+      const html = parse(await this.fetchPage(this.leagueUrl(id, season)));
+
+      const items = html.querySelectorAll('#yw1 > table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
         const link = item.querySelector('td.hauptlink.no-border-links > a');
         list.push({
-          id: this.getAttributeAndTrim(link, 'href')?.match(
-            /^\/(\S+)\/startseite\/verein\/(?<id>\d+)\/saison_id\/(\d+)/
-          )?.groups?.id,
-          name: this.getAttributeAndTrim(link, 'title')
+          id: link
+            .getAttribute('href')
+            ?.trim()
+            ?.match(/^\/(\S+)\/startseite\/verein\/(?<id>\d+)\/saison_id\/(\d+)/)?.groups?.id,
+          name: link.getAttribute('title')?.trim()
         });
       }
       return {
@@ -53,37 +55,37 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
 
   public async team(id: string, season?: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
-      const html = await this.fetchPage(this.teamUrl(id, season));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, '#yw1 > table > tbody > tr');
+      const html = parse(await this.fetchPage(this.teamUrl(id, season)));
+      const items = html.querySelectorAll('#yw1 > table > tbody > tr');
       const list: SoccerBotPlayer[] = [];
       for (const item of items) {
-        const link = item.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td.hauptlink > a');
-        const flagSrc = this.getAttributeAndTrim(item.querySelector('td:nth-child(4) > img:nth-child(1)'), 'src').match(
-          /^https:\/\/(.+)\/(?<id>\d+)\.png/
-        );
+        // const link = item.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td.hauptlink > a');
+        const link = item.querySelector('td.posrela > table tr:nth-child(1) > td.hauptlink > a');
+        const flagSrc = item
+          .querySelector('td:nth-child(4) > img:nth-child(1)')
+          ?.getAttribute('src')
+          ?.trim()
+          .match(/^https:\/\/(.+)\/(?<id>\d+)\.png/);
         list.push({
-          id: this.getAttributeAndTrim(link, 'href').match(/\/(\S+)\/profil\/spieler\/(?<id>\d+)$/)?.groups?.id,
-          name: this.getTextAndTrim(link),
-          jerseyNumber: coerceJerseyNumber(this.getTextAndTrim(item.querySelector('td:nth-child(1) > div.rn_nummer'))),
+          id: link
+            .getAttribute('href')
+            ?.trim()
+            ?.match(/\/(\S+)\/profil\/spieler\/(?<id>\d+)$/)?.groups?.id,
+          name: link?.text?.trim(),
+          jerseyNumber: coerceJerseyNumber(item.querySelector('td:nth-child(1) > div.rn_nummer')?.text?.trim()),
+          // position: coercePositionGroup(item.querySelector('td:nth-child(2) > table > tbody > tr:nth-child(2) > td')?.text?.trim()),
           position: coercePositionGroup(
-            this.getTextAndTrim(item.querySelector('td:nth-child(2) > table > tbody > tr:nth-child(2) > td'))
+            item.querySelector('td:nth-child(2) > table tr:nth-child(2) > td')?.text?.trim()
           ),
-          birthdate: coerceDate(
-            this.getTextAndTrim(item.querySelector('td:nth-child(3)')),
-            SoccerBotProvider.TRANSFERMARKT
-          ),
-          height: coerceHeight(this.getTextAndTrim(item.querySelector('td:nth-child(5)'))),
-          foot: coerceFoot(this.getTextAndTrim(item.querySelector('td:nth-child(6)'))),
-          joined: coerceDate(
-            this.getTextAndTrim(item.querySelector('td:nth-child(7)')),
-            SoccerBotProvider.TRANSFERMARKT
-          ),
+          birthdate: coerceDate(item.querySelector('td:nth-child(3)')?.text?.trim(), SoccerBotProvider.TRANSFERMARKT),
+          height: coerceHeight(item.querySelector('td:nth-child(5)')?.text?.trim()),
+          foot: coerceFoot(item.querySelector('td:nth-child(6)')?.text?.trim()),
+          joined: coerceDate(item.querySelector('td:nth-child(7)')?.text?.trim(), SoccerBotProvider.TRANSFERMARKT),
           contractExpires: coerceDate(
-            this.getTextAndTrim(item.querySelector('td:nth-child(9)')),
+            item.querySelector('td:nth-child(9)')?.text?.trim(),
             SoccerBotProvider.TRANSFERMARKT
           ),
-          marketValue: coerceMarketValue(this.getTextAndTrim(item.querySelector('td:nth-child(10)'))),
+          marketValue: coerceMarketValue(item.querySelector('td:nth-child(10)')?.text?.trim()),
           country: coerceCountry(
             flagSrc && flagSrc.groups ? flagSrc.groups.id : undefined,
             SoccerBotProvider.TRANSFERMARKT

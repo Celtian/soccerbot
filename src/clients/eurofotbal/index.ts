@@ -1,3 +1,4 @@
+import parse, { HTMLElement } from 'node-html-parser';
 import { coerceCountry } from '../../helpers/country';
 import { coerceDate } from '../../helpers/date';
 import { coerceHeight, coerceJerseyNumber, coerceWeight } from '../../helpers/number';
@@ -24,15 +25,18 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
 
   public async league(id: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const html = await this.fetchPage(this.leagueUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, '#bookmark_100_contents_1 > table > tbody > tr:not(:first-child)');
+      const html = parse(await this.fetchPage(this.leagueUrl(id)));
+      // const items = html.querySelectorAll('#bookmark_100_contents_1 > table > tbody > tr:not(:first-child)');
+      const items = html.querySelectorAll('#bookmark_100_contents_1 > table tr:not(:first-child)');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
         const link = item.querySelector('td:nth-child(3) > a');
         list.push({
-          id: this.getAttributeAndTrim(link, 'href').match(/^\/kluby\/(?<id>\S+)\/$/).groups.id,
-          name: this.getTextAndTrim(link)
+          id: link
+            .getAttribute('href')
+            ?.trim()
+            ?.match(/^\/kluby\/(?<id>\S+)\/$/).groups.id,
+          name: link?.text?.trim()
         });
       }
       return {
@@ -49,45 +53,43 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
 
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
-      const html = await this.fetchPage(this.teamUrl(id));
-      const virtualNode = this.nodeDOM(html);
+      const html = parse(await this.fetchPage(this.teamUrl(id)));
       const list: SoccerBotPlayer[] = [];
 
-      const table = this.selectArray(
-        virtualNode,
-        '#screen > div.all > div > div.middle > div.col-center > div.box.green > div'
-      )[0];
+      const table = html.querySelector(
+        // '#screen > div.all > div > div.middle > div.col-center > div.box.green > div'
+        'div.middle > div.col-center > div.box.green > div'
+      );
 
       if (table) {
         let position = 'Brankáři';
-        const sections: (HTMLDivElement | HTMLTableSectionElement)[] = this.selectArray(
-          table,
-          'div.bar, table > tbody'
-        );
+        // const sections: HTMLElement[] = table.querySelectorAll('div.bar, table > tbody');
+        const sections: HTMLElement[] = table.querySelectorAll('div.bar, table');
         for (const section of sections) {
-          const classAttr = this.getAttributeAndTrim(section, 'class');
+          const classAttr = section.getAttribute('class')?.trim();
           if (classAttr === 'bar') {
-            position = this.getTextAndTrim(section);
+            position = section?.text?.trim();
           } else {
-            const players = this.selectArray(section, 'tr');
+            const players = section.querySelectorAll('tr');
             for (const player of players) {
               const link = player.querySelector('td.name > a');
-              const hw = this.getTextAndTrim(player.querySelector('td.hw')).match(
-                /^(?<height>\S+)\s\/\s(?<weight>\S+)$/
-              );
+              const hw = player
+                .querySelector('td.hw')
+                .text.trim()
+                .match(/^(?<height>\S+)\s\/\s(?<weight>\S+)$/);
               list.push({
-                id: this.getAttributeAndTrim(link, 'href').match(/^\/hraci\/(?<id>\S+)\/$/).groups.id,
-                name: this.getTextAndTrim(link),
+                id: link
+                  .getAttribute('href')
+                  .trim()
+                  .match(/^\/hraci\/(?<id>\S+)\/$/).groups.id,
+                name: link.text.trim(),
                 position: coercePositionGroup(position),
-                jerseyNumber: coerceJerseyNumber(this.getTextAndTrim(player.querySelector('td.number'))),
-                birthdate: coerceDate(
-                  this.getTextAndTrim(player.querySelector('td.birth')),
-                  SoccerBotProvider.EUROFOTBAL
-                ),
+                jerseyNumber: coerceJerseyNumber(player.querySelector('td.number').text.trim()),
+                birthdate: coerceDate(player.querySelector('td.birth').text.trim(), SoccerBotProvider.EUROFOTBAL),
                 height: coerceHeight(hw.groups.height),
                 weight: coerceWeight(hw.groups.weight),
                 country: coerceCountry(
-                  this.getAttributeAndTrim(player.querySelector('td.flag > img'), 'alt'),
+                  player.querySelector('td.flag > img').getAttribute('alt').trim(),
                   SoccerBotProvider.EUROFOTBAL
                 )
               });

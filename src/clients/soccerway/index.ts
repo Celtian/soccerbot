@@ -1,3 +1,4 @@
+import parse from 'node-html-parser';
 import { coerceCountry } from '../../helpers/country';
 import { coerceDate } from '../../helpers/date';
 import { coerceFoot } from '../../helpers/foot';
@@ -37,15 +38,17 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
 
   public async league(id: string, season: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const html = await this.fetchPage(this.leagueUrl(id, season));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, 'table[data-round_id].detailed-table > tbody > tr');
+      const html = parse(await this.fetchPage(this.leagueUrl(id, season)));
+      const items = html.querySelectorAll('table[data-round_id].detailed-table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
         const link = item.querySelector('td.text.team.large-link > a');
         list.push({
-          id: this.getAttributeAndTrim(link, 'href').match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id,
-          name: this.getTextAndTrim(link)
+          id: link
+            .getAttribute('href')
+            .trim()
+            .match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id,
+          name: link.text.trim()
         });
       }
       return {
@@ -62,15 +65,17 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
 
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
-      const html = await this.fetchPage(this.teamUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const items = this.selectArray(virtualNode, 'table[data-season_id] > tbody > tr');
+      const html = parse(await this.fetchPage(this.teamUrl(id)));
+      const items = html.querySelectorAll('table[data-season_id] > tbody > tr');
       const list: SoccerBotPlayer[] = [];
       for (const item of items) {
         const link = item.querySelector('td.name.large-link > a');
-        const id = this.getAttributeAndTrim(link, 'href').match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id;
-        const jerseyNumber = coerceJerseyNumber(this.getTextAndTrim(item.querySelector('td.shirtnumber')));
-        const minutesPlayed = coerceMinutesPlayed(this.getTextAndTrim(item.querySelector('td.game-minutes')));
+        const id = link
+          .getAttribute('href')
+          .trim()
+          .match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id;
+        const jerseyNumber = coerceJerseyNumber(item.querySelector('td.shirtnumber').text.trim());
+        const minutesPlayed = coerceMinutesPlayed(item.querySelector('td.game-minutes').text.trim());
         await sleep(this.sleepMs); // sleep for a moment because of rare limit
         const player = await this.player(id);
         list.push({
@@ -94,14 +99,11 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
 
   public async player(id: string): Promise<SoccerBotResponse<SoccerBotPlayer>> {
     try {
-      const html = await this.fetchPage(this.playerUrl(id));
-      const virtualNode = this.nodeDOM(html);
-      const data: HTMLTableRowElement = virtualNode.querySelector(
-        '.block_player_passport > div > div > div.yui-u.first > div > dl'
-      );
+      const html = parse(await this.fetchPage(this.playerUrl(id)));
+      const data = html.querySelector('.block_player_passport > div > div > div.yui-u.first > div > dl');
 
-      const firstName = this.getTextAndTrim(data.querySelector('dd[data-first_name="first_name"]'));
-      const lastName = this.getTextAndTrim(data.querySelector('dd[data-last_name="last_name"]'));
+      const firstName = data.querySelector('dd[data-first_name="first_name"]').text.trim();
+      const lastName = data.querySelector('dd[data-last_name="last_name"]').text.trim();
 
       return {
         ok: true,
@@ -111,17 +113,17 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
           firstName,
           lastName,
           country: coerceCountry(
-            this.getTextAndTrim(data.querySelector('dd[data-nationality="nationality"]')),
+            data.querySelector('dd[data-nationality="nationality"]').text.trim(),
             SoccerBotProvider.SOCCERWAY
           ),
           birthdate: coerceDate(
-            this.getTextAndTrim(data.querySelector('dd[data-date_of_birth="date_of_birth"]')),
+            data.querySelector('dd[data-date_of_birth="date_of_birth"]').text.trim(),
             SoccerBotProvider.SOCCERWAY
           ),
-          position: coercePositionGroup(this.getTextAndTrim(data.querySelector('dd[data-position="position"]'))),
-          height: coerceHeight(this.getTextAndTrim(data.querySelector('dd[data-height="height"]'))),
-          weight: coerceWeight(this.getTextAndTrim(data.querySelector('dd[data-weight="weight"]'))),
-          foot: coerceFoot(this.getTextAndTrim(data.querySelector('dd[data-foot="foot"]')))
+          position: coercePositionGroup(data.querySelector('dd[data-position="position"]').text.trim()),
+          height: coerceHeight(data.querySelector('dd[data-height="height"]').text.trim()),
+          weight: coerceWeight(data.querySelector('dd[data-weight="weight"]').text.trim()),
+          foot: coerceFoot(data.querySelector('dd[data-foot="foot"]').text.trim())
         }
       };
     } catch (error) {
