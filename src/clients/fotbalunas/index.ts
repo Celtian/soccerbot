@@ -62,7 +62,7 @@ export class SoccerBotFotbalunasClient extends SoccerBotClient {
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
       const html = parse(await this.fetchPage(this.teamUrl(id)));
-      const page = html.querySelectorAll('#content > div > div > h3 > a')[0];
+      const page = html.querySelector('#content > div > div > h3 > a');
       const list: SoccerBotPlayer[] = [];
       if (page) {
         const clubId = page

@@ -56,9 +56,10 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
       const html = parse(await this.fetchPage(this.teamUrl(id)));
       const list: SoccerBotPlayer[] = [];
 
-      const table = html.querySelectorAll(
-        '#screen > div.all > div > div.middle > div.col-center > div.box.green > div'
-      )[0];
+      const table = html.querySelector(
+        // '#screen > div.all > div > div.middle > div.col-center > div.box.green > div'
+        'div.middle > div.col-center > div.box.green > div'
+      );
 
       if (table) {
         let position = 'Brankáři';
