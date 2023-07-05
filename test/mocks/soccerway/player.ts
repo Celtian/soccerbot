@@ -1,5 +1,5 @@
+import { SoccerBotCountryCode2, SoccerBotCountryCode3 } from '../../../src/shared/countries';
 import {
-  SoccerBotCountry,
   SoccerBotFoot,
   SoccerBotPlayer,
   SoccerBotPositionGroup,
@@ -3043,7 +3043,11 @@ export const PLAYER_DATA: SoccerBotResponse<SoccerBotPlayer> = {
     name: 'Ondřej Kolář',
     firstName: 'Ondřej',
     lastName: 'Kolář',
-    country: SoccerBotCountry.CZECH_REPUBLIC,
+    country: {
+      code2: SoccerBotCountryCode2.CZ,
+      code3: SoccerBotCountryCode3.CZE,
+      databaseName: 'Czech Republic'
+    },
     birthdate: '1994-10-17',
     position: SoccerBotPositionGroup.GOALKEEPER,
     height: 193,

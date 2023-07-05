@@ -1,17 +1,32 @@
-import { EUROFOTBAL_COUNTRY, SOCCERWAY_COUNTRY, SPORTNET_COUNTRY, TRANSFERMARKT_COUNTRY } from '../../shared/constants';
+import { COUNTRY, SoccerBotCountryData } from '../../shared/countries';
 import { SoccerBotCountry, SoccerBotProvider } from '../../shared/interfaces';
 
-export const coerceCountry = (value: string, type: SoccerBotProvider): SoccerBotCountry => {
+const findCountry = (value: string, type: SoccerBotProvider): SoccerBotCountryData => {
+  if (!value) {
+    return undefined;
+  }
   switch (type) {
     case SoccerBotProvider.TRANSFERMARKT:
-      return TRANSFERMARKT_COUNTRY[Number(value)];
+      return COUNTRY.find((i) => Number(i.transfermarkt) === Number(value));
     case SoccerBotProvider.SOCCERWAY:
-      return SOCCERWAY_COUNTRY[value];
+      return COUNTRY.find((i) => i.soccerway === value);
     case SoccerBotProvider.EUROFOTBAL:
-      return EUROFOTBAL_COUNTRY[value];
+      return COUNTRY.find((i) => i.eurofotbal === value);
     case SoccerBotProvider.SPORTNET:
-      return SPORTNET_COUNTRY[value];
+      return COUNTRY.find((i) => i.sportnet === value);
     default:
       return undefined;
   }
+};
+
+export const coerceCountry = (value: string, type: SoccerBotProvider): SoccerBotCountry => {
+  const country = findCountry(value, type);
+  if (!country || !country?.databasename || !country?.code2 || !country?.code3) {
+    return undefined;
+  }
+  return {
+    databaseName: country.databasename,
+    code2: country.code2,
+    code3: country.code3
+  };
 };

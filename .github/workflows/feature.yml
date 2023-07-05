@@ -1,17 +1,10 @@
-name: Test feature branch
-
-on:
-  push:
-    branches:
-      - feat/*
+name: 🐛 Test feature branch
+'on': pull_request
 
 jobs:
   install-and-test:
     name: Install & Test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [16]
 
     steps:
       - name: Checkout
@@ -20,7 +13,7 @@ jobs:
       - name: Setup node version
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
 
       - name: Cache node modules
