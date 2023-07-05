@@ -1,16 +1,21 @@
 import parse from 'node-html-parser';
-import { coerceCountry } from '../../helpers/country';
-import { coerceDate } from '../../helpers/date';
-import { coerceFoot } from '../../helpers/foot';
+import { coerceCountry, coerceDate, coerceFoot, coercePositionGroup, sleep } from '../../helpers';
 import { coerceHeight, coerceJerseyNumber, coerceMinutesPlayed, coerceWeight } from '../../helpers/number';
-import { coercePositionGroup } from '../../helpers/position';
-import { sleep } from '../../helpers/shared';
 import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
-import { SoccerBotClient } from '../shared';
+import { SoccerBotClient, UserAgents } from '../shared';
 
 const BASE_URL = 'https://int.soccerway.com';
 
 export class SoccerBotSoccerwayClient extends SoccerBotClient {
+  protected userAgents: UserAgents[] = [
+    UserAgents.Iphone,
+    UserAgents.Ipad,
+    UserAgents.Ipod,
+    UserAgents.Android,
+    UserAgents.AndroidSamsung,
+    UserAgents.AndroidLg
+  ];
+
   constructor(private sleepMs: number = 500) {
     super();
   }
@@ -38,7 +43,8 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
 
   public async league(id: string, season: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const html = parse(await this.fetchPage(this.leagueUrl(id, season)));
+      const url = this.leagueUrl(id, season);
+      const html = parse(await this.fetchPage(url));
       const items = html.querySelectorAll('table[data-round_id].detailed-table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
@@ -74,8 +80,8 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
           .getAttribute('href')
           .trim()
           .match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id;
-        const jerseyNumber = coerceJerseyNumber(item.querySelector('td.shirtnumber').text.trim());
-        const minutesPlayed = coerceMinutesPlayed(item.querySelector('td.game-minutes').text.trim());
+        const jerseyNumber = coerceJerseyNumber(item.querySelector('td.shirtnumber')?.text?.trim());
+        const minutesPlayed = coerceMinutesPlayed(item.querySelector('td.game-minutes')?.text?.trim());
         await sleep(this.sleepMs); // sleep for a moment because of rare limit
         const player = await this.player(id);
         list.push({
@@ -99,12 +105,11 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
 
   public async player(id: string): Promise<SoccerBotResponse<SoccerBotPlayer>> {
     try {
-      const html = parse(await this.fetchPage(this.playerUrl(id)));
-      const data = html.querySelector('.block_player_passport > div > div > div.yui-u.first > div > dl');
-
-      const firstName = data.querySelector('dd[data-first_name="first_name"]').text.trim();
-      const lastName = data.querySelector('dd[data-last_name="last_name"]').text.trim();
-
+      const url = this.playerUrl(id);
+      const html = parse(await this.fetchPage(url));
+      const data = html.querySelector('.block_player_passport > div > div > div.yui-u.first > div.clearfix');
+      const firstName = data.querySelector('[data-first_name="first_name"]')?.text?.trim();
+      const lastName = data.querySelector('[data-last_name="last_name"]')?.text?.trim();
       return {
         ok: true,
         data: {
@@ -113,17 +118,17 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
           firstName,
           lastName,
           country: coerceCountry(
-            data.querySelector('dd[data-nationality="nationality"]').text.trim(),
+            data.querySelector('[data-nationality="nationality"]')?.text?.trim(),
             SoccerBotProvider.SOCCERWAY
           ),
           birthdate: coerceDate(
-            data.querySelector('dd[data-date_of_birth="date_of_birth"]').text.trim(),
+            data.querySelector('[data-date_of_birth="date_of_birth"]')?.text?.trim(),
             SoccerBotProvider.SOCCERWAY
           ),
-          position: coercePositionGroup(data.querySelector('dd[data-position="position"]').text.trim()),
-          height: coerceHeight(data.querySelector('dd[data-height="height"]').text.trim()),
-          weight: coerceWeight(data.querySelector('dd[data-weight="weight"]').text.trim()),
-          foot: coerceFoot(data.querySelector('dd[data-foot="foot"]').text.trim())
+          position: coercePositionGroup(data.querySelector('[data-position="position"]')?.text?.trim()),
+          height: coerceHeight(data.querySelector('[data-height="height"]')?.text?.trim()),
+          weight: coerceWeight(data.querySelector('[data-weight="weight"]')?.text?.trim()),
+          foot: coerceFoot(data.querySelector('[data-foot="foot"]')?.text?.trim())
         }
       };
     } catch (error) {

@@ -1,651 +1,1801 @@
 import { SoccerBotResponse, SoccerBotTeam } from '../../../src/shared/interfaces';
 
 export const LEAGUE_HTML = `
+<!DOCTYPE html>
+<html lang="cs" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="ie=edge" http-equiv="x-ua-compatible" />
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+		<meta content="#da532c" name="msapplication-TileColor" />
+		<meta content="#ffffff" name="theme-color" />
+		<title>FORTUNA:LIGA - Fotbal Česko - FORTUNA:LIGA: zprávy, výsledky, statistiky</title>
+				<meta name="description" content="Fotbalová sekce Česko - FORTUNA:LIGA na Eurofotbal.cz nabízí novinky, výsledky a statistiky k soutěži FORTUNA:LIGA">
+<!-- OneTrust Cookies Consent Notice start for eurofotbal.cz -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="cfefe7a7-9a52-4929-88f9-721d7c585024" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for eurofotbal.cz -->
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
-<head>
-<title>1. Fotbalová liga - Fotbal Česko - 1. Fotbalová liga: zprávy, výsledky, statistiky</title>
-<meta name="description" content="Fotbalová sekce Česko - 1. Fotbalová liga na EuroFotbal.cz nabízí novinky, výsledky a statistiky k soutěži 1. Fotbalová liga">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="verify-v1" content="LMiHVgr9Hk5cQoaXlt2KDTx64extEBNUcXc8Srrv0zQ=" />
-<link rel="apple-touch-icon" sizes="180x180" href="/res/img/apple/apple-touch-icon-180x180.png" alt="iphone 6 plus" />
-<link rel="apple-touch-icon" sizes="152x152" href="/res/img/apple/apple-touch-icon-152x152.png" alt="ipad retina ios≥7" />
-<link rel="apple-touch-icon" sizes="120x120" href="/res/img/apple/apple-touch-icon-120x120.png" alt="iphone retina ios≥7" />
-<link rel="apple-touch-icon" sizes="72x72" href="/res/img/apple/apple-touch-icon-72x72.png" alt="first and second gen ipad" />
-<link rel="apple-touch-icon" sizes="57x57" href="/res/img/apple/apple-touch-icon-57x57.png" alt="non-retina iphone, ipod touch, android 2.1+" />
-<link rel="apple-touch-icon" href="/res/img/apple/apple-touch-icon.png" alt="everything else" />
-<link rel="shortcut icon" href="/res/img/favicon.ico" />
-<link rel="icon" type="image/x-icon" href="/res/img/favicon.ico" />
-<link rel="stylesheet" href="/res/css/advert.css?par=1630078966" type="text/css">
-<link rel="stylesheet" href="/res/css/_basic.css?par=1630078966" type="text/css">
-<link rel="stylesheet" href="/res/css/competition.css?par=1630078966" type="text/css">
-<link rel="stylesheet" href="/res/css/poll.css?par=1630078966" type="text/css">
-<link rel="stylesheet" href="/res/css/article.css?par=1630078966" type="text/css">
-<script src="/res/js/jquery-1.11.1.min.js?par=1630078966" language="JavaScript" type="text/javascript"></script>
-<script src="/res/js/_basic.js?par=1630078966" language="JavaScript" type="text/javascript"></script>
-<script src="https://cdn.cpex.cz/skin/v2/cpex-skin.js" language="JavaScript" type="text/javascript"></script>
-<script src="/res/js/ajax.js?par=1630078966" language="JavaScript" type="text/javascript"></script>
-<script src="/res/js/banner-scroll.js.php?par=1630078966" language="JavaScript" type="text/javascript"></script>
-<script src="/res/js/waypoints.js?par=1630078966" language="JavaScript" type="text/javascript"></script>
-<script src="/res/js/poll.js?par=1630078966" language="JavaScript" type="text/javascript"></script>
-<script src="/res/js/expres.js?par=1630078966" language="JavaScript" type="text/javascript"></script>
-</head>
-<body>
-			<!-- Adform publisher tag -->
-			<!-- Tag for Eurofotbal.cz_21161 - TT-Eurofotbal-CW-Nestandard-300-104-desktop placement -->
-			<script data-adfscript="adx.adform.net/adx/?mid=448205"></script>
-			<script src="//s1.adform.net/banners/scripts/adx.js" async defer></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M94G39');</script>
+<!-- End Google Tag Manager -->
+	    			<meta name="verify-v1" content="LMiHVgr9Hk5cQoaXlt2KDTx64extEBNUcXc8Srrv0zQ=" />
+		<meta name="google-site-verification" content="TnvYMJrinpWi-YIKQ7jiHVxT85WtEcAaIpAJWtnImY8" />
+		<link href="/res/img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+		<link href="/res/img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+		<link href="/res/img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+		<link href="/res/img/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+		<link as="font" crossorigin="anonymous" href="/res/fonts/Archivo-Regular.woff2" rel="preload" type="font/woff2" />
+		<link as="font" crossorigin="anonymous" href="/res/fonts/Archivo-Medium.woff2" rel="preload" type="font/woff2" />
+		<link as="font" crossorigin="anonymous" href="/res/fonts/Archivo-SemiBold.woff2" rel="preload" type="font/woff2" />
+		<link as="font" crossorigin="anonymous" href="/res/fonts/Archivo-Bold.woff2" rel="preload" type="font/woff2" />
+
+		<!-- Performax -->
+		<!-- PX2 AUTOADS LIBRARY (CSS) -->
+		<link rel="stylesheet" href="https://cdn.performax.cz/yi/adsbypx/px_autoads.css"/>
+		<!-- PX SLOTS PUBLISHER'S CONFIGURATION -->
+		<script type="application/javascript">
+			window.__pxPageConfig = window.__pxPageConfig || {};
+			window.__pxPageConfig.webType = 'responsive'; //mobile, desktop, responsive
+			window.__pxPageConfig.responsiveBreakpoint = 768; //integer - breakpoint mezi mobilnim zobrazenim a vetsim, kdyz nebude vyplneno tak vychozi hodnota je 576px
+					</script>
+		<!-- PX2 AUTOADS LIBRARY (JS) -->
+		<script async src="https://cdn.performax.cz/yi/adsbypx/px_autoads.js?aab=ulite"></script>
+
+		<link href="/res/css/application.min.css?serial=NEW_2306290334" rel="stylesheet" />
+		<link href="/res/css/extra.css?serial=NEW_2306290334" rel="stylesheet" />
+		<link href="/res/css/advert.css?serial=NEW_2306290334" rel="stylesheet" />
+		<script src="/res/js/application.js?serial=NEW_2306290334"></script>
+		<script src="/res/js/functions.js?serial=NEW_2306290334"></script>
 
 
-<div class="screen" id="screen">
-<div class="all">
-<div class="main">
-   <div class="header">
-      <a href="/" title="" class="home-link"><span>EuroFotbal.cz - specialista na evropský fotbal</span></a>
-      <span class="info">specialista na evropský fotbal</span>
-      <div class="login">
-         <form action="/muj/login/" method="post" class="top" onsubmit="return addLSID(this);">
-            <input type="hidden" name="return" value="LzEtZm90YmFsb3ZhLWxpZ2Ev">
-            <input type="text" name="login" id="loginLogin" onfocus="loginFormInit();" value="Login" class="field">
-            <input type="password" name="pass" id="loginPassword" value="Heslo" class="field ml5">
-            <div class="button">
-               <div class="l"></div>
-               <input type="submit" value="Přihlásit">
-               <div class="r"></div>
-            </div>
-         </form>
-         <div class="links">
-            <a href="/muj/registrace/" title="" class="sheet-check">Registrace</a> <span class="dl">|</span> <a href="/muj/reseni-problemu/" title="" class="sheet-question">Zapomněl jsem heslo</a>
-         </div>
-      </div>
-      <ul class="top-menu">
-         <li class="active"><a href="/" title=""><span class="l"></span><span class="bg">EuroFotbal</span><span class="r"></span></a></li>
-         <li><a href="/euro-2020/" title=""><span class="l"></span><span class="bg">Euro 2020</span><span class="r"></span></a></li>
-         <li><a href="/tipliga/" title=""><span class="l"></span><span class="bg">Tipliga</span><span class="r"></span></a></li>
-         <li><a href="/livescore/" title=""><span class="l"></span><span class="bg">Livescore</span><span class="r"></span></a></li>
-         <li><a href="/video/" title=""><span class="l"></span><span class="bg">Video</span><span class="r"></span></a></li>
-         <li><a href="/sazeni/" title=""><span class="l"></span><span class="bg">Sázení</span><span class="r"></span></a></li>
-         <li><a href="/tv/" title=""><span class="l"></span><span class="bg">Fotbal v TV</span><span class="r"></span></a></li>
-         <li><a href="/muj/" title=""><span class="l"></span><span class="bg">Můj EuroFotbal</span><span class="r"></span></a></li>
-      </ul>
-   </div>
-   <div class="cl h10"></div>
-	<div class="middle">
-		<div class="col-left">
-<div class="box">
-	<div class="in">
-		<ul class="main-menu">
-			<li><a href="/" title=""><span class="l"></span>Hlavní stránka<span class="r"></span></a></li>
-			<li><a href="/souteze/domaci/" title="" class="red"><span class="l"></span>Přehled soutěží<span class="r"></span></a>
-				<ul>
-					<li><a href="/premier-league/" title=""><span class="ar"></span>Premier League</a></li>
-					<li><a href="/laliga/" title=""><span class="ar"></span>LaLiga</a></li>
-					<li><a href="/serie-a/" title=""><span class="ar"></span>Serie A</a></li>
-					<li><a href="/bundesliga/" title=""><span class="ar"></span>1. Bundesliga</a></li>
-					<li><a href="/ligue-1/" title=""><span class="ar"></span>Ligue 1</a></li>
-					<li><a href="/1-fotbalova-liga/" title="" class="active"><span class="ar"></span>1. Fotbalová liga</a></li>
-					<li><a href="/fortuna-liga/" title=""><span class="ar"></span>Fortuna liga</a></li>
-					<li><a href="/primeira-liga/" title=""><span class="ar"></span>Primeira Liga</a></li>
-					<li><a href="/premier-liga/" title=""><span class="ar"></span>Premier Liga</a></li>
-					<li><a href="/eredivisie/" title=""><span class="ar"></span>Eredivisie</a></li>
-					<li><a href="/liga-mistru/" title=""><span class="ar"></span>Liga mistrů</a></li>
-					<li><a href="/evropska-liga/" title=""><span class="ar"></span>Evropská liga</a></li>
-					<li><a href="/konferencni-liga/" title=""><span class="ar"></span>Konferenční liga</a></li>
-					<li><a href="/euro-2020/" title=""><span class="ar"></span>Mistrovství Evropy</a></li>
-					<li><a href="/mistrovstvi-sveta-kvalifikace-2022/" title=""><span class="ar"></span>MS - kvalifikace</a></li>
-					<li><a href="/souteze/domaci/" title="" class="last"><span class="ar"></span>další soutěže</a></li>
-				</ul>
-			</li>
-			<li><a href="javascript: void(0);" onclick="leftMenuClick(2);" title=""><span class="l"></span>Kluby<span class="r"></span></a>
-				<ul style="display: none;" id="leftSubMenu2">
-					<li><a href="/kluby/anglie/arsenal-fc/" title=""><span class="ar"></span>Arsenal FC</a></li>
-					<li><a href="/kluby/anglie/chelsea-fc/" title=""><span class="ar"></span>Chelsea FC</a></li>
-					<li><a href="/kluby/anglie/manchester-united/" title=""><span class="ar"></span>Manchester United</a></li>
-					<li><a href="/kluby/italie/ac-milan/" title=""><span class="ar"></span>AC Milán</a></li>
-					<li><a href="/kluby/italie/juventus-fc/" title=""><span class="ar"></span>Juventus FC</a></li>
-					<li><a href="/kluby/nemecko/bayern-mnichov/" title=""><span class="ar"></span>Bayern Mnichov</a></li>
-					<li><a href="/kluby/spanelsko/fc-barcelona/" title=""><span class="ar"></span>FC Barcelona</a></li>
-					<li><a href="/kluby/spanelsko/real-madrid/" title=""><span class="ar"></span>Real Madrid</a></li>
-					<li><a href="/kluby/" title=""><span class="ar"></span>další kluby</a></li>
-				</ul>
-			</li>
-			<li><a href="javascript: void(0);" onclick="leftMenuClick(3);" title=""><span class="l"></span>Reprezentace<span class="r"></span></a>
-				<ul style="display: none;" id="leftSubMenu3">
-					<li><a href="/reprezentace/cesko/" title=""><span class="ar"></span>Česko</a></li>
-					<li><a href="/reprezentace/slovensko/" title=""><span class="ar"></span>Slovensko</a></li>
-					<li><a href="/reprezentace/" title="" class="last"><span class="ar"></span>další týmy</a></li>
-				</ul>
-			</li>
-			<li><a href="/prestupy/" title=""><span class="l"></span>Přestupy<span class="r"></span></a></li>
-			<li><a href="/zapasy/" title=""><span class="l"></span>Dnešní zápasy<span class="r"></span></a></li>
-			<li><a href="javascript: void(0);" onclick="leftMenuClick(1);" title=""><span class="l"></span>Články<span class="r"></span></a>
-				<ul style="display: none;" id="leftSubMenu1">
-					<li><a href="/clanky/aktuality/" title=""><span class="ar"></span>Aktuality</a></li>
-					<li><a href="/clanky/previews/" title=""><span class="ar"></span>Previews</a></li>
-					<li><a href="/clanky/komentare-a-souhrny/" title=""><span class="ar"></span>Komentáře a souhrny</a></li>
-					<li><a href="/clanky/nazory-a-komentare/" title=""><span class="ar"></span>Názory a komentáře</a></li>
-					<li><a href="/clanky/fejetony/" title=""><span class="ar"></span>Fejetony</a></li>
-					<li><a href="/clanky/zivotopisy/" title=""><span class="ar"></span>Životopisy</a></li>
-					<li><a href="/clanky/profily-historie/" title=""><span class="ar"></span>Profily, historie</a></li>
-					<li><a href="/clanky/rozhovory/" title=""><span class="ar"></span>Rozhovory</a></li>
-					<li><a href="/clanky/tipy-a-analyzy/" title=""><span class="ar"></span>Tipy a analýzy</a></li>
-				</ul>
-			</li>
-			<li><a href="javascript: void(0);" onclick="leftMenuClick(4);" title=""><span class="l"></span>Témata<span class="r"></span></a>
-				<ul style="display: none;" id="leftSubMenu4">
-					<li><a href="/tema/eurozapisnik-2020/" title=""><span class="ar"></span>Eurozápisník</a></li>
-					<li><a href="/tema/euro-2020-v-kostce/" title=""><span class="ar"></span>Euro v kostce</a></li>
-					<li><a href="/tema/predstaveni-tymu-euro-2020/" title=""><span class="ar"></span>Představení týmů Eura</a></li>
-					<li><a href="/tema/predstaveni-mest-euro-2020/" title=""><span class="ar"></span>Města a stadióny Eura</a></li>
-					<li><a href="/tema/fantasy-euro-2020/" title=""><span class="ar"></span>Euro Fantasy</a></li>
-					<li><a href="/tema/nominace-euro-2020/" title=""><span class="ar"></span>Nominace na Euro</a></li>
-					<li><a href="/tema/predstaveni-tymu-copa-2021/" title=""><span class="ar"></span>Představení týmů Copy</a></li>
-					<li><a href="/tema/udalosti-fl/" title=""><span class="ar"></span>Události FL</a></li>
-					<li><a href="/tema/ohlednuti-lm/" title=""><span class="ar"></span>Ohlédnutí za LM</a></li>
-					<li><a href="/tema/premier-league-v-kostce/" title=""><span class="ar"></span>PL v kostce</a></li>
-					<li><a href="/tema/ozveny-z-bundesligy/" title=""><span class="ar"></span>Ozvěny BL</a></li>
-					<li><a href="/tema/cesi-v-zahranici/" title=""><span class="ar"></span>Češi v zahraničí</a></li>
-					<li><a href="/tema/evropske-koeficienty/" title=""><span class="ar"></span>Evropské koeficienty</a></li>
-					<li><a href="/tema/prestupy/" title=""><span class="ar"></span>Přestupy</a></li>
-					<li><a href="/tema/spekulace/" title=""><span class="ar"></span>Přestupové spekulace</a></li>
-					<li><a href="/tema/zraneni/" title=""><span class="ar"></span>Zranění</a></li>
-					<li><a href="/tema/historie-evropskych-poharu/" title=""><span class="ar"></span>Historie pohárů</a></li>
-					<li><a href="/prehled-temat/" ><span class="ar"></span>další témata</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+	</head>
+
+	<body>
+				<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M94G39" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager -->
+
+				<!-- (C)2000-2023 Gemius SA - gemiusPrism  / eurofotbal1.cz/Default section -->
+		<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+		var pp_gemius_identifier = 'bQblbY7QrT0Gd__HdifFZabjrjyI7GbjvNaWIbZRYMz.e7';
+		// lines below shouldn't be edited
+		function gemius_pending(i) { window[i] = window[i] || function() {var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
+		gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('gemius_init'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event'); gemius_pending('pp_gemius_init');
+		(function(d,t) {try {var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':''); gt.setAttribute('async','async');
+		gt.setAttribute('defer','defer'); gt.src=l+'://spir.hit.gemius.pl/xgemius.js'; s.parentNode.insertBefore(gt,s);} catch (e) {}})(document,'script');
+		//--><!]]>
+		</script>
+
+					<div class="e-ads-banner--top-ads d-none d-lg-block">
+				<div class="e-ads-banner">
+<div class="adsenvelope adstextvpad banx-d_top" id="lsadvert-zid-5993" style="width:970px;"><div style="height:90px"><div class="adscontent" id="lsadvert-d_top"><iframe id="lsadvert-zid-5993-iframe" name="banx-d_top" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:970px; height:90px"></iframe></div><div class="adsgraphvert"><div class="adsgvert atv-CS"></div></div></div></div><div class="adsclear"></div>
 </div>
-<div class="cl h10"></div>
-<div class="box">
-	<div class="in">
-		<form action="/vyhledavani/" method="get" class="search">
-			<input type="text" name="text" class="field" id="searchField" value="" placeholder="Hledaný text">
-			<input type="submit" value="" class="submit" onclick="return searchSubmitCheck('searchField');">
-		</form>
-		<div class="cl"></div>
-	</div>
-</div>
-<div class="cl h10"></div>
-<div style="text-align: center;"><div class="adsenvelope adstextpad banx-bwin_left" id="lsadvert-zid-263" style="width:120px;"><div style="height:240px"><div class="adscontent" id="lsadvert-bwin_left"><iframe id="lsadvert-zid-263-iframe" name="banx-bwin_left" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:120px; height:240px"></iframe></div><div class="adsgraphhori"><div class="adsghori ath-CS"></div></div></div></div></div>
-<div class="box">
-<div class="in">
-<ul class="main-menu">
-<li><a href="/clanky-pro-vas-web/" title=""><span class="l"></span>Články pro váš web!<span class="r"></span></a></li>
+			</div>
+			<div class="e-ads-banner__branding-spacer d-none d-lg-block"></div>
+
+	<div class="e-layout__body e-layout__body--full-width">
+
+	<!-- Start of Eurofotbal::Ui::HeaderCell (block e-u-header) -->
+	<input class="e-ui-header__menu-input" hidden="" id="e-ui-header__menu-input" type="checkbox" />
+	<header class="e-ui-header">
+		<div class="container-fluid">
+			<div class="e-ui-header__top">
+				<a class="e-ui-header__logo" href="/"><img alt="EuroFotbal" class="e-ui-header__logo-img e-ui-header__logo-img--green" height="35" src="/res/img/eurofotbal-logo.svg" width="203" /><img alt="EuroFotbal" class="e-ui-header__logo-img e-ui-header__logo-img--white" height="20" src="/res/img/eurofotbal-logo-white.svg" width="116" /></a>
+				<div class="e-ui-header__search-wrap">
+					<!-- Start of Eurofotbal::Ui::Header::SearchCell (block e-u-h-search) -->
+					<form action="/vyhledavani/" class="e-ui-header-search" role="search" onsubmit="return searchCheck();">
+						<div class="e-ui-header-search__group">
+							<input class="e-ui-header-search__input form-control" name="text" placeholder="Hledaný text" type="text" />
+							<button class="e-ui-header-search__submit" type="submit">
+								<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+								<svg class="l-ui-icon l-ui-icon--search" style="width: 24px; height: 24px" viewBox="0 0 24 24"><use xlink:href="/res/img/svg_sprite.svg#search"></use></svg>
+								<!-- End of Livesport::Ui::IconCell -->
+							</button>
+						</div>
+						<button class="e-ui-header-search__toggle" type="button">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--search" style="width: 24px; height: 24px" viewBox="0 0 24 24"><use xlink:href="/res/img/svg_sprite.svg#search"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</button>
+					</form>
+					<!-- End of Eurofotbal::Ui::Header::SearchCell -->
+				</div>
+				<label class="e-ui-header__menu-toggle" for="e-ui-header__menu-input">
+					<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+					<svg class="l-ui-icon l-ui-icon--hamburger e-ui-header__menu-toggle-hamburger" style="width: 24px; height: 24px" viewBox="0 0 24 24"><use xlink:href="/res/img/svg_sprite.svg#hamburger"></use></svg>
+					<!-- End of Livesport::Ui::IconCell -->
+					<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+					<svg class="l-ui-icon l-ui-icon--close e-ui-header__menu-toggle-close" style="width: 24px; height: 24px" viewBox="0 0 24 24"><use xlink:href="/res/img/svg_sprite.svg#close"></use></svg>
+					<!-- End of Livesport::Ui::IconCell -->
+				</label>
+								<div class="e-ui-header__user-menu-wrap">
+					<!-- Start of Eurofotbal::Ui::Header::UserMenuCell (block e-u-h-user-menu) -->
+					<div class="e-ui-header-user-menu e-ui-header-user-menu--toggler" role="navigation">
+						<input class="e-ui-header-user-menu__input" hidden="" id="e-ui-header-user-menu__input" type="checkbox" />
+						<label class="e-ui-header-user-menu__btn" for="e-ui-header-user-menu__input">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--user e-ui-header-user-menu__btn-ico" style="width: 14px; height: 16px" viewBox="0 0 14 16"><use xlink:href="/res/img/svg_sprite.svg#user"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+							<span class="e-ui-header-user-menu__btn-label">Můj EuroFotbal</span>
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down e-ui-header-user-menu__btn-chevron" style="width: auto; height: 8px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</label>
+						<div class="e-ui-header-user-menu__dropdown">
+							<div class="e-ui-header-user-menu__dropdown-aside e-ui-header-user-menu__dropdown-aside--login mb-20 mb-lg-0">
+								<form action="/muj/prihlaseni/" method="post" onsubmit="return addLSID(this);">
+									<input type="hidden" name="return" value="L2ZvcnR1bmEtbGlnYS1jei8=">
+									<div class="e-ui-form__row">
+										<!-- Start of Eurofotbal::Ui::FormCell (block e-u-form) -->
+										<div class="e-ui-form__group e-js-ui-form__group">
+											<label class="e-ui-form__label form-label" for="usernameInput1">Login</label>
+											<!-- Start of Eurofotbal::Ui::Form::InputCell (block e-u-f-input) -->
+											<input aria-describedby="" class="e-ui-form-input form-control e-ui-form-input--border-black" id="usernameInput1" name="usernameInput1" placeholder="Váš login" type="text" value="" tabindex="1" />
+											<!-- End of Eurofotbal::Ui::Form::InputCell -->
+										</div>
+										<!-- End of Eurofotbal::Ui::FormCell -->
+									</div>
+									<div class="e-ui-form__row">
+										<!-- Start of Eurofotbal::Ui::FormCell (block e-u-form) -->
+										<div class="e-ui-form__group e-js-ui-form__group">
+											<label class="e-ui-form__label form-label" for="passwordInput1">Heslo</label>
+											<button class="e-js-ui-form__password-toggle-btn e-ui-form__password-toggle-btn" type="button">
+												<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+												<svg class="l-ui-icon l-ui-icon--visibility_on e-js-ui-form__password-toggle-btn-icon--show" style="width: 16px; height: 11px" viewBox="0 0 16 11"><use xlink:href="/res/img/svg_sprite.svg#visibility_on"></use></svg>
+												<!-- End of Livesport::Ui::IconCell -->
+												<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+												<svg class="l-ui-icon l-ui-icon--visibility_off e-js-ui-form__password-toggle-btn-icon--hide d-none" style="width: 16px; height: 14px" viewBox="0 0 16 14"><use xlink:href="/res/img/svg_sprite.svg#visibility_off"></use></svg>
+												<!-- End of Livesport::Ui::IconCell -->
+											</button>
+											<!-- Start of Eurofotbal::Ui::Form::InputCell (block e-u-f-input) -->
+											<input aria-describedby="" class="e-ui-form-input form-control e-ui-form-input--border-black" id="passwordInput1" name="passwordInput1" placeholder="Vaše heslo" type="password" value="" tabindex="2" />
+											<!-- End of Eurofotbal::Ui::Form::InputCell -->
+										</div>
+										<!-- End of Eurofotbal::Ui::FormCell -->
+									</div>
+									<div class="e-ui-form__row">
+										<div class="e-ui-form__group">
+											<div class="e-ui-form__controls e-ui-form__controls--centered">
+												<button class="btn btn-primary w-100" type="submit" tabindex="3">Přihlásit se </button>
+												<a class="e-ui-form__header-forgot-link" href="/muj/reseni-problemu/" tabindex="4">Zapomněl jsem heslo </a>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="e-ui-header-user-menu__dropdown-main">
+								<ul class="e-ui-header-user-menu__dropdown-links">
+									<li class="e-ui-header-user-menu__dropdown-li">
+										<a class="e-ui-header-user-menu__dropdown-link" href="/muj/info/"><span class="e-ui-header-user-menu__dropdown-link-label">Co je Můj EuroFotbal?</span></a>
+									</li>
+									<li class="e-ui-header-user-menu__dropdown-li">
+										<a class="e-ui-header-user-menu__dropdown-link" href="/muj/registrace/"><span class="e-ui-header-user-menu__dropdown-link-label">Registrace</span></a>
+									</li>
+									<li class="e-ui-header-user-menu__dropdown-li">
+										<a class="e-ui-header-user-menu__dropdown-link" href="/muj/reseni-problemu/"><span class="e-ui-header-user-menu__dropdown-link-label">Řešení problémů</span></a>
+									</li>
+									<li class="e-ui-header-user-menu__dropdown-li">
+										<a class="e-ui-header-user-menu__dropdown-link" href="/muj/aktivace/"><span class="e-ui-header-user-menu__dropdown-link-label">Aktivace účtu</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- End of Eurofotbal::Ui::Header::UserMenuCell -->
+				</div>
+							</div>
+		</div>
+	</header>
+	<!-- End of Eurofotbal::Ui::HeaderCell -->
+
+	<!-- Start of Eurofotbal::Ui::Header::MenuCell (block e-u-h-menu) -->
+	<nav class="e-ui-header-menu">
+		<div class="container-fluid e-ui-header-menu__container">
+			<ul class="e-ui-header-menu__ul">
+				<!--Use active BEM modifier for active link-->
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--with-children">
+					<a class="e-ui-header-menu__a" href="/souteze/domaci/">
+						Soutěže
+						<span class="e-ui-header-menu__chevron-wrap">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down e-ui-header-menu__chevron" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</span>
+					</a>
+					<div class="e-ui-header-menu__submenu">
+						<div class="container-fluid e-ui-header-menu__submenu-container">
+							<div class="e-ui-header-menu__submenu-inner">
+								<ul class="e-ui-header-menu__ul">
+								<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/premier-league/">Premier League</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/laliga/">LaLiga</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/serie-a/">Serie A</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/bundesliga/">1. Bundesliga</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/ligue-1/">Ligue 1</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/fortuna-liga-cz/">FORTUNA:LIGA CZ</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/fortuna-liga-sk/">Fortuna liga SK</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/primeira-liga/">Primeira Liga</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/eredivisie/">Eredivisie</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/liga-mistru/">Liga mistrů</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/evropska-liga/">Evropská liga</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/konferencni-liga/">Konferenční liga</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/mistrovstvi-evropy-kvalifikace-2024/">Euro - kvalifikace</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/liga-narodu-2022-2023/">Liga národů</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/mistrovstvi-evropy-do-21-let-2023/">ME do 21 let</a></li>
+								</ul>
+								<div class="e-ui-header-menu__submenu-more">
+									<a class="btn btn-secondary-on-dark e-ui-header-menu__submenu-more-btn" href="/souteze/domaci/"><span class="e-ui-header-menu__submenu-more-btn-span">Další soutěže</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--standalone">
+					<a class="e-ui-header-menu__a" href="/prestupy/">Přestupy</a>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--standalone">
+					<a class="e-ui-header-menu__a" href="/zapasy/">Zápasy</a>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--with-children">
+					<a class="e-ui-header-menu__a" href="/kluby/">
+						Kluby
+						<span class="e-ui-header-menu__chevron-wrap">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down e-ui-header-menu__chevron" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</span>
+					</a>
+					<div class="e-ui-header-menu__submenu">
+						<div class="container-fluid e-ui-header-menu__submenu-container">
+							<div class="e-ui-header-menu__submenu-inner">
+								<ul class="e-ui-header-menu__ul">
+								<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/anglie/arsenal-fc/">Arsenal FC</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/anglie/chelsea-fc/">Chelsea FC</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/anglie/manchester-united/">Manchester United</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/italie/ac-milan/">AC Milán</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/italie/juventus-fc/">Juventus FC</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/nemecko/bayern-mnichov/">Bayern Mnichov</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/spanelsko/fc-barcelona/">FC Barcelona</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/kluby/spanelsko/real-madrid/">Real Madrid</a></li>
+								</ul>
+								<div class="e-ui-header-menu__submenu-more">
+									<a class="btn btn-secondary-on-dark e-ui-header-menu__submenu-more-btn" href="/kluby/"><span class="e-ui-header-menu__submenu-more-btn-span">Další kluby</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--with-children">
+					<span class="e-ui-header-menu__a">
+						Články
+						<span class="e-ui-header-menu__chevron-wrap">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down e-ui-header-menu__chevron" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</span>
+					</span>
+					<div class="e-ui-header-menu__submenu">
+						<div class="container-fluid e-ui-header-menu__submenu-container">
+							<div class="e-ui-header-menu__submenu-inner">
+								<ul class="e-ui-header-menu__ul">
+								<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/aktuality/">Aktuality</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/previews/">Previews</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/komentare-a-souhrny/">Komentáře a souhrny</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/nazory-a-komentare/">Názory a komentáře</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/fejetony/">Fejetony</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/zivotopisy/">Životopisy</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/profily-historie/">Profily, historie</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/rozhovory/">Rozhovory</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/clanky/tipy-a-analyzy/">Tipy a analýzy</a></li>
+								</ul>
+							</div>
+							<div class="e-ui-header-menu__submenu-inner">
+								<ul class="e-ui-header-menu__ul">
+								<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/zapisnik-ms-2022/">Zápisník MS</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/ms-2022-v-kostce/">MS v kostce</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/katar-v-datech/">Katar v datech</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/extra-cteni-ms2022/">Extra čtení k MS</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/fantasy-ms-2022/">Fantasy MS</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/predstaveni-tymu-ms-2022/">Představení týmů MS</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/udalosti-fl/">Události FL</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/ohlednuti-lm/">Ohlédnutí za LM</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/premier-league-v-kostce/">PL v kostce</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/ozveny-z-bundesligy/">Ozvěny BL</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/cesi-v-zahranici/">Češi v zahraničí</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/evropske-koeficienty/">Evropské koeficienty</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/prestupy/">Přestupy</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/spekulace/">Přestupové spekulace</a></li>
+<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/tema/zraneni/">Zranění</a></li>
+								</ul>
+								<div class="e-ui-header-menu__submenu-more">
+									<a class="btn btn-secondary-on-dark e-ui-header-menu__submenu-more-btn" href="/prehled-temat/"><span class="e-ui-header-menu__submenu-more-btn-span">Další témata</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--with-children">
+					<a class="e-ui-header-menu__a" href="/reprezentace/">
+						Reprezentace
+						<span class="e-ui-header-menu__chevron-wrap">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down e-ui-header-menu__chevron" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</span>
+					</a>
+					<div class="e-ui-header-menu__submenu">
+						<div class="container-fluid e-ui-header-menu__submenu-container">
+							<div class="e-ui-header-menu__submenu-inner">
+								<ul class="e-ui-header-menu__ul">
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/cesko/">Česko</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/slovensko/">Slovensko</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/anglie/">Anglie</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/francie/">Francie</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/italie/">Itálie</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/nemecko/">Německo</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/spanelsko/">Španělsko</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/argentina/">Argentina</a></li>
+									<li class="e-ui-header-menu__li"><a class="e-ui-header-menu__a" href="/reprezentace/brazilie/">Brazílie</a></li>
+								</ul>
+								<div class="e-ui-header-menu__submenu-more">
+									<a class="btn btn-secondary-on-dark e-ui-header-menu__submenu-more-btn" href="/reprezentace/"><span class="e-ui-header-menu__submenu-more-btn-span">Další týmy</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--standalone">
+					<a class="e-ui-header-menu__a" href="/livescore/">Livescore</a>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--standalone">
+					<a class="e-ui-header-menu__a" href="/liga-mistru/2022-2023/soutez/">Tipovací soutěž</a>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--standalone">
+					<a class="e-ui-header-menu__a" href="/tv/">TV</a>
+				</li>
+				<li class="e-ui-header-menu__li e-ui-header-menu__li--more" hidden="">
+					<span class="e-ui-header-menu__a">
+						Další
+						<span class="e-ui-header-menu__chevron-wrap">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down e-ui-header-menu__chevron" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</span>
+					</span>
+					<div class="e-ui-header-menu__submenu">
+						<div class="container-fluid e-ui-header-menu__submenu-container">
+							<div class="e-ui-header-menu__submenu-inner">
+								<ul class="e-ui-header-menu__ul"></ul>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- End of Eurofotbal::Ui::Header::MenuCell -->
+
+	<div class="e-layout">
+
+		<!-- Start of Eurofotbal::Leagues::LayoutCell (block e-l-layout) -->
+<div class="e-layout__wrap e-leagues-layout">
+	<div class="container-fluid e-layout__container">
+		<main class="e-layout__main">
+			<!-- Start of Eurofotbal::Ui::BreadcrumbsCell (block e-u-breadcrumbs) -->
+<ul class="e-ui-breadcrumbs small">
+	<li class="e-ui-breadcrumbs__li">
+		<a class="e-ui-breadcrumbs__a" href="/">Hlavní stránka</a>
+	</li>
+	<li class="e-ui-breadcrumbs__li">
+		<!-- Start of Livesport::Ui::IconCell (block l-u-icon) --><svg class="l-ui-icon l-ui-icon--mini_chevron_right e-ui-breadcrumbs__chevron" style="width: 4px; height: 6px" viewBox="0 0 4 6"><use xlink:href="/res/img/svg_sprite.svg#mini_chevron_right"></use></svg><!-- End of Livesport::Ui::IconCell -->
+		<a class="e-ui-breadcrumbs__a" href="/souteze/domaci/">Soutěže</a>
+	</li>
+	<li class="e-ui-breadcrumbs__li">
+		<!-- Start of Livesport::Ui::IconCell (block l-u-icon) --><svg class="l-ui-icon l-ui-icon--mini_chevron_right e-ui-breadcrumbs__chevron" style="width: 4px; height: 6px" viewBox="0 0 4 6"><use xlink:href="/res/img/svg_sprite.svg#mini_chevron_right"></use></svg><!-- End of Livesport::Ui::IconCell -->
+		<a class="e-ui-breadcrumbs__a" href="/fortuna-liga-cz/2023-2024/">Česko - FORTUNA:LIGA</a>
+	</li>
 </ul>
-</div>
-</div>
-<div class="cl h10"></div>
-<div style="text-align: center;"><a href="/rss/"><img src="/res/img/ico-rss.gif"></a>&nbsp;&nbsp;<a href="https://wap.eurofotbal.cz/" target="_blank"><img src="/res/img/ico-wap.gif" style="margin-bottom: 2px;"></a></div>
-<div class="cl h10"></div>
-<div style="text-align: center;"><a href="/netvibes/"><img src="/res/img/netvibes.gif" border="0" alt="Přidej na Netvibes" title="Přidej na Netvibes"></a></div>
-<div class="cl h10"></div>
-
-		<div style="/*float: left;*/">
-			<div style="text-align: center;">
-				<a href="/facebook/" target="_blank"><img src="/res/img/banners/fbbanner.gif?serial=1"/></a>
+<!-- End of Eurofotbal::Ui::BreadcrumbsCell -->
+					<!-- Start of Eurofotbal::Leagues::Layout::HeaderCell (block e-l-l-header) -->
+		<!-- Start of Eurofotbal::Ui::MasterHeaderCell (block e-u-master-header) -->
+		<div class="e-ui-master-header">
+			<div class="e-ui-master-header__title">
+										<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+		<div class="l-ui-image l-ui-image--loading e-leagues-layout-header__image" style="width: 48px; height: 48px">
+			<picture class="l-ui-image__picture">
+				<img alt="" class="l-ui-image__img" data-src="/res/img/nopic/logo.gif" data-srcset="/res/img/nopic/logo.gif 1x, /res/img/nopic/logo.gif 2x" />
+			</picture>
+			<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+		</div>
+		<!-- End of Livesport::Ui::ImageCell -->
+						<div class="e-ui-master-header__title-right e-ui-master-header__title-right">
+					<!-- Start of Eurofotbal::Ui::MasterTitleCell (block e-u-master-title) -->
+					<h1 class="e-ui-master-title">
+						<span class="e-ui-master-title__main">FORTUNA:LIGA</span>
+						<span class="e-ui-master-title__sub">Česko - FORTUNA:LIGA - zprávy</span>
+					</h1>
+					<!-- End of Eurofotbal::Ui::MasterTitleCell -->
+				</div>
 			</div>
-			<div style="margin-top: 2px; font-size:9px; text-align: center;">
-				<a href="/facebook/">EuroFotbal</a> on Facebook
+			<div class="e-ui-master-header__utilities">
+						<a class="e-ui-master-header__favorite-link e-with-icon small js-bookmark-link" href="javascript:void(0);" onclick="bookmarkToggle('competition', 19, 0)";>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--plus_circle" style="width: 15px; height: 15px" viewBox="0 0 14 14"><use xlink:href="/res/img/svg_sprite.svg#plus_circle"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+			<span>Přidat soutěž do záložek</span>
+		</a>
+						<div class="e-ui-master-header__dropdown">
+					<!-- Start of Eurofotbal::Ui::DropdownCell (block e-u-dropdown) -->
+					<div class="e-ui-dropdown dropdown-toggle-wrapper">
+						<button aria-expanded="false" class="dropdown-toggle dropdown-toggle--primary btn e-with-icon e-with-icon--reversed" data-bs-offset="[0, 0]" data-bs-toggle="dropdown" type="button">
+							2023 / 2024							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_down_light dropdown-button-icon" style="width: 14px; height: 8px" viewBox="0 0 14 8"><use xlink:href="/res/img/svg_sprite.svg#chevron_down_light"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</button>
+						<ul class="dropdown-menu dropdown-menu-override" data-popper-placement="bottom-start">
+							<li><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/">2023 / 2024</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2022-2023/tabulky/">2022 / 2023</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2021-2022/tabulky/">2021 / 2022</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2020-2021/tabulky/">2020 / 2021</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2019-2020/tabulky/">2019 / 2020</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2018-2019/tabulky/">2018 / 2019</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2017-2018/tabulky/">2017 / 2018</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2016-2017/tabulky/">2016 / 2017</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2015-2016/tabulky/">2015 / 2016</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2014-2015/tabulky/">2014 / 2015</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2013-2014/tabulky/">2013 / 2014</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2012-2013/tabulky/">2012 / 2013</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2011-2012/tabulky/">2011 / 2012</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2010-2011/tabulky/">2010 / 2011</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2009-2010/tabulky/">2009 / 2010</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2008-2009/tabulky/">2008 / 2009</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2007-2008/tabulky/">2007 / 2008</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2006-2007/tabulky/">2006 / 2007</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2005-2006/tabulky/">2005 / 2006</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2004-2005/tabulky/">2004 / 2005</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2003-2004/tabulky/">2003 / 2004</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2002-2003/tabulky/">2002 / 2003</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2001-2002/tabulky/">2001 / 2002</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/2000-2001/tabulky/">2000 / 2001</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1999-2000/tabulky/">1999 / 2000</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1998-1999/tabulky/">1998 / 1999</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1997-1998/tabulky/">1997 / 1998</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1996-1997/tabulky/">1996 / 1997</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1995-1996/tabulky/">1995 / 1996</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1994-1995/tabulky/">1994 / 1995</a></li>
+<li><a class="dropdown-item" href="/fortuna-liga-cz/1993-1994/tabulky/">1993 / 1994</a></li>
+						</ul>
+					</div>
+					<!-- End of Eurofotbal::Ui::DropdownCell -->
+				</div>
 			</div>
 		</div>
+		<!-- End of Eurofotbal::Ui::MasterHeaderCell -->
+		<!-- End of Eurofotbal::Leagues::Layout::HeaderCell -->
 
+		<!-- Start of Eurofotbal::Ui::PillsCell (block e-u-pills) -->
+		<div class="e-ui-pills">
+			<ul class="e-ui-pills__list">
+			<li class="e-ui-pills__item"><a class="e-ui-pills__link e-ui-pills__link--active" href="/fortuna-liga-cz/">Zprávy</a></li>
+
+		<li class="e-ui-pills__item dropdown-toggle-wrapper">
+			<div class="dropdown">
+				<button aria-expanded="false" class="e-ui-pills__link dropdown-toggle dropdown-toggle--secondary e-with-icon e-with-icon--reversed" data-bs-offset="[0, 0]" data-bs-toggle="dropdown" type="button">
+					Tabulky
+					<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+					<svg class="l-ui-icon l-ui-icon--chevron_down_light dropdown-button-icon" style="width: 14px; height: 8px" viewBox="0 0 14 8"><use xlink:href="/res/img/svg_sprite.svg#chevron_down_light"></use></svg>
+					<!-- End of Livesport::Ui::IconCell -->
+				</button>
+				<ul class="dropdown-menu dropdown-menu-override dropdown-menu--secondary" data-popper-placement="bottom-start">
+					<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/tabulky/">všechny tabulky</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/tabulky/zakladni-cast/">základní část</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/tabulky/o-titul/">o titul</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/tabulky/o-udrzeni/">o udržení</a></li>
+				</ul>
+			</div>
+		</li>
+			<li class="e-ui-pills__item dropdown-toggle-wrapper">
+		<div class="dropdown">
+			<button aria-expanded="false" class="e-ui-pills__link dropdown-toggle dropdown-toggle--secondary e-with-icon e-with-icon--reversed" data-bs-offset="[0, 0]" data-bs-toggle="dropdown" type="button">
+				Zápasy				<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+				<svg class="l-ui-icon l-ui-icon--chevron_down_light dropdown-button-icon" style="width: 14px; height: 8px" viewBox="0 0 14 8"><use xlink:href="/res/img/svg_sprite.svg#chevron_down_light"></use></svg>
+				<!-- End of Livesport::Ui::IconCell -->
+			</button>
+			<ul class="dropdown-menu dropdown-menu-override dropdown-menu--secondary" data-popper-placement="bottom-start">
+				<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/vysledky-rozlosovani/">celá sezóna</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/vysledky-rozlosovani/zakladni-cast/">základní část</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/vysledky-rozlosovani/o-titul/">o titul</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/vysledky-rozlosovani/o-7-misto/">o 7. místo</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/2023-2024/vysledky-rozlosovani/o-udrzeni/">o udržení</a></li>
+			</ul>
 		</div>
-<div class="col-top">
-<div class="box green"><div class="in">
-<h1 class="pagetitle2">Česko - 1. Fotbalová liga - zprávy</h1>
-<div class="fr">
-<select class="pagetitle2select" name="seasonSelect" onchange="location.href=this.value">
-<option value="/1-fotbalova-liga/2021-2022/" selected>2021/2022</option><option value="/1-fotbalova-liga/2020-2021/tabulky/">2020/2021</option><option value="/1-fotbalova-liga/2019-2020/tabulky/">2019/2020</option><option value="/1-fotbalova-liga/2018-2019/tabulky/">2018/2019</option><option value="/1-fotbalova-liga/2017-2018/tabulky/">2017/2018</option><option value="/1-fotbalova-liga/2016-2017/tabulky/">2016/2017</option><option value="/1-fotbalova-liga/2015-2016/tabulky/">2015/2016</option><option value="/1-fotbalova-liga/2014-2015/tabulky/">2014/2015</option><option value="/1-fotbalova-liga/2013-2014/tabulky/">2013/2014</option><option value="/1-fotbalova-liga/2012-2013/tabulky/">2012/2013</option><option value="/1-fotbalova-liga/2011-2012/tabulky/">2011/2012</option><option value="/1-fotbalova-liga/2010-2011/tabulky/">2010/2011</option><option value="/1-fotbalova-liga/2009-2010/tabulky/">2009/2010</option><option value="/1-fotbalova-liga/2008-2009/tabulky/">2008/2009</option><option value="/1-fotbalova-liga/2007-2008/tabulky/">2007/2008</option><option value="/1-fotbalova-liga/2006-2007/tabulky/">2006/2007</option><option value="/1-fotbalova-liga/2005-2006/tabulky/">2005/2006</option><option value="/1-fotbalova-liga/2004-2005/tabulky/">2004/2005</option><option value="/1-fotbalova-liga/2003-2004/tabulky/">2003/2004</option><option value="/1-fotbalova-liga/2002-2003/tabulky/">2002/2003</option><option value="/1-fotbalova-liga/2001-2002/tabulky/">2001/2002</option><option value="/1-fotbalova-liga/2000-2001/tabulky/">2000/2001</option><option value="/1-fotbalova-liga/1999-2000/tabulky/">1999/2000</option><option value="/1-fotbalova-liga/1998-1999/tabulky/">1998/1999</option><option value="/1-fotbalova-liga/1997-1998/tabulky/">1997/1998</option><option value="/1-fotbalova-liga/1996-1997/tabulky/">1996/1997</option><option value="/1-fotbalova-liga/1995-1996/tabulky/">1995/1996</option><option value="/1-fotbalova-liga/1994-1995/tabulky/">1994/1995</option><option value="/1-fotbalova-liga/1993-1994/tabulky/">1993/1994</option></select>
-</div>
-<div class="cl"></div>
-</div></div>
-<div class="cl h10"></div>
-<div class="box submenu"><div class="in"><div class="bookmark"><span class="it active"><a href="/1-fotbalova-liga/">Zprávy</a></span><span class="dl"></span><span class="it"><a href="/1-fotbalova-liga/2021-2022/tabulky/" class="popup" onmouseover="menuOver(1);" onmouseout="menuOut();">Tabulky</a><br><div id="menu_1" class="itemdiv" onmouseover="menuOver(1);" onmouseout="menuOut();"><a href="/1-fotbalova-liga/2021-2022/tabulky/">všechny tabulky</a><a href="/1-fotbalova-liga/2021-2022/tabulky/zakladni-cast/">základní část</a><a href="/1-fotbalova-liga/2021-2022/tabulky/o-titul/">o titul</a><a href="/1-fotbalova-liga/2021-2022/tabulky/o-udrzeni/">o udržení</a></div></span><span class="dl"></span><span class="it"><a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/" class="popup" onmouseover="menuOver(2);" onmouseout="menuOut()">Zápasy</a><br><div id="menu_2" class="itemdiv" onmouseover="menuOver(2);" onmouseout="menuOut(2)"><a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/" class="bold">celá sezóna</a><a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/zakladni-cast/">základní část</a><a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/o-titul/">o titul</a><a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/o-evropskou-ligu/">o Evropskou ligu</a><a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/o-udrzeni/">o udržení</a></div></span><span class="dl"></span><span class="it"><a href="/1-fotbalova-liga/2021-2022/statistiky/tabulka-strelcu/">Statistiky</a></span>
-<span class="dl"></span><span class="it"><a href="/1-fotbalova-liga/2021-2022/kluby/">Kluby</a></span>
-<span class="dl"></span><span class="it"><a href="/1-fotbalova-liga/2021-2022/prestupy/">Přestupy</a></span><span class="dl"></span><span class="it">	<a href="javascript: void(0);" class="popup" onmouseover="menuOver(5);" onmouseout="menuOut();">Česko: další soutěže</a>	<br><div id="menu_5" class="itemdiv" onmouseover="menuOver(5);" onmouseout="menuOut();"><a class="bold" href="/1-fotbalova-liga/">1. Fotbalová liga</a><a href="/souteze/cesko/mol-cup/">MOL Cup</a><a class="comp-inactive" href="/souteze/cesko/superpohar/">Superpohár</a><a href="/souteze/cesko/fotbalova-narodni-liga/">Fotbalová národní liga</a><a class="comp-inactive" href="/souteze/cesko/cfl/">ČFL</a><a href="/souteze/cesko/cfl-a/">ČFL A</a><a href="/souteze/cesko/cfl-b/">ČFL B</a><a href="/souteze/cesko/msfl/">MSFL</a><a href="/souteze/cesko/divize-a/">Divize A</a><a href="/souteze/cesko/divize-b/">Divize B</a><a href="/souteze/cesko/divize-c/">Divize C</a><a href="/souteze/cesko/divize-d/">Divize D</a><a href="/souteze/cesko/divize-e/">Divize E</a><a href="/souteze/cesko/divize-f/">Divize F</a><a class="comp-inactive" href="/souteze/cesko/juniorska-liga/">Juniorská liga</a><a href="/souteze/cesko/baraz-o-1-ligu/">Baráž o 1. ligu</a><a href="/souteze/cesko/1-liga-zen/">1. liga žen</a><a class="comp-inactive" href="/souteze/cesko/baraz-o-1-ligu-zen/">Baráž o 1. ligu žen</a>	</div></span><div class="border"></div></div></div></div>
-<div class="cl h10"></div>
-</div>
-<div class="col-center">
-	<div class="box green tran cols c2">
-		<div class="col tran">
-			<div class="img w248"><a href="/clanky/ani-konec-trenera-nepomohl-aneb-udalosti-6-kola-fortuna-ligy-511678/">
-				<img src="/res/img/news/z7jGSh9S-MFNWeigq_1.jpg" alt="">
-				<div class="desc"><div class="i">Miroslav Holeňák (&copy;&nbsp;fcslovanliberec.cz)</div></div>
-				<div class="b">&nbsp;</div>
-			</a></div>
+	</li>
+	<li class="e-ui-pills__item"><a class="e-ui-pills__link" href="/fortuna-liga-cz/2023-2024/statistiky/tabulka-strelcu/">Statistiky</a></li>
+<li class="e-ui-pills__item"><a class="e-ui-pills__link" href="/fortuna-liga-cz/2023-2024/prestupy/">Přestupy</a></li>
+	<li class="e-ui-pills__item dropdown-toggle-wrapper">
+		<div class="dropdown">
+			<button aria-expanded="false" class="e-ui-pills__link dropdown-toggle dropdown-toggle--secondary e-with-icon e-with-icon--reversed" data-bs-offset="[0, 0]" data-bs-toggle="dropdown" type="button">
+				Česko: Další soutěže
+				<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+				<svg class="l-ui-icon l-ui-icon--chevron_down_light dropdown-button-icon" style="width: 14px; height: 8px" viewBox="0 0 14 8"><use xlink:href="/res/img/svg_sprite.svg#chevron_down_light"></use></svg>
+				<!-- End of Livesport::Ui::IconCell -->
+			</button>
+			<ul class="dropdown-menu dropdown-menu-override dropdown-menu--secondary" data-popper-placement="bottom-start">
+			<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/fortuna-liga-cz/">FORTUNA:LIGA</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/mol-cup/">MOL Cup</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/superpohar/">Superpohár</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/fotbalova-narodni-liga/">Fotbalová národní liga</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/cfl/">ČFL</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/cfl-a/">ČFL A</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/cfl-b/">ČFL B</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/cfl-play-off/">ČFL - Play Off</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/msfl/">MSFL</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/divize-a/">Divize A</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/divize-b/">Divize B</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/divize-c/">Divize C</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/divize-d/">Divize D</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/divize-e/">Divize E</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/divize-f/">Divize F</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/juniorska-liga/">Juniorská liga</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/baraz-o-1-ligu/">Baráž o 1. ligu</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/1-liga-zen/">1. liga žen</a></li>
+<li class="dropdown-menu-override__search-result-item"><a class="dropdown-item" href="/souteze/cesko/baraz-o-1-ligu-zen/">Baráž o 1. ligu žen</a></li>
+			</ul>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col tran">
-			<h2 class="lab medium"><a href="/clanky/ani-konec-trenera-nepomohl-aneb-udalosti-6-kola-fortuna-ligy-511678/" title="">Ani konec trenéra nepomohl aneb Události 6. kola FORTUNA:LIGY</a></h2>
-			<div class="article-perex-top">Z Liberce se před 6. kolem nejvyšší ligové soutěže pakoval trenér Pavel Hoftych a zdálo se, že utkání se Zlínem je ideálním pro odražení se ke světlejším zítřkům. Jenže provizorní kouč Miroslav Holeňák se svým týmem podlehl Zlínu a Luboše Kozla tak čeká velmi náročná práce. <a href="/clanky/ani-konec-trenera-nepomohl-aneb-udalosti-6-kola-fortuna-ligy-511678/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="red">DNES</span> <span class="dl">|</span> <a href="/clanky/nazory-a-komentare">Názory a komentáře</a> <span class="dl">|</span> <a href="/clanky/ani-konec-trenera-nepomohl-aneb-udalosti-6-kola-fortuna-ligy-511678/#forum" class="forumbubble" data-fid="908093">4 komentáře</a>
+	</li>
+				</ul>
+			<div class="e-ui-pills__gradient e-ui-pills__gradient--left"></div>
+			<div class="e-ui-pills__gradient e-ui-pills__gradient--right"></div>
 		</div>
-		<div class="cl"></div>
-	</div>
-<div class="cl h10"></div>
-<div class="box green tran">
-		<div class="bookmark">
-			<span class="dl"></span>
-			<span class="it active"><a href="" title="">Další články</a></span>
-			<div class="border"></div>
+		<!-- End of Eurofotbal::Ui::PillsCell -->
+
+		<div class="e-leagues-articles">
+					<div class="mt-30">
+								<!-- Start of Eurofotbal::Articles::HeroCell (block e-a-hero) -->
+		<a class="e-articles-hero sm-anti-container" href="/clanky/slavia-ziskala-dalsi-posilu-z-norska-predstavila-zaloznika-wallema-632490/">
+			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-hero__cover" style="max-width: 100%; max-height: 100%"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/top/bV0arBss-hlPi154U.webp 1x, /res/img/articles/top_x2/bV0arBss-hlPi154U.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/top/bV0arBss-hlPi154U.jpg" data-srcset="/res/img/articles/top/bV0arBss-hlPi154U.jpg 1x, /res/img/articles/top_x2/bV0arBss-hlPi154U.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.7123%"></span></div>			<!-- End of Livesport::Ui::ImageCell -->
+			<div class="e-articles-hero__cover-credit small">Conrad Wallem (&copy; slavia.cz)</div>
+			<div class="e-articles-hero__content">
+				<h2 class="h1 e-articles-hero__title text-line-clamp-7">Slavia získala další posilu z Norska, představila záložníka Wallema</h2>
+				<div class="e-articles-hero__info">
+					<div class="e-articles-hero__info-item">DNES</div>
+					<div class="e-articles-hero__info-item">Aktuality</div>
+					<div class="e-articles-hero__info-item">
+						<span class="e-with-icon js-hero-comments-link" data-url="/clanky/slavia-ziskala-dalsi-posilu-z-norska-predstavila-zaloznika-wallema-632490/#forum">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+							<span data-forumid="939640">16 komentářů</span>
+						</span>
+					</div>
+									</div>
+			</div>
+		</a>
+		<!-- End of Eurofotbal::Articles::HeroCell -->
+							</div>
+					<div class="mt-40">
+						<!-- Start of Eurofotbal::Ui::UnderlinedTitleCell (block l-u-underlined-title) -->
+						<div class="l-ui-underlined-title"><h3 class="l-ui-underlined-title__title"><span class="l-ui-underlined-title__underline">Další články</span></h3></div>
+						<!-- End of Eurofotbal::Ui::UnderlinedTitleCell -->
+					</div>
+									<!-- Start of Eurofotbal::Articles::VerboseListCell (block e-a-verbose-list) -->
+				<div class="e-articles-verbose-list">
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/se-spartou-neodjeli-na-soustredeni-plechaty-suchomel-polidar-a-soucek-632472/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/n3oStuoD-rFwwbvpT.webp 1x, /res/img/articles/small_x2/n3oStuoD-rFwwbvpT.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/n3oStuoD-rFwwbvpT.jpg" data-srcset="/res/img/articles/small/n3oStuoD-rFwwbvpT.jpg 1x, /res/img/articles/small_x2/n3oStuoD-rFwwbvpT.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/se-spartou-neodjeli-na-soustredeni-plechaty-suchomel-polidar-a-soucek-632472/">Se Spartou neodjeli na soustředění Plechatý, Suchomel, Polidar a Souček</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Sparťané odcestovali na soustředění do rakouského Bad Kleinkirchheimu bez Dominika Plechatého, Martina Suchomela, Matěje Polidara a Filipa Součka, kteří s týmem zahájili letní přípravu. Ligový mistr o tom informoval na svém webu.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Dnes</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/se-spartou-neodjeli-na-soustredeni-plechaty-suchomel-polidar-a-soucek-632472/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939636">17 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-</div>
-<div class="cl h10"></div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/liberecky-koscelnik-dostal-za-faul-proti-zlinu-trest-na-tri-duely-511697/">
-				<img src="/res/img/news/lUjPRtKi-fLFTGIl7_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/obrance-suchy-se-upsal-mlade-boleslavi-i-na-pristi-sezonu-632442/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/6gBS7Ogc-rBcKGXpB.webp 1x, /res/img/articles/small_x2/6gBS7Ogc-rBcKGXpB.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/6gBS7Ogc-rBcKGXpB.jpg" data-srcset="/res/img/articles/small/6gBS7Ogc-rBcKGXpB.jpg 1x, /res/img/articles/small_x2/6gBS7Ogc-rBcKGXpB.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/obrance-suchy-se-upsal-mlade-boleslavi-i-na-pristi-sezonu-632442/">Obránce Suchý se upsal Mladé Boleslavi i na příští sezonu</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Bývalý kapitán reprezentace Marek Suchý bude dál nastupovat za Mladou Boleslav. Pětatřicetiletý obránce prodloužil s klubem smlouvu o další rok do konce června 2024. Středočeský celek to oznámil na svém webu.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Dnes</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/obrance-suchy-se-upsal-mlade-boleslavi-i-na-pristi-sezonu-632442/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939632">žádný komentář</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/liberecky-koscelnik-dostal-za-faul-proti-zlinu-trest-na-tri-duely-511697/" title="">Liberecký Koscelník dostal za faul proti Zlínu trest na tři duely</a></h2>
-			<div class="article-perex">Liberecký pravý obránce či záložník Martin Koscelník dostal za faul v zápase 6. ligového kola se Zlínem trest na tři soutěžní utkání. Disciplinární komise Ligové fotbalové asociace přihlédla k tomu, že se slovenský reprezentant podobného zákroku dopustil už v únoru při duelu v Plzni. <a href="/clanky/liberecky-koscelnik-dostal-za-faul-proti-zlinu-trest-na-tri-duely-511697/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="red">DNES</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/liberecky-koscelnik-dostal-za-faul-proti-zlinu-trest-na-tri-duely-511697/#forum" class="forumbubble" data-fid="908092">6 komentářů</a>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/hanousek-prestoupil-do-ankaragucu-kde-uz-na-jare-hostoval-632396/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/O4Y2UKTL-jBJyu7yO.webp 1x, /res/img/articles/small_x2/O4Y2UKTL-jBJyu7yO.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/O4Y2UKTL-jBJyu7yO.jpg" data-srcset="/res/img/articles/small/O4Y2UKTL-jBJyu7yO.jpg 1x, /res/img/articles/small_x2/O4Y2UKTL-jBJyu7yO.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/hanousek-prestoupil-do-ankaragucu-kde-uz-na-jare-hostoval-632396/">Hanousek přestoupil do Ankaragücü, kde už na jaře hostoval</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Matěj Hanousek přestoupil ze Sparty do tureckého klubu Ankaragücü, v němž už na jaře hostoval. Ligový mistr o tom informoval na svém webu. Třicetiletý obránce v pražském klubu nasbíral 80 soutěžních startů a získal trofej pro vítěze českého poháru.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/hanousek-prestoupil-do-ankaragucu-kde-uz-na-jare-hostoval-632396/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939582">58 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/jablonec-posilil-zkuseny-utocnik-nespor-z-olomouce-511694/">
-				<img src="/res/img/news/jceYqjV5-ldlUUvKe_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/penner-prestupuje-na-sever-cech-budejovice-vymenil-za-liberec-632330/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/SlkaELES-lSOBSxtF.webp 1x, /res/img/articles/small_x2/SlkaELES-lSOBSxtF.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/SlkaELES-lSOBSxtF.jpg" data-srcset="/res/img/articles/small/SlkaELES-lSOBSxtF.jpg 1x, /res/img/articles/small_x2/SlkaELES-lSOBSxtF.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/penner-prestupuje-na-sever-cech-budejovice-vymenil-za-liberec-632330/">Penner přestupuje na sever Čech, Budějovice vyměnil za Liberec </a></h4>
+				<p class="e-articles-verbose-list__perex lead">Liberec posílil záložník Nicolas Penner, který do Slovanu přestoupil z Českých Budějovic. Oba kluby potvrdily transfer na svých webových stránkách. Dvaadvacetiletý hráč podepsal s novým zaměstnavatelem smlouvu na tři roky.
+</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/penner-prestupuje-na-sever-cech-budejovice-vymenil-za-liberec-632330/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939580">24 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/jablonec-posilil-zkuseny-utocnik-nespor-z-olomouce-511694/" title="">Jablonec posílil zkušený útočník Nešpor z Olomouce</a></h2>
-			<div class="article-perex">Jablonec posílil útočník Martin Nešpor. Jednatřicetiletý hráč, který naposledy působil v Olomouci, podepsal se severočeským klubem roční smlouvu. Účastník skupiny Evropské konferenční ligy o tom informoval na svých internetových stránkách. <a href="/clanky/jablonec-posilil-zkuseny-utocnik-nespor-z-olomouce-511694/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="red">DNES</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/jablonec-posilil-zkuseny-utocnik-nespor-z-olomouce-511694/#forum" class="forumbubble" data-fid="908091">24 komentářů</a>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/obrance-celustka-skoncil-na-kypru-a-vratil-se-do-zlina-632374/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/GvVfWta9-Q7tU1061.webp 1x, /res/img/articles/small_x2/GvVfWta9-Q7tU1061.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/GvVfWta9-Q7tU1061.jpg" data-srcset="/res/img/articles/small/GvVfWta9-Q7tU1061.jpg 1x, /res/img/articles/small_x2/GvVfWta9-Q7tU1061.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/obrance-celustka-skoncil-na-kypru-a-vratil-se-do-zlina-632374/">Obránce Čelůstka skončil na Kypru a vrátil se do Zlína</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Kádr Zlína posílil obránce Tomáš Čelůstka, který minulou sezonu strávil v kyperské Karmiotisse. "Ševci" o návratu svého odchovance informovali na webových stránkách. Jednatřicetiletý krajní bek podepsal se zlínským klubem dvouletou smlouvu.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/obrance-celustka-skoncil-na-kypru-a-vratil-se-do-zlina-632374/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939578">11 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/kozel-nad-nabidkou-liberce-nevahal-slovan-podle-nej-na-posledni-misto-nepatri-511548/">
-				<img src="/res/img/news/C6lMBiKn-UcBVNhra_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/n-diaye-na-odchodu-z-plzne-nevesel-se-do-nominace-na-soustredeni-632324/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/xfaCU1P5-CGANHGfe.webp 1x, /res/img/articles/small_x2/xfaCU1P5-CGANHGfe.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/xfaCU1P5-CGANHGfe.jpg" data-srcset="/res/img/articles/small/xfaCU1P5-CGANHGfe.jpg 1x, /res/img/articles/small_x2/xfaCU1P5-CGANHGfe.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/n-diaye-na-odchodu-z-plzne-nevesel-se-do-nominace-na-soustredeni-632324/">N'Diaye na odchodu z Plzně, nevešel se do nominace na soustředění</a></h4>
+				<p class="e-articles-verbose-list__perex lead">S Plzní neodcestoval na soustředění do rakouského Westendorfu záložník Modou N'Diaye, jehož budoucnost ve Viktorii se podle klubového webu řeší. Ve výběru staronového trenéra Miroslava Koubka je 22 hráčů do pole a čtyři brankáři.
+</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/n-diaye-na-odchodu-z-plzne-nevesel-se-do-nominace-na-soustredeni-632324/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939574">33 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/kozel-nad-nabidkou-liberce-nevahal-slovan-podle-nej-na-posledni-misto-nepatri-511548/" title="">Kozel nad nabídkou Liberce neváhal, Slovan podle něj na poslední místo nepatří</a></h2>
-			<div class="article-perex">Přestože Liberci patří v lize poslední místo, trenér Luboš Kozel nad nabídkou převzít mužstvo příliš neváhal. Nástupce Pavla Hoftycha bere angažmá jako výzvu a je přesvědčen, že Severočeši na dno tabulky nepatří. Hráči podle něj potřebují psychicky zvednout. Jeho asistenty budou Ivan Kopecký a Miroslav Holeňák, který zůstává z předchozího realizačního týmu. <a href="/clanky/kozel-nad-nabidkou-liberce-nevahal-slovan-podle-nej-na-posledni-misto-nepatri-511548/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">VČERA</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/kozel-nad-nabidkou-liberce-nevahal-slovan-podle-nej-na-posledni-misto-nepatri-511548/#forum" class="forumbubble" data-fid="908057">93 komentářů</a>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/slavia-znovu-lovila-na-severu-evropy-ziskala-sinyana-z-molde-632302/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/GdvEG3F3-WbvJ1KQh.webp 1x, /res/img/articles/small_x2/GdvEG3F3-WbvJ1KQh.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/GdvEG3F3-WbvJ1KQh.jpg" data-srcset="/res/img/articles/small/GdvEG3F3-WbvJ1KQh.jpg 1x, /res/img/articles/small_x2/GdvEG3F3-WbvJ1KQh.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/slavia-znovu-lovila-na-severu-evropy-ziskala-sinyana-z-molde-632302/">Slavia znovu lovila na severu Evropy, získala Sinyana z Molde</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Sheriff Sinyan po vypršení smlouvy v Molde zamíří do Slavie. Šestadvacetiletý gambijský stoper, jenž má také norský pas, podepsal roční smlouvu s opcí na další dvě sezony...</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/slavia-znovu-lovila-na-severu-evropy-ziskala-sinyana-z-molde-632302/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939570">127 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/sima-prestoupil-ze-slavie-do-brightonu-sezonu-ale-stravi-ve-stoke-city-511373/">
-				<img src="/res/img/news/bNhoY5p7-b1dOXUN4_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/mlada-boleslav-dotahla-podpis-kadlece-smlouvu-prodlouzil-seda-632294/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/8Wz6IPpi-hvS2xgzS.webp 1x, /res/img/articles/small_x2/8Wz6IPpi-hvS2xgzS.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/8Wz6IPpi-hvS2xgzS.jpg" data-srcset="/res/img/articles/small/8Wz6IPpi-hvS2xgzS.jpg 1x, /res/img/articles/small_x2/8Wz6IPpi-hvS2xgzS.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/mlada-boleslav-dotahla-podpis-kadlece-smlouvu-prodlouzil-seda-632294/">Mladá Boleslav dotáhla podpis Kadlece, smlouvu prodloužil Šeda</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Mladá Boleslav získala slovenského krajního obránce Andreje Kadlece z druholigové polské Niecieczy a podle klubového webu s ním podepsala tříletou smlouvu. Středočeši rovněž prodloužili kontrakt s brankářem Janem Šedou o další rok do konce června 2024.
+</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/mlada-boleslav-dotahla-podpis-kadlece-smlouvu-prodlouzil-seda-632294/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939568">8 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/sima-prestoupil-ze-slavie-do-brightonu-sezonu-ale-stravi-ve-stoke-city-511373/" title="">Sima přestoupil ze Slavie do Brightonu, sezonu ale stráví ve Stoke City</a></h2>
-			<div class="article-perex">Abdallah Sima přestoupil z pražské Slavie do anglického Brightonu a v novém působišti podepsal smlouvu do roku 2025. Kluby o tom informovaly na svých webech, výši transferu ale nezveřejnily. Aktuální sezonu stráví dvacetiletý Senegalec na hostování v druholigovém Stoke City. <a href="/clanky/sima-prestoupil-ze-slavie-do-brightonu-sezonu-ale-stravi-ve-stoke-city-511373/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">31.08.</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/sima-prestoupil-ze-slavie-do-brightonu-sezonu-ale-stravi-ve-stoke-city-511373/#forum" class="forumbubble" data-fid="908038">268 komentářů</a>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/slavia-prodlouzila-s-teclem-podepsal-hracskou-i-manazerskou-smlouvu-632272/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/xhfVArVM-CAlvCE6c.webp 1x, /res/img/articles/small_x2/xhfVArVM-CAlvCE6c.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/xhfVArVM-CAlvCE6c.jpg" data-srcset="/res/img/articles/small/xhfVArVM-CAlvCE6c.jpg 1x, /res/img/articles/small_x2/xhfVArVM-CAlvCE6c.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/slavia-prodlouzila-s-teclem-podepsal-hracskou-i-manazerskou-smlouvu-632272/">Slavia prodloužila s Teclem, podepsal hráčskou i manažerskou smlouvu</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Stanislav Tecl podepsal novou roční smlouvu se Slavií. Dvaatřicetiletý útočník současně bude od nové sezony manažerem třetiligového B-týmu.
+</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">Včera</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/slavia-prodlouzila-s-teclem-podepsal-hracskou-i-manazerskou-smlouvu-632272/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939564">82 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/havel-pripustil-ze-pozvanku-do-reprezentace-uz-moc-necekal-511314/">
-				<img src="/res/img/news/G0WzuZSH-dvJhFEND_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/zkuseny-utocnik-rabusic-prodlouzil-smlouvu-v-liberci-632204/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/z1qD87H7-xCixQzQi.webp 1x, /res/img/articles/small_x2/z1qD87H7-xCixQzQi.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/z1qD87H7-xCixQzQi.jpg" data-srcset="/res/img/articles/small/z1qD87H7-xCixQzQi.jpg 1x, /res/img/articles/small_x2/z1qD87H7-xCixQzQi.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/zkuseny-utocnik-rabusic-prodlouzil-smlouvu-v-liberci-632204/">Zkušený útočník Rabušic prodloužil smlouvu v Liberci</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Liberec prodloužil smlouvu s třiatřicetiletým útočníkem Michaelem Rabušicem. Severočeský klub o tom informoval na webu, délku nového kontraktu neuvedl.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">03.07.</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/zkuseny-utocnik-rabusic-prodlouzil-smlouvu-v-liberci-632204/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939554">3 komentáře</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/havel-pripustil-ze-pozvanku-do-reprezentace-uz-moc-necekal-511314/" title="">Havel připustil, že pozvánku do reprezentace už moc nečekal</a></h2>
-			<div class="article-perex">Milan Havel připustil, že už příliš nepočítal s tím, že se někdy dostane do české reprezentace. Premiérová pozvánka před zářijovými zápasy s Běloruskem, v Belgii a s Ukrajinou sedmadvacetiletého plzeňského obránce překvapila o to víc, že se v létě potýkal se zraněním a musel na operaci menisku. <a href="/clanky/havel-pripustil-ze-pozvanku-do-reprezentace-uz-moc-necekal-511314/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">31.08.</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/havel-pripustil-ze-pozvanku-do-reprezentace-uz-moc-necekal-511314/#forum" class="forumbubble" data-fid="908033">8 komentářů</a>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/brankar-markovic-prestoupil-ze-slavie-do-ostravy-632202/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/f5j2zMqn-OY0nzRv6.webp 1x, /res/img/articles/small_x2/f5j2zMqn-OY0nzRv6.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/f5j2zMqn-OY0nzRv6.jpg" data-srcset="/res/img/articles/small/f5j2zMqn-OY0nzRv6.jpg 1x, /res/img/articles/small_x2/f5j2zMqn-OY0nzRv6.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/brankar-markovic-prestoupil-ze-slavie-do-ostravy-632202/">Brankář Markovič přestoupil ze Slavie do Ostravy</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Kádr Ostravy posílil brankář Jakub Markovič, který do Baníku přestoupil ze Slavie Praha. Se slezským klubem uzavřel smlouvu na čtyři roky s opcí. Baník to uvedl na svém oficiálním webu.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">03.07.</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/brankar-markovic-prestoupil-ze-slavie-do-ostravy-632202/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939550">22 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/obrance-zima-prestoupil-z-prazske-slavie-do-fc-turin-511341/">
-				<img src="/res/img/news/IuD1f0y6-xnh1rk6o_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/sef-rozhodcich-prihoda-rezignoval-nahradit-by-ho-mohl-kovarik-632196/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/CYC7kR2d-zqXonvn0.webp 1x, /res/img/articles/small_x2/CYC7kR2d-zqXonvn0.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/CYC7kR2d-zqXonvn0.jpg" data-srcset="/res/img/articles/small/CYC7kR2d-zqXonvn0.jpg 1x, /res/img/articles/small_x2/CYC7kR2d-zqXonvn0.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/sef-rozhodcich-prihoda-rezignoval-nahradit-by-ho-mohl-kovarik-632196/">Šéf rozhodčích Příhoda rezignoval, nahradit by ho mohl Kovařík</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Radek Příhoda rezignoval na pozici předsedy Komise rozhodčích Fotbalové asociace ČR. Vedení asociace chce nabídnout funkci dosavadnímu místopředsedovi komise Liboru Kovaříkovi. FAČR o tom informovala v tiskové zprávě.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">03.07.</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/sef-rozhodcich-prihoda-rezignoval-nahradit-by-ho-mohl-kovarik-632196/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939548">145 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/obrance-zima-prestoupil-z-prazske-slavie-do-fc-turin-511341/" title="">Obránce Zima přestoupil z pražské Slavie do FC Turín</a></h2>
-			<div class="article-perex">Dvacetiletý obránce David Zima přestoupil z pražské Slavie do FC Turín. Kluby o tom informovaly na svých webech. Podle italských médií dvojnásobný český šampion podepsal s účastníkem Serie A čtyřletou smlouvu. <a href="/clanky/obrance-zima-prestoupil-z-prazske-slavie-do-fc-turin-511341/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">31.08.</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/obrance-zima-prestoupil-z-prazske-slavie-do-fc-turin-511341/#forum" class="forumbubble" data-fid="908031">191 komentářů</a>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/reznik-zustava-v-plzni-zkuseny-obrance-o-rok-prodlouzil-smlouvu-632114/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/ARsb9qqD-CtSOMS2H.webp 1x, /res/img/articles/small_x2/ARsb9qqD-CtSOMS2H.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/ARsb9qqD-CtSOMS2H.jpg" data-srcset="/res/img/articles/small/ARsb9qqD-CtSOMS2H.jpg 1x, /res/img/articles/small_x2/ARsb9qqD-CtSOMS2H.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/reznik-zustava-v-plzni-zkuseny-obrance-o-rok-prodlouzil-smlouvu-632114/">Řezník zůstává v Plzni, zkušený obránce o rok prodloužil smlouvu</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Obránce Radim Řezník bude i v příští sezoně pokračovat ve Viktorii Plzeň. Čtyřiatřicetiletý fotbalista prodloužil končící smlouvu o další rok. Třetí tým minulé prvoligové sezony to oznámil na klubovém webu.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">03.07.</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/reznik-zustava-v-plzni-zkuseny-obrance-o-rok-prodlouzil-smlouvu-632114/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939540">47 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/utocnik-zajic-bude-z-baniku-ostrava-hostovat-v-zaglebie-lubin-511342/">
-				<img src="/res/img/news/KzSfrT71-CSvBIQtA_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+				<div class="e-articles-verbose-list__article">
+			<a class="e-articles-verbose-list__image-a" href="/clanky/slavia-zacala-pripravu-vitezne-otocila-duely-s-rakowem-i-maccabi-haifa-632044/">
+				<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+				<div class="l-ui-image l-ui-image--loading l-ui-image--hover-zoom e-articles-verbose-list__image" style="max-width: 192px; max-height: 128px"  ><picture class="l-ui-image__picture"><source data-srcset="/res/img/articles/small/SjtsHmMQ-UJ9dsUk3.webp 1x, /res/img/articles/small_x2/SjtsHmMQ-UJ9dsUk3.webp 2x" type="image/webp" /><img alt="" class="l-ui-image__img" data-src="/res/img/articles/small/SjtsHmMQ-UJ9dsUk3.jpg" data-srcset="/res/img/articles/small/SjtsHmMQ-UJ9dsUk3.jpg 1x, /res/img/articles/small_x2/SjtsHmMQ-UJ9dsUk3.jpg 2x" /></picture><span class="l-ui-image__spacer" style="padding-top: 66.6667%"></span></div>				<!-- End of Livesport::Ui::ImageCell -->
+			</a>
+			<div class="e-articles-verbose-list__content">
+				<h4 class="e-articles-verbose-list__title"><a class="e-articles-verbose-list__title-a" href="/clanky/slavia-zacala-pripravu-vitezne-otocila-duely-s-rakowem-i-maccabi-haifa-632044/">Slavia začala přípravu vítězně, otočila duely s Rakówem i Maccabi Haifa</a></h4>
+				<p class="e-articles-verbose-list__perex lead">Slávisté v prvním utkání letní přípravy na úvod soustředění v Rakousku porazili úřadujícího polského mistra Čenstochovou 2:1. Obě branky Pražanů ve Welsu vstřelil Mick van Buren. Stejným výsledkem poté svěřenci trenéra Jindřicha Trpišovského zdolali aktuálního držitele izraelského titulu Maccabi Haifa.</p>
+				<!-- Start of Eurofotbal::Articles::MetaCell (block e-a-meta) -->
+				<div class="e-articles-meta">
+					<span class="e-articles-meta__item">02.07.</span>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-articles-meta__item--overflowable" href="/clanky/aktuality/" title="Aktuality">Aktuality</a>
+					<a class="e-articles-meta__item e-articles-meta__item--a e-with-icon" href="/clanky/slavia-zacala-pripravu-vitezne-otocila-duely-s-rakowem-i-maccabi-haifa-632044/#forum">
+						<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+						<svg class="l-ui-icon l-ui-icon--comments" style="width: 14px; height: 12px" viewBox="0 0 14 12"><use xlink:href="/res/img/svg_sprite.svg#comments"></use></svg>
+						<!-- End of Livesport::Ui::IconCell -->
+						<span data-forumid="939532">100 komentářů</span>
+					</a>
+									</div>
+				<!-- End of Eurofotbal::Articles::MetaCell -->
+			</div>
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/utocnik-zajic-bude-z-baniku-ostrava-hostovat-v-zaglebie-lubin-511342/" title="">Útočník Zajíc bude z Baníku Ostrava hostovat v Zaglebie Lubin</a></h2>
-			<div class="article-perex">Útočník Tomáš Zajíc odchází z Ostravy do Zaglebie Lubin, kde bude hostovat do konce sezony. Podle Baníku je součástí dohody opce. Pětadvacetiletý Zajíc po loňském příchodu ze Slovácka dal v lize osm gólů, v tomto ročníku nejvyšší soutěže ale do hry nezasáhl. <a href="/clanky/utocnik-zajic-bude-z-baniku-ostrava-hostovat-v-zaglebie-lubin-511342/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">31.08.</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/utocnik-zajic-bude-z-baniku-ostrava-hostovat-v-zaglebie-lubin-511342/#forum" class="forumbubble" data-fid="908032">38 komentářů</a>
+						</div>
+				<!-- End of Eurofotbal::Articles::VerboseListCell -->
+				<!-- Start of Eurofotbal::Ui::PaginationCell (block e-u-pagination) -->
+		<div class="e-ui-pagination" role="navigation">
+			<div class="e-ui-pagination__back-to-top-wrap">
+				<span class="e-ui-pagination__back-to-top e-with-icon e-with-icon--reversed"><span class="e-ui-pagination__back-to-top-label">Nahoru</span>
+					<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+					<svg class="l-ui-icon l-ui-icon--arrow_up" style="width: 8px; height: 12px" viewBox="0 0 8 12"><use xlink:href="/res/img/svg_sprite.svg#arrow_up"></use></svg>
+					<!-- End of Livesport::Ui::IconCell -->
+				</span>
+			</div>
+			<div class="e-ui-pagination__load-more-wrap">
+							<button class="e-ui-pagination__load-more btn btn-secondary" data-url="/api/articles-more.php?location=competition&locationID=19&locationID2 = 0&list=2" type="button">15 dalších...</button>
+				<!-- Start of Livesport::Ui::LoaderCell (block l-u-loader) -->
+				<div class="l-ui-loader e-ui-pagination__loader"></div>
+				<!-- End of Livesport::Ui::LoaderCell -->
+							</div>
+			<div class="e-ui-pagination__pagination">
+				<ul class="e-ui-pagination__pagination-ul">
+					<li class="e-ui-pagination__pagination-li">
+											<span class="e-ui-pagination__pagination-chevron">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_right l-ui-icon--rotate" style="width: 8px; height: 14px" viewBox="0 0 8 14"><use xlink:href="/res/img/svg_sprite.svg#chevron_right"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</span>
+											</li>
+											<li class="e-ui-pagination__pagination-li">
+							<span class="e-ui-pagination__pagination-page e-ui-pagination__pagination-page--active">1</span>
+						</li>
+												<li class="e-ui-pagination__pagination-li">
+							<a class="e-ui-pagination__pagination-page e-ui-pagination__pagination-page--link" href="/fortuna-liga-cz/?list=2">2</a>
+						</li>
+												<li class="e-ui-pagination__pagination-li">
+							<a class="e-ui-pagination__pagination-page e-ui-pagination__pagination-page--link" href="/fortuna-liga-cz/?list=3">3</a>
+						</li>
+												<li class="e-ui-pagination__pagination-li">
+							<a class="e-ui-pagination__pagination-page e-ui-pagination__pagination-page--link" href="/fortuna-liga-cz/?list=4">4</a>
+						</li>
+												<li class="e-ui-pagination__pagination-li">
+							<a class="e-ui-pagination__pagination-page e-ui-pagination__pagination-page--link" href="/fortuna-liga-cz/?list=5">5</a>
+						</li>
+											<li class="e-ui-pagination__pagination-li">
+						<span class="e-ui-pagination__pagination-dots">&hellip;</span>
+					</li>
+										<li class="e-ui-pagination__pagination-li">
+											<a class="e-ui-pagination__pagination-chevron e-ui-pagination__pagination-chevron--link" href="/fortuna-liga-cz/?list=2">
+							<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+							<svg class="l-ui-icon l-ui-icon--chevron_right" style="width: 8px; height: 14px" viewBox="0 0 8 14"><use xlink:href="/res/img/svg_sprite.svg#chevron_right"></use></svg>
+							<!-- End of Livesport::Ui::IconCell -->
+						</a>
+											</li>
+				</ul>
+			</div>
 		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/bucha-prodlouzil-v-plzni-smlouvu-do-cervna-2024-511313/">
-				<img src="/res/img/news/KbYECXYj-88irGk05_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
+		<!-- End of Eurofotbal::Ui::PaginationCell -->
 		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/bucha-prodlouzil-v-plzni-smlouvu-do-cervna-2024-511313/" title="">Bucha prodloužil v Plzni smlouvu do června 2024</a></h2>
-			<div class="article-perex"> Třiadvacetiletý záložník Pavel Bucha prodloužil s Plzní smlouvu o další dva roky do června 2024. Viktoria o tom informovala na svém webu. <a href="/clanky/bucha-prodlouzil-v-plzni-smlouvu-do-cervna-2024-511313/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">31.08.</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/bucha-prodlouzil-v-plzni-smlouvu-do-cervna-2024-511313/#forum" class="forumbubble" data-fid="908029">6 komentářů</a>
-		</div>
-		<div class="cl"></div>
-	</div>
-	<div class="box green tran cols per">
-		<div class="col l tran">
-			<div class="img w116"><a href="/clanky/hlavaty-bude-z-plzne-hostovat-v-boleslavi-matejka-v-pardubicich-511300/">
-				<img src="/res/img/news/UoJe0f89-YL96BYus_3.jpg" alt="">
-				<div class="b">&nbsp;</div>
-			</a></div>
-		</div>
-		<div class="sep">&nbsp;</div>
-		<div class="col r tran">
-			<h2 class="lab small"><a href="/clanky/hlavaty-bude-z-plzne-hostovat-v-boleslavi-matejka-v-pardubicich-511300/" title="">Hlavatý bude z Plzně hostovat v Boleslavi, Matějka v Pardubicích</a></h2>
-			<div class="article-perex">Z Plzně odešli na roční hostování třiadvacetiletý záložník Michal Hlavatý a stejně starý útočník Lukáš Matějka. Hlavatý posílil Mladou Boleslav, Matějka zase Pardubice. Viktoria o tom informovala na svém webu. <a href="/clanky/hlavaty-bude-z-plzne-hostovat-v-boleslavi-matejka-v-pardubicich-511300/" title="" class="button-r"><span>&nbsp;</span></a></div>
-			<div class="cl h5"></div>
-<span class="bold">31.08.</span> <span class="dl">|</span> <a href="/clanky/aktuality">Aktuality</a> <span class="dl">|</span> <a href="/clanky/hlavaty-bude-z-plzne-hostovat-v-boleslavi-matejka-v-pardubicich-511300/#forum" class="forumbubble" data-fid="908027">35 komentářů</a>
-		</div>
-		<div class="cl"></div>
-	</div>
-<div class="box green">
-	<div class="in c">
-<div class="pageslist"><table cellspacing="0" cellpadding="0"><tr><td><a href="/1-fotbalova-liga/"><span class="pg-bb">&nbsp;</span></a><div class="dl"></div><a href="/1-fotbalova-liga/"><span class="pg-b">&nbsp;</span></a><div class="dl"></div><div class="actual">1</div><div class="dl"></div><a href="/1-fotbalova-liga/?list=2">2</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=3">3</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=4">4</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=5">5</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=6">6</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=7">7</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=8">8</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=9">9</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=10">10</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=11">11</a><div class="dl"></div><a href="/1-fotbalova-liga/?list=2"><span class="pg-f">&nbsp;</span></a><div class="dl"></div><a href="/1-fotbalova-liga/?list=1449"><span class="pg-ff">&nbsp;</span></a><div class="cl"></div>
-</td></tr></table></div>	</div>
-</div>
-<script language="javascript">
-postsLoad('908093,908092,908091,908057,908038,908033,908031,908032,908029,908027', 0);
-</script>
-<div style="text-align: center;" class="mt20"><div class="adsenvelope adstextpad banx-main_square" id="lsadvert-zid-3301" style="width:300px;"><div style="height:250px"><div class="adscontent" id="lsadvert-main_square"><iframe id="lsadvert-zid-3301-iframe" name="banx-main_square" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:300px; height:250px"></iframe></div><div class="adsgraphhori"><div class="adsghori ath-CS"></div></div></div></div></div>
-</div>
-<div class="col-right">
-<div class="box blue"><div class="in">
-<a href="javascript:void(0)" class="sheets-plus" id="bookmarkLink" onclick="bookmarkToggle('competition', 19, 0);">přidat stránku do záložek</a></div></div>
-<div class="cl h10"></div>
-<div class="box green" onmouseover="expresOver();" onmouseout="expresOut();">
-<div class="in">
-<div class="bookmark">
-<span class="it active"><a href="/1-fotbalova-liga/expres-zpravy/" title="">Expres zprávy</a></span>
-<div class="border"></div>
-</div>
-<table cellspacing="0" cellpadding="0" class="rightexpres">
-<col width="25"><col width="193">
-<tr id="rightexpres-title-511667">
-<td class="nw c red w30">16:41</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511667');">Program 9. kola FORTUNA:LIGY</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511667">
-<td colspan="2" class="nbr"><b>Program 9. kola první fotbalové ligy:
-<br>Sobota 25. září:</b>
-<br>16:00 České Budějovice - Karviná, Pardubice - Plzeň, Ostrava - Bohemians 1905,
-<br>19:00 Zlín - Sparta.
-<br><b>Neděle 26. září:</b>
-<br>16:00 Jablonec - Liberec, Mladá Boleslav - Slovácko, Teplice - Olomouc,
-<br>19:00 Slavia - Hradec Králové. <span class="source">(ČTK)</span></td>
-</tr>
-<tr id="rightexpres-title-511633">
-<td class="nw c red w30">10:32</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511633');">Slavii opustil João Felipe</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511633">
-<td colspan="2" class="nbr">João Felipe se dále nebude snažit prosadit ve Slavii Praha. Dvacetiletý brazilský křídelník se chtěl vrátit zpátky do Brazílie, proto došlo k vzájemnému ukončení smlouvy. <span class="source">(twitter.com/slaviamladez)</span></td>
-</tr>
-<tr id="rightexpres-title-511295">
-<td class="nw c w30">31.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511295');">Golenkov podepsal v Olomouci</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511295">
-<td colspan="2" class="nbr">Ruský útočník Jegor Golenkov podepsal na dva roky smlouvu s Olomoucí. Naposledy působil v ruské Samaře, se kterou v minulé sezoně postoupil do nejvyšší soutěže. Přichází jako volný hráč poté, co přesvědčil na zkoušce. <span class="source">(sigmafotbal.cz)</span></td>
-</tr>
-<tr id="rightexpres-title-511242">
-<td class="nw c w30">31.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511242');">Slavia odmítla nabídku za Alijagiće</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511242">
-<td colspan="2" class="nbr">Denis Alijagić prožívá vydařené hostování ve Vlašimi, což neuniklo ani pozornosti zahraničních klubů. Nabídku za talentovaného útočníka Slavie Praha měl podat AC Milán, úřadující český mistr ale prodej mládežnického reprezentanta Bosny a Hercegoviny odmítl. <span class="source">(twitter.com/LudekMadl)</span></td>
-</tr>
-<tr id="rightexpres-title-511050">
-<td class="nw c w30">29.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511050');">FORTUNA:LIGA - výsledky</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511050">
-<td colspan="2" class="nbr">Výsledky dnešních zápasů české ligy: <b>Bohemians 1905 - Teplice 4:2</B> (41. z penalty a 59. z penalty Chramosta, 45+2. Krch, 90+4. Koubek - 22. Mareš, 89. Fortelný), <b>Hradec Králové - Plzeň 1:0</b> (58. Rada), <b>Olomouc - Jablonec 4:0</b> (4. González, 58. Zmrzlý, 73. a 79. Hála), <b>Karviná - Slavia 3:3</b> (27. Papadopulos, 55. Svoboda, 90+1. Zych - 35. Schranz, 45. Kačaraba, 65. Traoré).</td>
-</tr>
-<tr id="rightexpres-title-511070">
-<td class="nw c w30">29.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511070');">Slavia dohrává bez zraněného Kúdely</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511070">
-<td colspan="2" class="nbr">Ondřej Kúdela nedohrál první poločas dnešního zápasu v Karviné, obránce Slavie se v závěru úvodní části zranil a musel střídat.</td>
-</tr>
-<tr id="rightexpres-title-511043">
-<td class="nw c w30">29.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('511043');">Takács má namířeno do Lubinu</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-511043">
-<td colspan="2" class="nbr">Slavii Praha by měl opustit Ladislav Takács, jenž se zřejmě přesune do Polska. Pětadvacetiletý defenzivní univerzál má namířeno na roční hostování s opcí do Zagłębie Lubin. <span class="source">(twitter.com/Eugeniogonza2)</span></td>
-</tr>
-<tr id="rightexpres-title-510970">
-<td class="nw c w30">28.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('510970');">Zajíc na odchodu z Baníku</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-510970">
-<td colspan="2" class="nbr">Loni desetigólový útočník Tomáš Zajíc nemá v Ostravě na růžích ustláno a po příchodu Jiřího Klímy či Ladislava Almásiho definitivně míří pryč. Potvrdil to kouč Ondřej Smetana po utkání s Mladou Boleslaví, kdy se Zajíc opět nevešel ani na lavičku. <span class="source">(isport.cz)</span></td>
-</tr>
-<tr id="rightexpres-title-510964">
-<td class="nw c w30">28.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('510964');">Sparta přivádí Haraslína</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-510964">
-<td colspan="2" class="nbr">Univerzální slovenský křídelník či krajní obránce Lukáš Haraslín by již v pondělí mohl být představen pražskou Spartou. Ta účastníka nedávného Eura přivádí ze Sassuola na hostování s opcí. <span class="source">(gianlucadimarzio.com)</span></td>
-</tr>
-<tr id="rightexpres-title-510957">
-<td class="nw c w30">28.08.</td>
-<td class="nbr"><a href="javascript: void(0);" onclick="expresShow('510957');">Horejš: Spartu jsme hodně potrápili</a></td>
-</tr>
-<tr class="rightexpres-text none" id="rightexpres-text-510957">
-<td colspan="2" class="nbr">Kouč Českých Budějovic David Horejš byl i přes prohru 0:1 po výkonu se Spartou spokojený: <i>"Náš výkon byl velice slušný, Spartu jsme hodně potrápili. Abychom mohli pomýšlet na lepší výsledek, museli bychom vstřelit branku. V předchozích zápasech, v nichž jsme tady bodovali, jsme byli produktivní. Možnosti, které jsme dnes měli, jsme nedokázali dotáhnout, a to zápas rozhodlo. Sparta rozhodla ze standardní situace. To mě mrzí hodně, protože jsme se na to hodně připravovali. Sparta působila lépe v poslední třetině, byla tam vidět větší kvalita. Z naší strany tam byly nadstandardní výkony od některých hráčů. V přechodové fáze jsme působili jistě, byli jsme kvalitní na míči. Ale zápas se rozhoduje ve vápně a v poslední třetině a tam jsme byli bohužel hodně zbrklí. Výkon se dá hodnotit pozitivně, ale výsledek pro nás bohužel nic."</i> <span class="source">(ČTK)</span></td>
-</tr>
-</table>
-<div class="cl h5"></div>
-<a href="/1-fotbalova-liga/expres-zpravy/" title="" class="but w120 fr"><span class="l"></span><span class="i">Další expres zprávy</span><span class="r"></span></a>
-<div class="cl"></div>
-</div>
-</div>
-<div class="cl h10"></div>
-<div class="adsenvelope adstextpad banx-square" id="lsadvert-zid-1150" style="width:300px;"><div style="height:250px"><div class="adscontent" id="lsadvert-square"><iframe id="lsadvert-zid-1150-iframe" name="banx-square" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:300px; height:250px"></iframe></div><div class="adsgraphhori"><div class="adsghori ath-CS"></div></div></div></div><div class="box green"><div class="in">
-<div class="bookmark">
-<span id="bookmark_100_title_1" class="it active"><a href="#" onclick="return bookmarkSetActiveList('100', 1);">základní část</a></span>
-<span class="dl"></span>
-<span id="bookmark_100_title_2" class="it"><a href="#" onclick="return bookmarkSetActiveList('100', 2);">o titul</a></span>
-<span class="dl"></span>
-<span id="bookmark_100_title_3" class="it"><a href="#" onclick="return bookmarkSetActiveList('100', 3);">o udržení</a></span>
-<span class="dl"></span>
-	<div class="border"></div>
-</div>
-<div id="bookmark_100_contents_1">
-<table cellspacing="0" cellpadding="0" class="leaguetable vam">
-<tr><th class="pos">&nbsp;</th><th colspan="2">Tým</th><th class="c">Z</th><th class="c nbr">B</th></tr>
-<tr><td class="pos" style="background: #DCEBC5;" title="skupina o titul"><span class="rank">1.</span></td><td class="logo"><img src="/res/img/team-logo/4zqe1Nl5-fuvfH3PL.png"></td><td class=""><a href="/kluby/cesko/sparta-praha/">Sparta Praha</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">16</td></tr>
-<tr><td class="pos" style="background: #DCEBC5;" title="skupina o titul"><span class="rank">2.</span></td><td class="logo"><img src="/res/img/team-logo/Kb3QvF8a-6sEsOLMh.png"></td><td class=""><a href="/kluby/cesko/viktoria-plzen/">Viktoria Plzeň</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">15</td></tr>
-<tr><td class="pos" style="background: #DCEBC5;" title="skupina o titul"><span class="rank">3.</span></td><td class="logo"><img src="/res/img/team-logo/U5IeDDAa-EHjrWR8F.png"></td><td class=""><a href="/kluby/cesko/slavia-praha/">Slavia Praha</a></td><td class="nw c c1">5</td><td class="nw nbr c c1">13</td></tr>
-<tr><td class="pos" style="background: #DCEBC5;" title="skupina o titul"><span class="rank">4.</span></td><td class="logo"><img src="/res/img/team-logo/AuLLBNSg-vZQvv0lr.png"></td><td class=""><a href="/kluby/cesko/1-fc-slovacko/">1. FC Slovácko</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">13</td></tr>
-<tr><td class="pos" style="background: #DCEBC5;" title="skupina o titul"><span class="rank">5.</span></td><td class="logo"><img src="/res/img/team-logo/hIlpqziM-Q9RRRo5a.png"></td><td class=""><a href="/kluby/cesko/banik-ostrava/">Baník Ostrava</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">12</td></tr>
-<tr><td class="pos" style="background: #DCEBC5;" title="skupina o titul"><span class="rank">6.</span></td><td class="logo"><img src="/res/img/team-logo/hd1BQXiM-thd8iK6o.png"></td><td class=""><a href="/kluby/cesko/sigma-olomouc/">Sigma Olomouc</a></td><td class="nw c c1">5</td><td class="nw nbr c c1">10</td></tr>
-<tr><td class="pos" style="background: #E4EFFF;" title="o 7.-10. místo"><span class="rank">7.</span></td><td class="logo"><img src="/res/img/team-logo/YqOFxRXA-Y5ugOelE.png"></td><td class=""><a href="/kluby/cesko/fastav-zlin/">Fastav Zlín</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">9</td></tr>
-<tr><td class="pos" style="background: #E4EFFF;" title="o 7.-10. místo"><span class="rank">8.</span></td><td class="logo"><img src="/res/img/team-logo/pUeNLmkl-AssAw0sA.png"></td><td class=""><a href="/kluby/cesko/fk-mlada-boleslav/">FK Mladá Boleslav</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">7</td></tr>
-<tr><td class="pos" style="background: #E4EFFF;" title="o 7.-10. místo"><span class="rank">9.</span></td><td class="logo"><img src="/res/img/team-logo/46AMCCj5-4dxpBJMG.png"></td><td class=""><a href="/kluby/cesko/dynamo-ceske-budejovice/">Dynamo České Budějovice</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">7</td></tr>
-<tr><td class="pos" style="background: #E4EFFF;" title="o 7.-10. místo"><span class="rank">10.</span></td><td class="logo"><img src="/res/img/team-logo/fN6sahVg-WWuhGv47.png"></td><td class=""><a href="/kluby/cesko/bohemians-praha-1905/">Bohemians Praha 1905</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">6</td></tr>
-<tr><td class="pos" style="background: #F9D4CC;" title="skupina o udržení"><span class="rank">11.</span></td><td class="logo"><img src="/res/img/team-logo/QPbN5bj5-YVdbVGED.png"></td><td class=""><a href="/kluby/cesko/fc-hradec-kralove/">FC Hradec Králové</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">6</td></tr>
-<tr><td class="pos" style="background: #F9D4CC;" title="skupina o udržení"><span class="rank">12.</span></td><td class="logo"><img src="/res/img/team-logo/MZLFU98a-biPYe2Z2.png"></td><td class=""><a href="/kluby/cesko/fk-pardubice/">FK Pardubice</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">5</td></tr>
-<tr><td class="pos" style="background: #F9D4CC;" title="skupina o udržení"><span class="rank">13.</span></td><td class="logo"><img src="/res/img/team-logo/hW9QzVBG-dMNreo7H.png"></td><td class=""><a href="/kluby/cesko/fk-jablonec/">FK Jablonec</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">5</td></tr>
-<tr><td class="pos" style="background: #F9D4CC;" title="skupina o udržení"><span class="rank">14.</span></td><td class="logo"><img src="/res/img/team-logo/SEHNnGml-lAaltwJ8.png"></td><td class=""><a href="/kluby/cesko/mfk-karvina/">MFK Karviná</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">3</td></tr>
-<tr><td class="pos" style="background: #F9D4CC;" title="skupina o udržení"><span class="rank">15.</span></td><td class="logo"><img src="/res/img/team-logo/zcgEuC9a-8EW7UJ8O.png"></td><td class=""><a href="/kluby/cesko/fk-teplice/">FK Teplice</a></td><td class="nw c c1">6</td><td class="nw nbr c c1">3</td></tr>
-<tr><td class="pos nbb" style="background: #F9D4CC;" title="skupina o udržení"><span class="rank">16.</span></td><td class="logo nbb"><img src="/res/img/team-logo/O2zfRX7r-pKLugMV2.png"></td><td class=" nbb"><a href="/kluby/cesko/slovan-liberec/">Slovan Liberec</a></td><td class="nw c c1 nbb">6</td><td class="nw nbr c c1 nbb">1</td></tr>
-</table>
+			<div class="ad-mt-40 ad-bottom-container">
+<div class="desktop-tablet-only px-ads px-ads--rectangle"><div id="rectangle1"></div></div>
+<div class="mobile-only px-ads px-ads--rectangle300"><div id="mobile_rectangle1"></div></div>
 
 </div>
-<div id="bookmark_100_contents_2" class="none">
-<table cellspacing="0" cellpadding="0" class="leaguetable vam">
-<tr><th class="pos">&nbsp;</th><th colspan="2">Tým</th><th class="c">Z</th><th class="c nbr">B</th></tr>
-<tr><td colspan="5" class="nodata">tabulka je prázdná</td></tr>
-</table>
+		</main>
+				<aside class="e-layout__aside">
+						<!-- Start of Eurofotbal::Ui::UnderlinedTitleCell (block l-u-underlined-title) -->
+			<div class="l-ui-underlined-title"><h3 class="l-ui-underlined-title__title"><span class="l-ui-underlined-title__underline">Expres zprávy</span></h3></div>
+			<!-- End of Eurofotbal::Ui::UnderlinedTitleCell -->
+						<!-- Start of Eurofotbal::Shorts::ExpandableListCell (block e-s-expandable-list) -->
+			<div class="e-shorts-expandable-list">
+			<ul class="e-shorts-expandable-list__ul">
+
+		<li class="e-shorts-expandable-list__li e-shorts-expandable-list__li--highlighted">
+			<div class="e-shorts-expandable-list__time">13:42</div>
+			<div class="e-shorts-expandable-list__title">Teplice - Žižkov 2:1</div>
+			<div class="e-shorts-expandable-list__content">
+				<p class="e-shorts-expandable-list__perex"><p><b>Přípravné utkání v Blšanech:</p>
+
+<p>FK Teplice - Viktoria Žižkov 2:1 (0:1)</p>
+
+<p>Branky:</b> 47. a 88. Fila - 7. Oravec.</p>
+
+<p><b>Sestava Teplic:</p>
+
+<p>I. poločas:</b> Němeček - Knapík, Chaloupek, Mičevič - Křišťan - Radosta, Bzura, Havelka, Trnovec - Vachoušek, Gning.</p>
+
+<p><b>II. poločas:</b> Grigar - Bílek, Cykalo, Dramé - Jukl - Urbanec, Trubač, Beránek, Krsmanovič - Fila, Jásir. Trenér: Frťala.</p></p>
+				<span class="e-shorts-expandable-list__source">ČTK</span>
+			</div>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--chevron_down e-shorts-expandable-list__ico" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</li>
+
+
+		<li class="e-shorts-expandable-list__li e-shorts-expandable-list__li--highlighted">
+			<div class="e-shorts-expandable-list__time">13:40</div>
+			<div class="e-shorts-expandable-list__title">Trmal v přípravě Mladé Boleslavi</div>
+			<div class="e-shorts-expandable-list__content">
+				<p class="e-shorts-expandable-list__perex">Do přípravy Mladé Boleslavi se zapojil Matouš Trmal, který je do roku 2025 pod smlouvu s Vitórií Guimarães SC. Působení 24letého brankáře ve středočeském klubu je předmětem dalšího jednání. Trenéru Marku Kuličovi se hlásil rovněž Martin Suchomel, jemuž bude pokračovat hostování ze Sparty.</p>
+				<span class="e-shorts-expandable-list__source">twitter.com/fkmladaboleslav</span>
+			</div>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--chevron_down e-shorts-expandable-list__ico" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</li>
+
+
+		<li class="e-shorts-expandable-list__li e-shorts-expandable-list__li--highlighted">
+			<div class="e-shorts-expandable-list__time">12:43</div>
+			<div class="e-shorts-expandable-list__title">Slovan Liberec - Varnsdorf 4:0</div>
+			<div class="e-shorts-expandable-list__content">
+				<p class="e-shorts-expandable-list__perex"><p><b>Přípravné utkání v Mnichově Hradišti:</p>
+
+<p>Slovan Liberec - Varnsdorf 4:0 (0:0).</p>
+
+<p>Branky:</b> 70. a 85. Hudák, 59. Doumbia, 67. Tupta.</p>
+
+<p><b>I. poločas:</b> Bačkovský - Fukala, Plechatý, Chaluš, Govaers, Preisler - Polyák (31. Hudák), Lexa (31. Lehozcki) - Frýdek, Rabušic, Penner.</p>
+
+<p><b>II. poločas:</b> Bačkovský - Lehoczki, Prebsl, Purzitidis - Mikula, Varfolomejev, Doumbia, Višinský, Beran - Hudák, Tupta. Trenér: Kozel.</p></p>
+				<span class="e-shorts-expandable-list__source">ČTK</span>
+			</div>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--chevron_down e-shorts-expandable-list__ico" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</li>
+
+
+		<li class="e-shorts-expandable-list__li">
+			<div class="e-shorts-expandable-list__time">04.07.</div>
+			<div class="e-shorts-expandable-list__title">Sparta prodala Hanouska do Turecka</div>
+			<div class="e-shorts-expandable-list__content">
+				<p class="e-shorts-expandable-list__perex">Matěj Hanousek znovu oblékne dres MKE Ankaragücü. Obránce zde na jaře hostoval ze Sparty a turecký klub nyní oznámil přestup, s fotbalistou podepsal jednoletý kontrakt s opcí.</p>
+				<span class="e-shorts-expandable-list__source">ankaragucu.org.tr</span>
+			</div>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--chevron_down e-shorts-expandable-list__ico" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</li>
+
+
+		<li class="e-shorts-expandable-list__li">
+			<div class="e-shorts-expandable-list__time">04.07.</div>
+			<div class="e-shorts-expandable-list__title">WSG Tirol - FK Jablonec 1:2</div>
+			<div class="e-shorts-expandable-list__content">
+				<p class="e-shorts-expandable-list__perex"><p><b>Přípravné utkání ve Wattensu (Rakousko):</p>
+
+<p>WSG Tirol - FK Jablonec 1:2 (0:2).</p>
+
+<p>Branky Jablonce:</b> 19. Drchal, 40. Kratochvíl.</p>
+
+<p><b>Sestava Jablonce:</b> Hanuš - Slávik, Tekijaški (73. Smejkal), Hurtado (60. Martinec), Souček - Pleštil (60. Schön), Považanec (73. Hübschman), Kratochvíl (73. Nykrín), Čanturišvili (73. Akpudje) - Chramosta (60. Náprstek), Drchal (65. Ikaunieks). Trenér: Látal.</p></p>
+				<span class="e-shorts-expandable-list__source">ČTK</span>
+			</div>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--chevron_down e-shorts-expandable-list__ico" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</li>
+
+
+		<li class="e-shorts-expandable-list__li">
+			<div class="e-shorts-expandable-list__time">04.07.</div>
+			<div class="e-shorts-expandable-list__title">Penner přestoupil do Liberce</div>
+			<div class="e-shorts-expandable-list__content">
+				<p class="e-shorts-expandable-list__perex">Slovan Liberec dotáhl příchod Nicolase Pennera z Českých Budějovic. Dvaadvacetiletý záložník, na jehož přestupu se měla finančně podílet Slavia, podepsal na severu Čech tříletou smlouvu.</p>
+				<span class="e-shorts-expandable-list__source">twitter.com/FCSlovanLiberec</span>
+			</div>
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--chevron_down e-shorts-expandable-list__ico" style="width: 9px; height: 6px" viewBox="0 0 9 6"><use xlink:href="/res/img/svg_sprite.svg#chevron_down"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</li>
+
+		</ul>
+<div class="text-end mt-g"><a class="fw-bold text-primary" href="/fortuna-liga-cz/expres-zpravy/">Další expres zprávy</a></div>
+			</div>
+			<!-- End of Eurofotbal::Shorts::ExpandableListCell -->
+			<div class="ad-mt-40">
+<div class="adsenvelope adstextpad banx-d_rs1" id="lsadvert-zid-5995" style="width:300px;"><div style="height:250px"><div class="adscontent" id="lsadvert-d_rs1"><iframe id="lsadvert-zid-5995-iframe" name="banx-d_rs1" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:300px; height:250px"></iframe></div><div class="adsgraphhori"><div class="adsghori ath-CS"></div></div></div></div>
+</div>
+<div class="mt-40">
+<!-- Start of Eurofotbal::Ui::UnderlinedTitleCell (block l-u-underlined-title) -->
+<div class="l-ui-underlined-title"><h3 class="l-ui-underlined-title__title"><span class="l-ui-underlined-title__underline">Tabulky</span></h3></div>
+<!-- End of Eurofotbal::Ui::UnderlinedTitleCell -->
+<!-- Start of Eurofotbal::Ui::TabsCell (block e-u-tabs) -->
+<div class="e-ui-tabs e-ui-tabs--overflowable e-js-ui-tabs--overflowable">
+<ul class="nav nav-tabs e-ui-tabs__list e-js-ui-tabs__list" role="tablist">
+<li class="nav-item e-ui-tabs__item" role="presentation"><button aria-controls="tabs-groupsidetable-tab1" aria-selected="true"  class="nav-link active" data-bs-target="#tabs-groupsidetable-tab1" data-bs-toggle="tab" id="tabs-btn-groupsidetable-tab1" role="tab" type="button">základní část</button></li>
+<li class="nav-item e-ui-tabs__item" role="presentation"><button aria-controls="tabs-groupsidetable-tab2" aria-selected="false"  class="nav-link" data-bs-target="#tabs-groupsidetable-tab2" data-bs-toggle="tab" id="tabs-btn-groupsidetable-tab2" role="tab" type="button">o titul</button></li>
+<li class="nav-item e-ui-tabs__item" role="presentation"><button aria-controls="tabs-groupsidetable-tab3" aria-selected="false"  class="nav-link" data-bs-target="#tabs-groupsidetable-tab3" data-bs-toggle="tab" id="tabs-btn-groupsidetable-tab3" role="tab" type="button">o udržení</button></li>
+</ul>
+<div class="e-ui-tabs__gradient e-ui-tabs__gradient--left e-js-ui-tabs__gradient--left e-js-ui-tabs__gradient--hidden"></div>
+<div class="e-ui-tabs__gradient e-ui-tabs__gradient--right e-js-ui-tabs__gradient--right e-js-ui-tabs__gradient--hidden"></div>
+</div>
+<!-- End of Eurofotbal::Ui::TabsCell -->
+<div class="tab-content">
+<div aria-labelledby="tabs-btn-groupsidetable-tab1" class="tab-pane fade show active" id="tabs-groupsidetable-tab1" role="tabpanel" tabindex="0">
+<!-- Start of Eurofotbal::Tables::TableOverviewCell (block e-t-table-overview) -->
+<div aria-label="Tabulka ligy" class="e-tables-table-overview" role="table">
+<div class="e-tables-table-overview__row e-tables-table-overview__row--header" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="columnheader"></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-154" role="columnheader">Tým</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="columnheader">Z</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="columnheader">B</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/1-fc-slovacko/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--green" title="skupina o titul">1</span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/0zzzX9Sq-OxJDt8W9.png" data-srcset="/res/img/team-logo/0zzzX9Sq-OxJDt8W9.png 1x, /res/img/team-logo/ltpTJQhQ-OxJDt8W9.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">1. FC Slovácko</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/fc-hradec-kralove/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--green" title="skupina o titul"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/K40L3J76-t8KBKiFM.png" data-srcset="/res/img/team-logo/K40L3J76-t8KBKiFM.png 1x, /res/img/team-logo/hjIymzRc-t8KBKiFM.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">FC Hradec Králové</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/bohemians-praha-1905/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--green" title="skupina o titul"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/AXiFIwSq-4KnmZ2cm.png" data-srcset="/res/img/team-logo/AXiFIwSq-4KnmZ2cm.png 1x, /res/img/team-logo/plH75fhQ-4KnmZ2cm.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Bohemians Praha 1905</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/dynamo-ceske-budejovice/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--green" title="skupina o titul"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/SnFM95A6-OvC9uFrA.png" data-srcset="/res/img/team-logo/SnFM95A6-OvC9uFrA.png 1x, /res/img/team-logo/zk8vtzj9-OvC9uFrA.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Dynamo České Budějovice</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/fk-jablonec/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--green" title="skupina o titul"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/8tebfG86-6mFrAMe4.png" data-srcset="/res/img/team-logo/8tebfG86-6mFrAMe4.png 1x, /res/img/team-logo/6F7EwXRc-6mFrAMe4.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">FK Jablonec</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/slovan-liberec/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--green" title="skupina o titul"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/25m3lJBN-K4bwIg6L.png" data-srcset="/res/img/team-logo/25m3lJBN-K4bwIg6L.png 1x, /res/img/team-logo/ETpKXZUE-K4bwIg6L.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Slovan Liberec</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/fk-mlada-boleslav/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--blue" title="playoff o sedmé místo"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/Q1xUeLWH-CzkWjcLk.png" data-srcset="/res/img/team-logo/Q1xUeLWH-CzkWjcLk.png 1x, /res/img/team-logo/ngGnSkCK-CzkWjcLk.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">FK Mladá Boleslav</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/banik-ostrava/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--blue" title="playoff o sedmé místo"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/YBbGF7R0-KGvKypjo.png" data-srcset="/res/img/team-logo/YBbGF7R0-KGvKypjo.png 1x, /res/img/team-logo/61nYox73-KGvKypjo.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Baník Ostrava</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/viktoria-plzen/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--blue" title="playoff o sedmé místo"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/bqVYEnjT-bVBL6l7j.png" data-srcset="/res/img/team-logo/bqVYEnjT-bVBL6l7j.png 1x, /res/img/team-logo/8tiFsHOt-bVBL6l7j.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Viktoria Plzeň</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/sigma-olomouc/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--blue" title="playoff o sedmé místo"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/zJBsc5S0-tSvbp7JC.png" data-srcset="/res/img/team-logo/zJBsc5S0-tSvbp7JC.png 1x, /res/img/team-logo/Mcp0TZ73-2ytfom46.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Sigma Olomouc</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/slavia-praha/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--orange" title="skupina o udržení"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/nsu4mohT-8nl9JmVC.png" data-srcset="/res/img/team-logo/nsu4mohT-8nl9JmVC.png 1x, /res/img/team-logo/rkGqGFQt-WOk5KTF6.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Slavia Praha</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/sparta-praha/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--orange" title="skupina o udržení"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/6eqSK8oe-lWOFh0RD.png" data-srcset="/res/img/team-logo/6eqSK8oe-lWOFh0RD.png 1x, /res/img/team-logo/IJtq4P4n-lWOFh0RD.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">Sparta Praha</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/fk-teplice/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--orange" title="skupina o udržení"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/6sIqeaDN-tMZZuXYk.png" data-srcset="/res/img/team-logo/6sIqeaDN-tMZZuXYk.png 1x, /res/img/team-logo/I5F0vGWE-tMZZuXYk.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">FK Teplice</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/fc-trinity-zlin/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--orange" title="skupina o udržení"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/zgIIQLPq-M31BfaBC.png" data-srcset="/res/img/team-logo/zgIIQLPq-M31BfaBC.png 1x, /res/img/team-logo/OCsBDxjQ-M31BfaBC.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">FC Trinity Zlín</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/mfk-karvina/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--orange" title="skupina o udržení"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/nNAX91iT-6oOqZrmN.png" data-srcset="/res/img/team-logo/nNAX91iT-6oOqZrmN.png 1x, /res/img/team-logo/K8SmgIAK-6oOqZrmN.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">MFK Karviná</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+<div class="e-tables-table-overview__row" onclick="window.location='/kluby/cesko/fk-pardubice/';" role="row">
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--rank" role="cell"><span class="e-tables-table-overview__rank e-tables-table-overview__bg--orange" title="skupina o udržení"></span></div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--image" role="cell">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/b7y5m96k-zTKvvVaA.png" data-srcset="/res/img/team-logo/b7y5m96k-zTKvvVaA.png 1x, /res/img/team-logo/WhgLWPPt-zTKvvVaA.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--expand-min-120" role="cell">FK Pardubice</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+<div class="e-tables-table-overview__cell e-tables-table-overview__cell--points e-tables-table-overview__cell--centered" role="cell">0</div>
+</div>
+</div>
+<!-- End of Eurofotbal::Tables::TableOverviewCell -->
+</div>
+<div aria-labelledby="tabs-btn-groupsidetable-tab2" class="tab-pane fade" id="tabs-groupsidetable-tab2" role="tabpanel" tabindex="0">
+<div class="mt-10">tabulka je prázdná</div>
+</div>
+<div aria-labelledby="tabs-btn-groupsidetable-tab3" class="tab-pane fade" id="tabs-groupsidetable-tab3" role="tabpanel" tabindex="0">
+<div class="mt-10">tabulka je prázdná</div>
+</div>
+</div>
+<div class="text-end mt-3"><a class="fw-bold text-primary" href="/fortuna-liga-cz/2023-2024/tabulky/">Podrobné tabulky </a></div>
+</div>
+<div class="ad-mt-40">
+<div class="adsenvelope adstextpad banx-d_rs2" id="lsadvert-zid-5996" style="width:300px;"><div style="height:250px"><div class="adscontent" id="lsadvert-d_rs2"><iframe id="lsadvert-zid-5996-iframe" name="banx-d_rs2" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:300px; height:250px"></iframe></div><div class="adsgraphhori"><div class="adsghori ath-CS"></div></div></div></div>
+</div>
+<div class="ad-mt-40">
+<div class="desktop-only px-ads px-ads--halfpage"><div id="halfpage1"></div></div>
 
 </div>
-<div id="bookmark_100_contents_3" class="none">
-<table cellspacing="0" cellpadding="0" class="leaguetable vam">
-<tr><th class="pos">&nbsp;</th><th colspan="2">Tým</th><th class="c">Z</th><th class="c nbr">B</th></tr>
-<tr><td colspan="5" class="nodata">tabulka je prázdná</td></tr>
-</table>
+<div class="mt-40">
+<!-- Start of Eurofotbal::Ui::UnderlinedTitleCell (block l-u-underlined-title) -->
+<div class="l-ui-underlined-title"><h3 class="l-ui-underlined-title__title"><span class="l-ui-underlined-title__underline">Poslední výsledky</span></h3></div>
+<!-- End of Eurofotbal::Ui::UnderlinedTitleCell -->
+<!-- Start of Eurofotbal::Results::SidebarOverviewCell (block e-r-sidebar-overview) -->
+<div class="e-results-sidebar-overview">
+nenalezeny žádné zápasy</div>
+<!-- End of Eurofotbal::Results::SidebarOverviewCell -->
+</div>
+<div class="mt-40">
+<!-- Start of Eurofotbal::Ui::UnderlinedTitleCell (block l-u-underlined-title) -->
+<div class="l-ui-underlined-title"><h3 class="l-ui-underlined-title__title"><span class="l-ui-underlined-title__underline">Následující zápasy</span></h3></div>
+<!-- End of Eurofotbal::Ui::UnderlinedTitleCell -->
+<!-- Start of Eurofotbal::Results::SidebarOverviewCell (block e-r-sidebar-overview) -->
+<div class="e-results-sidebar-overview">
+<!-- Start of Eurofotbal::Results::SidebarOverviewCell (block e-r-sidebar-overview) -->
+<div class="e-results-sidebar-overview">
+<div class="e-results-sidebar-overview__contents">
+<div class="e-results-sidebar-overview__content e-results-sidebar-overview__content--current">
+<div class="e-results-sidebar-overview__results-title"><span class="e-results-sidebar-overview__results-title-label small">22.07.</span></div>
+<div class="e-results-sidebar-overview__results">
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/fk-pardubice-bohemians-praha-1905-849678/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/b7y5m96k-zTKvvVaA.png" data-srcset="/res/img/team-logo/b7y5m96k-zTKvvVaA.png 1x, /res/img/team-logo/WhgLWPPt-zTKvvVaA.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">FK Pardubice</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/AXiFIwSq-4KnmZ2cm.png" data-srcset="/res/img/team-logo/AXiFIwSq-4KnmZ2cm.png 1x, /res/img/team-logo/plH75fhQ-4KnmZ2cm.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Bohemians</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/sparta-praha-sigma-olomouc-849680/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/6eqSK8oe-lWOFh0RD.png" data-srcset="/res/img/team-logo/6eqSK8oe-lWOFh0RD.png 1x, /res/img/team-logo/IJtq4P4n-lWOFh0RD.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Sparta Praha</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/zJBsc5S0-tSvbp7JC.png" data-srcset="/res/img/team-logo/zJBsc5S0-tSvbp7JC.png 1x, /res/img/team-logo/Mcp0TZ73-2ytfom46.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Olomouc</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/mfk-karvina-fc-trinity-zlin-849682/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/nNAX91iT-6oOqZrmN.png" data-srcset="/res/img/team-logo/nNAX91iT-6oOqZrmN.png 1x, /res/img/team-logo/K8SmgIAK-6oOqZrmN.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">MFK Karviná</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/zgIIQLPq-M31BfaBC.png" data-srcset="/res/img/team-logo/zgIIQLPq-M31BfaBC.png 1x, /res/img/team-logo/OCsBDxjQ-M31BfaBC.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">FC Zlín</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/fk-teplice-viktoria-plzen-849684/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/6sIqeaDN-tMZZuXYk.png" data-srcset="/res/img/team-logo/6sIqeaDN-tMZZuXYk.png 1x, /res/img/team-logo/I5F0vGWE-tMZZuXYk.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">FK Teplice</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/bqVYEnjT-bVBL6l7j.png" data-srcset="/res/img/team-logo/bqVYEnjT-bVBL6l7j.png 1x, /res/img/team-logo/8tiFsHOt-bVBL6l7j.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Plzeň</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/slovan-liberec-banik-ostrava-849686/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/25m3lJBN-K4bwIg6L.png" data-srcset="/res/img/team-logo/25m3lJBN-K4bwIg6L.png 1x, /res/img/team-logo/ETpKXZUE-K4bwIg6L.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Liberec</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/YBbGF7R0-KGvKypjo.png" data-srcset="/res/img/team-logo/YBbGF7R0-KGvKypjo.png 1x, /res/img/team-logo/61nYox73-KGvKypjo.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Ostrava</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/slavia-praha-fc-hradec-kralove-849688/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/nsu4mohT-8nl9JmVC.png" data-srcset="/res/img/team-logo/nsu4mohT-8nl9JmVC.png 1x, /res/img/team-logo/rkGqGFQt-WOk5KTF6.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Slavia Praha</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/K40L3J76-t8KBKiFM.png" data-srcset="/res/img/team-logo/K40L3J76-t8KBKiFM.png 1x, /res/img/team-logo/hjIymzRc-t8KBKiFM.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Hradec Kr.</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/1-fc-slovacko-dynamo-ceske-budejovice-849690/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/0zzzX9Sq-OxJDt8W9.png" data-srcset="/res/img/team-logo/0zzzX9Sq-OxJDt8W9.png 1x, /res/img/team-logo/ltpTJQhQ-OxJDt8W9.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Slovácko</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/SnFM95A6-OvC9uFrA.png" data-srcset="/res/img/team-logo/SnFM95A6-OvC9uFrA.png 1x, /res/img/team-logo/zk8vtzj9-OvC9uFrA.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Č. Buděj.</div>
+</div>
+</a>
+<a class="e-results-sidebar-overview__result" href="/fortuna-liga-cz/2023-2024/preview/fk-mlada-boleslav-fk-jablonec-849692/">
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--left">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/Q1xUeLWH-CzkWjcLk.png" data-srcset="/res/img/team-logo/Q1xUeLWH-CzkWjcLk.png 1x, /res/img/team-logo/ngGnSkCK-CzkWjcLk.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">Ml. Boleslav</div>
+</div>
+<div class="e-results-sidebar-overview__result-date">?</div>
+<div class="e-results-sidebar-overview__result-team e-results-sidebar-overview__result-team--right">
+<div class="e-results-sidebar-overview__result-team-logo">			<!-- Start of Livesport::Ui::ImageCell (block l-u-image) -->
+			<div class="l-ui-image l-ui-image--loading" style="width: 24px; height: 24px">
+				<picture class="l-ui-image__picture">
+					<img alt="" class="l-ui-image__img" data-src="/res/img/team-logo/8tebfG86-6mFrAMe4.png" data-srcset="/res/img/team-logo/8tebfG86-6mFrAMe4.png 1x, /res/img/team-logo/6F7EwXRc-6mFrAMe4.png 2x" />
+				</picture>
+				<span class="l-ui-image__spacer" style="padding-top: 100.0%"></span>
+			</div>
+			<!-- End of Livesport::Ui::ImageCell -->
+			</div>
+<div class="e-results-sidebar-overview__result-team-label">FK Jablonec</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- End of Eurofotbal::Results::SidebarOverviewCell -->
+</div>
+<!-- End of Eurofotbal::Results::SidebarOverviewCell -->
+</div>
+<div class="text-end mt-3"><a class="fw-bold text-primary" href="/fortuna-liga-cz/2023-2024/vysledky-rozlosovani/">Kompletní výsledky</a></div>
+		<div class="mt-40">
+			<!-- Start of Eurofotbal::Ui::UnderlinedTitleCell (block l-u-underlined-title) -->
+			<div class="l-ui-underlined-title"><h3 class="l-ui-underlined-title__title"><span class="l-ui-underlined-title__underline">Anketa</span></h3></div>
+			<!-- End of Eurofotbal::Ui::UnderlinedTitleCell -->
+			<!-- Start of Eurofotbal::Surveys::SidebarFormCell (block e-s-sidebar-form) -->
+			<div class="e-surveys-sidebar-form" data-poll-id="5777">
+<p class="mb-h fw-bold">Vrátí se Zbrojovka Brno za rok do FORTUNA:LIGY?</p>
+<div class="d-grid gap-10">
+<button class="e-surveys-sidebar-form__button btn btn-secondary-sidebar" name="ano" type="submit" onclick="poll_vote(this, 18835); return false;">ano</button>
+<button class="e-surveys-sidebar-form__button btn btn-secondary-sidebar" name="ne" type="submit" onclick="poll_vote(this, 18837); return false;">ne</button>
+</div>
+</div>
+			<!-- End of Eurofotbal::Surveys::SidebarFormCell -->
+		</div>
+				</aside>
+			</div>
+</div>
+<!-- End of Eurofotbal::Leagues::LayoutCell -->
 
+	</div>
+
+	<!-- Start of Eurofotbal::Ui::FooterCell (block e-u-footer) -->
+	<footer class="e-ui-footer small e-ui-footer--sticky-mobile e-ui-footer--sticky-tablet">
+		<div class="container-fluid">
+			<div class="e-ui-footer__top">
+				<a class="e-ui-footer__logo-a" href="/"><img alt="EuroFotbal" class="e-ui-footer__logo-img" height="22" src="/res/img/eurofotbal-logo.svg" /></a>
+				<div class="e-ui-footer__menus">
+					<nav class="e-ui-footer__menu">
+						<a class="e-ui-footer__menu-a" href="/souteze/domaci/">Soutěže</a>
+						<div class="e-ui-footer__menu-children">
+						<a class="e-ui-footer__menu-children-a" href="/premier-league/">Premier League</a>
+<a class="e-ui-footer__menu-children-a" href="/laliga/">LaLiga</a>
+<a class="e-ui-footer__menu-children-a" href="/serie-a/">Serie A</a>
+<a class="e-ui-footer__menu-children-a" href="/bundesliga/">1. Bundesliga</a>
+<a class="e-ui-footer__menu-children-a" href="/ligue-1/">Ligue 1</a>
+<a class="e-ui-footer__menu-children-a" href="/fortuna-liga-cz/">FORTUNA:LIGA CZ</a>
+<a class="e-ui-footer__menu-children-a" href="/fortuna-liga-sk/">Fortuna liga SK</a>
+<a class="e-ui-footer__menu-children-a" href="/primeira-liga/">Primeira Liga</a>
+<a class="e-ui-footer__menu-children-a" href="/eredivisie/">Eredivisie</a>
+<a class="e-ui-footer__menu-children-a" href="/liga-mistru/">Liga mistrů</a>
+<a class="e-ui-footer__menu-children-a" href="/evropska-liga/">Evropská liga</a>
+<a class="e-ui-footer__menu-children-a" href="/konferencni-liga/">Konferenční liga</a>
+<a class="e-ui-footer__menu-children-a" href="/mistrovstvi-evropy-kvalifikace-2024/">Euro - kvalifikace</a>
+<a class="e-ui-footer__menu-children-a" href="/liga-narodu-2022-2023/">Liga národů</a>
+<a class="e-ui-footer__menu-children-a" href="/mistrovstvi-evropy-do-21-let-2023/">ME do 21 let</a>
+						</div>
+					</nav>
+					<nav class="e-ui-footer__menu">
+						<a class="e-ui-footer__menu-a" href="/prehled-temat/">Témata</a>
+						<div class="e-ui-footer__menu-children">
+						<a class="e-ui-footer__menu-children-a" href="/tema/zapisnik-ms-2022/">Zápisník MS</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/ms-2022-v-kostce/">MS v kostce</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/katar-v-datech/">Katar v datech</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/extra-cteni-ms2022/">Extra čtení k MS</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/fantasy-ms-2022/">Fantasy MS</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/predstaveni-tymu-ms-2022/">Představení týmů MS</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/udalosti-fl/">Události FL</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/ohlednuti-lm/">Ohlédnutí za LM</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/premier-league-v-kostce/">PL v kostce</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/ozveny-z-bundesligy/">Ozvěny BL</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/cesi-v-zahranici/">Češi v zahraničí</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/evropske-koeficienty/">Evropské koeficienty</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/prestupy/">Přestupy</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/spekulace/">Přestupové spekulace</a>
+<a class="e-ui-footer__menu-children-a" href="/tema/zraneni/">Zranění</a>
+						</div>
+					</nav>
+					<nav class="e-ui-footer__menu">
+						<a class="e-ui-footer__menu-a" href="/kluby/">Kluby</a>
+						<div class="e-ui-footer__menu-children">
+						<a class="e-ui-footer__menu-children-a" href="/kluby/anglie/arsenal-fc/">Arsenal FC</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/anglie/chelsea-fc/">Chelsea FC</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/anglie/manchester-united/">Manchester United</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/italie/ac-milan/">AC Milán</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/italie/juventus-fc/">Juventus FC</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/nemecko/bayern-mnichov/">Bayern Mnichov</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/spanelsko/fc-barcelona/">FC Barcelona</a>
+<a class="e-ui-footer__menu-children-a" href="/kluby/spanelsko/real-madrid/">Real Madrid</a>
+						</div>
+					</nav>
+					<nav class="e-ui-footer__menu">
+						<a class="e-ui-footer__menu-a" href="javascript:void(0);">Články</a>
+						<div class="e-ui-footer__menu-children">
+						<a class="e-ui-footer__menu-children-a" href="/clanky/aktuality/">Aktuality</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/previews/">Previews</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/komentare-a-souhrny/">Komentáře a souhrny</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/nazory-a-komentare/">Názory a komentáře</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/fejetony/">Fejetony</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/zivotopisy/">Životopisy</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/profily-historie/">Profily, historie</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/rozhovory/">Rozhovory</a>
+<a class="e-ui-footer__menu-children-a" href="/clanky/tipy-a-analyzy/">Tipy a analýzy</a>
+						</div>
+					</nav>
+					<nav class="e-ui-footer__menu">
+						<a class="e-ui-footer__menu-a" href="/reprezentace/">Reprezentace</a>
+						<div class="e-ui-footer__menu-children">
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/cesko/">Česko</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/slovensko/">Slovensko</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/anglie/">Anglie</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/francie/">Francie</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/italie/">Itálie</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/nemecko/">Německo</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/spanelsko/">Španělsko</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/argentina/">Argentina</a></li>
+							<a class="e-ui-footer__menu-children-a" href="/reprezentace/brazilie/">Brazílie</a></li>
+						</div>
+						<a class="e-ui-footer__menu-a" href="/prestupy/">Přestupy</a>
+						<a class="e-ui-footer__menu-a" href="/zapasy/">Zápasy</a>
+						<a class="e-ui-footer__menu-a" href="/livescore/">Livescore</a>
+						<a class="e-ui-footer__menu-a" href="/liga-mistru/soutez/">Tipovací soutěž</a>
+						<a class="e-ui-footer__menu-a" href="/tv/">Fotbal TV</a>
+						<a class="e-ui-footer__menu-a" href="/clanky-pro-vas-web/">Články pro váš web</a>
+					</nav>
+				</div>
+				<div class="e-ui-footer__icons">
+					<a class="e-ui-footer__icons-icon" href="https://www.facebook.com/EuroFotbal"><img alt="fb" class="e-ui-footer__icons-image" height="29" src="/res/img/icons/fb.svg" width="29" /></a>
+					<a class="e-ui-footer__icons-icon" href="https://twitter.com/EuroFotbal"><img alt="tw" class="e-ui-footer__icons-image" height="29" src="/res/img/icons/tw.svg" width="29" /></a>
+					<a class="e-ui-footer__icons-icon" href="https://www.instagram.com/eurofotbal_cz/"><img alt="ig" class="e-ui-footer__icons-image" height="29" src="/res/img/icons/ig.svg" width="29" /></a>
+					<a class="e-ui-footer__icons-icon" href="/feed/rss/"><img alt="rss" class="e-ui-footer__icons-image" height="29" src="/res/img/icons/rss.svg" width="29" /></a>
+					<a class="e-ui-footer__icons-icon" href="http://www.netvibes.com/subscribe.php?url=https://www.eurofotbal.cz/feed/rss/&title=EuroFotbal.cz"><img alt="netvibes" class="e-ui-footer__icons-image" height="29" src="/res/img/icons/netvibes.svg" width="29" /></a>
+				</div>
+			</div>
+			<div class="e-ui-footer__copyright-and-links">
+				<div class="e-ui-footer__copyright">
+					Copyright © 2001-2023 EuroFotbal.cz. Využíváme zpravodajství ČTK.
+				</div>
+				<ul class="e-ui-footer__links">
+					<li class="e-ui-footer__links-li"><a class="e-ui-footer__links-a" href="/feed/rss/">RSS</a></li>
+					<li class="e-ui-footer__links-li"><a class="e-ui-footer__links-a" href="/podminky/">Podmínky užití</a></li>
+					<li class="e-ui-footer__links-li"><a class="e-ui-footer__links-a optanon-show-settings" href="javascript:void(0);">Nastavení soukromí</a></li>
+					<li class="e-ui-footer__links-li"><a class="e-ui-footer__links-a" href="/kontakt/">Kontakt</a></li>
+					<li class="e-ui-footer__links-li"><a class="e-ui-footer__links-a" href="/tiraz/">Tiráž</a></li>
+				</ul>
+				<div class="e-ui-footer__copyright">
+					Od 01.04.2023 provozuje Eurofotbal společnost Livesport s.r.o.
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End of Eurofotbal::Ui::FooterCell -->
+
+	</div> <!-- end of e-layout-body -->
+
+	<div class="e-ads-banner--bottom-ads mobile-only"><div class="e-ads-banner">
+<div class="adsenvelope adstextvpad banx-m_adfoot" id="lsadvert-zid-6009" style="width:320px;"><div style="height:50px"><div class="adscontent" id="lsadvert-m_adfoot"><iframe id="lsadvert-zid-6009-iframe" name="banx-m_adfoot" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:320px; height:50px"></iframe></div><div class="adsgraphvert"><div class="adsgvert atv-CS"></div></div></div></div><div class="adsclear"></div>
 </div>
-<script language="javascript">
-bookmarkInit('100', 1);
-</script>
-<div class="cl h5"></div>
-<a href="/1-fotbalova-liga/2021-2022/tabulky/" title="" class="but w110 fr"><span class="l"></span><span class="i">Podrobné tabulky</span><span class="r"></span></a>
-<div class="cl"></div>
-</div></div>
-<div class="cl h10"></div>
-<div class="adsenvelope adstextpad banx-square2" id="lsadvert-zid-1151" style="width:300px;"><div style="height:250px"><div class="adscontent" id="lsadvert-square2"><iframe id="lsadvert-zid-1151-iframe" name="banx-square2" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:300px; height:250px"></iframe></div><div class="adsgraphhori"><div class="adsghori ath-CS"></div></div></div></div><div class="box green">
-<div class="in">
-<div class="bookmark">
-<span class="it active">Poslední zápasy</span>
-<div class="border"></div>
 </div>
-<table cellspacing="0" cellpadding="0" class="matches">
-<tr><td class="date_noyear">28.08.</td><td class="teams"><div class="fl">Slovan Liberec - Fastav Zlín</div><a href="/1-fotbalova-liga/2021-2022/reportaz/slovan-liberec-fastav-zlin-721101/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/slovan-liberec-fastav-zlin-721101/">0:1</a></td></tr>
-<tr><td class="date_noyear">28.08.</td><td class="teams"><div class="fl">1. FC Slovácko - FK Pardubice</div><a href="/1-fotbalova-liga/2021-2022/reportaz/1-fc-slovacko-fk-pardubice-721103/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/1-fc-slovacko-fk-pardubice-721103/">2:1</a></td></tr>
-<tr><td class="date_noyear">28.08.</td><td class="teams"><div class="fl">Baník Ostrava - Ml. Boleslav</div><a href="/1-fotbalova-liga/2021-2022/reportaz/banik-ostrava-fk-mlada-boleslav-721106/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/banik-ostrava-fk-mlada-boleslav-721106/">1:0</a></td></tr>
-<tr><td class="date_noyear">28.08.</td><td class="teams"><div class="fl">Sparta Praha - České Budějovice</div><a href="/1-fotbalova-liga/2021-2022/reportaz/sparta-praha-dynamo-ceske-budejovice-721107/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/sparta-praha-dynamo-ceske-budejovice-721107/">1:0</a></td></tr>
-<tr><td class="date_noyear">29.08.</td><td class="teams"><div class="fl">Bohemians Praha 1905 - FK Teplice</div><a href="/1-fotbalova-liga/2021-2022/reportaz/bohemians-praha-1905-fk-teplice-721104/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/bohemians-praha-1905-fk-teplice-721104/">4:2</a></td></tr>
-<tr><td class="date_noyear">29.08.</td><td class="teams"><div class="fl">Sigma Olomouc - FK Jablonec</div><a href="/1-fotbalova-liga/2021-2022/reportaz/sigma-olomouc-fk-jablonec-721105/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/sigma-olomouc-fk-jablonec-721105/">4:0</a></td></tr>
-<tr><td class="date_noyear">29.08.</td><td class="teams"><div class="fl">Hradec Králové - Viktoria Plzeň</div><a href="/1-fotbalova-liga/2021-2022/reportaz/fc-hradec-kralove-viktoria-plzen-721108/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/fc-hradec-kralove-viktoria-plzen-721108/">1:0</a></td></tr>
-<tr class="last"><td class="date_noyear">29.08.</td><td class="teams"><div class="fl">MFK Karviná - Slavia Praha</div><a href="/1-fotbalova-liga/2021-2022/reportaz/mfk-karvina-slavia-praha-721102/" class="fr matchico" title="Reportáž"><img src="/res/img/servis-report.gif"></a></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/reportaz/mfk-karvina-slavia-praha-721102/">3:3</a></td></tr>
-</table>
-<div class="cl h5"></div>
-<a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/" title="" class="but w100 fr"><span class="l"></span><span class="i">Všechny zápasy</span><span class="r"></span></a>
-<div class="cl"></div>
+<div class="e-ads-banner--bottom-ads tablet-only"><div class="e-ads-banner">
+<div class="adsenvelope adstextvpad banx-t_adfoot" id="lsadvert-zid-6010" style="width:728px;"><div style="height:90px"><div class="adscontent" id="lsadvert-t_adfoot"><iframe id="lsadvert-zid-6010-iframe" name="banx-t_adfoot" frameborder="0" scrolling="no" style="allowTransparency: true; visibility: hidden; width:728px; height:90px"></iframe></div><div class="adsgraphvert"><div class="adsgvert atv-CS"></div></div></div></div><div class="adsclear"></div>
 </div>
 </div>
-<div class="cl h10"></div>
-<div class="box green">
-<div class="in">
-<div class="bookmark">
-<span class="it active">Následující zápasy</span>
-<div class="border"></div>
-</div>
-<table cellspacing="0" cellpadding="0" class="matches">
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">FK Teplice - Baník Ostrava</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/fk-teplice-banik-ostrava-721109/">info</a></td></tr>
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">Ml. Boleslav - Sigma Olomouc</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/fk-mlada-boleslav-sigma-olomouc-721110/">info</a></td></tr>
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">Slavia Praha - 1. FC Slovácko</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/slavia-praha-1-fc-slovacko-721111/">info</a></td></tr>
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">FK Jablonec - MFK Karviná</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/fk-jablonec-mfk-karvina-721112/">info</a></td></tr>
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">Fastav Zlín - Bohemians 1905</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/fastav-zlin-bohemians-praha-1905-721113/">info</a></td></tr>
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">FK Pardubice - Slovan Liberec</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/fk-pardubice-slovan-liberec-721114/">info</a></td></tr>
-<tr><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">Č. Budějovice - Hradec Král.</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/dynamo-ceske-budejovice-fc-hradec-kralove-721115/">info</a></td></tr>
-<tr class="last"><td class="date_noyear">11.09.</td><td class="time">?</td><td class="teams"><div class="fl">Viktoria Plzeň - Sparta Praha</div></td><td class="res nbr"><a href="/1-fotbalova-liga/2021-2022/preview/viktoria-plzen-sparta-praha-721116/">info</a></td></tr>
-</table>
-<div class="cl h5"></div>
-<a href="/1-fotbalova-liga/2021-2022/vysledky-rozlosovani/" title="" class="but w100 fr"><span class="l"></span><span class="i">Všechny zápasy</span><span class="r"></span></a>
-<div class="cl"></div>
-</div>
-</div>
-<div class="cl h10"></div>
-<div class="box green"><div class="in">
-<div class="bookmark"><span class="it active"><a href="/1-fotbalova-liga/2021-2022/statistiky/tabulka-strelcu/">Tabulka střelců</a></span><div class="border"></div></div>
-<table cellspacing="0" cellpadding="0" class="leaguetable full vam"><tr><th>&nbsp;</th><th colspan="2">Hráč</th><th class="c nbr">Góly</th></tr><tr><td class="pos"><span class="rank">1.</span></td><td class="logo"><img src="/res/img/flags/small/45.gif">
-</td><td><a href="/hraci/ivan-schranz-27936/">Ivan Schranz</a></td><td class="c c1 nbr">5</td></tr><tr><td class="pos"><span class="rank">2.</span></td><td class="logo"><img src="/res/img/flags/small/16.gif">
-</td><td><a href="/hraci/martin-hala-32515/">Martin Hála</a></td><td class="c c1 nbr">4</td></tr><tr><td class="pos"><span class="rank">3.</span></td><td class="logo"><img src="/res/img/flags/small/3.gif">
-</td><td><a href="/hraci/jean-david-beauguel-36963/">Jean-David Beauguel</a></td><td class="c c1 nbr">3</td></tr><tr><td class="pos"><span class="rank">&nbsp;</span></td><td class="logo"><img src="/res/img/flags/small/16.gif">
-</td><td><a href="/hraci/adam-hlozek-85856/">Adam Hložek</a></td><td class="c c1 nbr">3</td></tr><tr><td class="pos nbb"><span class="rank">&nbsp;</span></td><td class="logo nbb"><img src="/res/img/flags/small/16.gif">
-</td><td class="nbb"><a href="/hraci/david-lischka-69736/">David Lischka</a></td><td class="c c1 nb">3</td></tr></table><div class="cl h5"></div>
-<a href="/1-fotbalova-liga/2021-2022/statistiky/tabulka-strelcu/" title="" class="but w80 fr"><span class="l"></span><span class="i">Celá tabulka</span><span class="r"></span></a>
-<div class="cl"></div>
-</div></div>
-<div class="cl h10"></div>
-<div class="box green"><div class="in">
-<div class="bookmark"><span class="it active">Anketa</span><div class="border"></div></div>
-<div id="poll4598">
-<div class="poll">
-<form name="poll4598">
-<div class="name">Jak se vám líbí návrat k systému nadstavbových skupin?</div><table cellspacing="0" cellpadding="0">
-<tr><td class="left"><input type="radio" class="noborder" name="vote" value="15188" id="vote15188"></td><td><label for="vote15188">Vyhovuje mi. Dělá soutěž zajímavější</label></td></tr><tr><td class="left"><input type="radio" class="noborder" name="vote" value="15189" id="vote15189"></td><td><label for="vote15189">Nevadí mi, ale preferoval bych jiné rozdělení</label></td></tr><tr><td class="left"><input type="radio" class="noborder" name="vote" value="15190" id="vote15190"></td><td><label for="vote15190">Raději bych viděl ligu s 18 týmy jako loni</label></td></tr><tr><td class="left"><input type="radio" class="noborder" name="vote" value="15191" id="vote15191"></td><td><label for="vote15191">Nejlepší je klasický systém: 16 týmů a 30 kol </label></td></tr></table>
-</form>
-</div>
-<div class="cl h5"></div>
-<a href="javascript: vote(4598);" title="" class="but fr"><span class="l"></span><span class="i">Hlasovat</span><span class="r"></span></a>
-<div class="cl"></div>
-</div></div></div>
-<div class="cl h10"></div>
-</div>   </div>
-   <div class="cl h10"></div>
-   <div class="footer">
-      <div class="l">
-         <div class="fl">Copyright &copy; 2007-2021 EuroFotbal.cz. Využíváme zpravodajství ČTK.</div>
-<div class="fl"><a href="https://www.toplist.cz/" target="_top"><img src="https://toplist.cz/dot.asp?id=1259275" border="0" alt="TOPlist" width="1" height="1"/></a></div>
-      </div>
-      <div class="r">
-         <a href="/" title="" class="link">Hlavní stránka</a>
-         <span class="dl"> | </span>
-         <a href="/rss/" title="" class="link">RSS</a>
-         <span class="dl"> | </span>
-         <a href="https://wap.eurofotbal.cz/" target="_blank" class="link">WAP</a>
-         <span class="dl"> | </span>
-         <a href="/podminky/" title="" class="link">Podmínky užití</a>
-         <span class="dl"> | </span>
-         <a href="/kontakt/" title="" class="link">Kontakt</a>
-         <span class="dl"> | </span>
-         <a href="javascript:void(0);" class="link optanon-show-settings">Nastavení soukromí</a>
-      </div>
-      <div class="cl"></div>
-   </div>
-   <div class="cl h10"></div>
-</div>
-</div>
-<div class="col-advert">
-</div>
-<div class="cl"></div>
-</div>
-<div class="cl"></div>
-			<script language="javascript">
-			$(document).ready(function() {
-				bgInit();
-			});
-			</script>
-			<!-- Adform publisher tag -->
-			<!-- Tag for Eurofotbal.cz - TT-Eurofotbal-Leaderboard-2000-1400 placement -->
-			<script data-adfscript="adx.adform.net/adx/?mid=547711"></script>
-			                <script type="text/javascript">
+
+		<!-- Start of Livesport::Comments::FormCell (block l-c-form) -->
+	<div class="l-comments-form l-js-comments-form l-js-comments-form--template d-none">
+		<!-- Start of Livesport::Comments::SignedOutInfoCell (block l-c-signed-out-info) -->
+		<div class="l-comments-signed-out-info">
+			<p class="l-comments-signed-out-info__text">Komentáře mohou přidávat pouze registrovaní uživatelé. Jste-li již zaregistrován, přihlašte se vyplněním svého loginu a hesla vpravo nahoře na stránce.</p>
+			<a class="btn btn-primary" href="/muj/registrace/">Registrace nového uživatele</a>
+		</div>
+		<!-- End of Livesport::Comments::SignedOutInfoCell -->
+	</div>
+	<!-- End of Livesport::Comments::FormCell -->
+
+	<!-- Start of Eurofotbal::Ui::EmojiPickerCell (block l-u-emoji-picker) -->
+	<div class="l-ui-emoji-picker l-js-ui-emoji-picker" data-url="/api/emoji_data.json" hidden="">
+		<!-- Start of Livesport::Ui::LoaderCell (block l-u-loader) -->
+		<div class="l-ui-loader l-ui-emoji-picker__loader"></div>
+		<!-- End of Livesport::Ui::LoaderCell -->
+	</div>
+	<div class="l-ui-emoji-picker-backdrop"></div>
+	<!-- End of Eurofotbal::Ui::EmojiPickerCell -->
+
+	<!-- Start of Livesport::Comments::UserPopoverCell (block l-c-user-popover) -->
+	<div class="l-comments-user-popover l-comments-user-popover--hidden" data-error="Informace o uživateli se nepodařilo načíst.">
+		<div class="l-comments-user-popover__content"></div>
+		<!-- Start of Livesport::Ui::LoaderCell (block l-u-loader) -->
+		<div class="l-ui-loader l-ui-loader--exact l-comments-user-popover__loader"></div>
+		<!-- End of Livesport::Ui::LoaderCell -->
+		<div class="l-comments-user-popover__close">
+			<!-- Start of Livesport::Ui::IconCell (block l-u-icon) -->
+			<svg class="l-ui-icon l-ui-icon--close" style="width: auto; height: 18px" viewBox="0 0 24 24"><use xlink:href="/res/img/svg_sprite.svg#close"></use></svg>
+			<!-- End of Livesport::Ui::IconCell -->
+		</div>
+	</div>
+	<!-- End of Livesport::Comments::UserPopoverCell -->
+
+                    <script type="text/javascript">
                     // <![CDATA[
                     var banners; "use strict";
 var BannerHandler = (function () {
@@ -1602,16 +2752,16 @@ else {
 }
 
                     banners = new BannerHandler(
-                        [1150,1151,263,3301],
+                        [5993,6010,6009,5996,5995],
                         [],
                         window.bannersAdsServers || ["content.livesportmedia.eu"],
                         "ads.livesportmedia.eu",
                         [],
                         "",
                         null,
-                        {"1150":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[0,9999]},"1151":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[0,9999]},"263":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[0,9999]},"3301":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[0,9999]}},
+                        {"5993":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[975,9999]},"6010":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[751,974]},"6009":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[0,750]},"5996":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[975,9999]},"5995":{"height":null,"second_request":false,"zones":[],"offset":false,"breakpoint":[975,9999]}},
                         true,
-                        [259],
+                        [],
                         {},
                     );
 
@@ -1623,69 +2773,40 @@ else {
                     }
                                         // ]]>
                 </script>
-                		<script type='text/javascript'>
-		$(document).ready(function()
-		{
-			setTimeout('document.lsadvert_display();', 1000);
-		});
-		</script>
+                    	<script type='text/javascript'>
+    	$(document).ready(function()
+    	{
+    		setTimeout('document.lsadvert_display();', 1000);
+    	});
+    	</script>
+   			<span id="mlc-4ck3s9wd8c"></span>
+	<span id="mlc-aks81bkdz"></span>
 
-		<!-- OneTrust Cookies Consent Notice start for eurofotbal.cz -->
-		<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="cfefe7a7-9a52-4929-88f9-721d7c585024" ></script>
-		<script type="text/javascript">
-		function OptanonWrapper() { }
-		</script>
-		<!-- OneTrust Cookies Consent Notice end for eurofotbal.cz -->
-
-		<!-- Google Tag Manager -->
-		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M94G39"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-M94G39');</script>
-		<!-- End Google Tag Manager -->
-
-		<!-- iBILLBOARD Ad Server one2many code -->
-		<!-- HowTo: All the ad codes must be above this code! -->
-		<!-- HowTo: It is good idea to place this code just below the last ad code. -->
-		<script type='text/javascript' charset='utf-8' src='https://go.cz.bbelements.com/bb/bb_one2n.js'></script>
-		<script type='text/javascript'>/* <![CDATA[ */
-		var bbkeywords=''; //fill in: 'key1;key2;..'
-		bmone2n.addPosition('21161.1.1.5','');
-		bmone2n.getAd('go.cz.bbelements.com',bbkeywords,''+(typeof(bburlparam)=='string'?'&'+bburlparam:''),'utf-8');
-		/* ]]> */</script>
-		<div id='bmone2t-21161.1.1.5' style='display:none'><script type='text/javascript'>/* <![CDATA[ */ bmone2n.makeAd('21161.1.1.5'); /* ]]> */</script></div>
-		<script type='text/javascript'>/* <![CDATA[ */ bmone2n.moveAd(); /* ]]> */</script>
-
-		<span id="mlc-4ck3s9wd8c"></span>
-		<span id="mlc-aks81bkdz"></span>
-		</body>
+  </body>
 </html>
 `;
 
 export const LEAGUE_DATA: SoccerBotResponse<SoccerBotTeam[]> = {
   ok: true,
   data: [
-    { id: 'cesko/sparta-praha', name: 'Sparta Praha' },
-    { id: 'cesko/viktoria-plzen', name: 'Viktoria Plzeň' },
-    { id: 'cesko/slavia-praha', name: 'Slavia Praha' },
     { id: 'cesko/1-fc-slovacko', name: '1. FC Slovácko' },
-    { id: 'cesko/banik-ostrava', name: 'Baník Ostrava' },
-    { id: 'cesko/sigma-olomouc', name: 'Sigma Olomouc' },
-    { id: 'cesko/fastav-zlin', name: 'Fastav Zlín' },
-    { id: 'cesko/fk-mlada-boleslav', name: 'FK Mladá Boleslav' },
+    { id: 'cesko/fc-hradec-kralove', name: 'FC Hradec Králové' },
+    { id: 'cesko/bohemians-praha-1905', name: 'Bohemians Praha 1905' },
     {
       id: 'cesko/dynamo-ceske-budejovice',
       name: 'Dynamo České Budějovice'
     },
-    { id: 'cesko/bohemians-praha-1905', name: 'Bohemians Praha 1905' },
-    { id: 'cesko/fc-hradec-kralove', name: 'FC Hradec Králové' },
-    { id: 'cesko/fk-pardubice', name: 'FK Pardubice' },
     { id: 'cesko/fk-jablonec', name: 'FK Jablonec' },
-    { id: 'cesko/mfk-karvina', name: 'MFK Karviná' },
+    { id: 'cesko/slovan-liberec', name: 'Slovan Liberec' },
+    { id: 'cesko/fk-mlada-boleslav', name: 'FK Mladá Boleslav' },
+    { id: 'cesko/banik-ostrava', name: 'Baník Ostrava' },
+    { id: 'cesko/viktoria-plzen', name: 'Viktoria Plzeň' },
+    { id: 'cesko/sigma-olomouc', name: 'Sigma Olomouc' },
+    { id: 'cesko/slavia-praha', name: 'Slavia Praha' },
+    { id: 'cesko/sparta-praha', name: 'Sparta Praha' },
     { id: 'cesko/fk-teplice', name: 'FK Teplice' },
-    { id: 'cesko/slovan-liberec', name: 'Slovan Liberec' }
+    { id: 'cesko/fc-trinity-zlin', name: 'FC Trinity Zlín' },
+    { id: 'cesko/mfk-karvina', name: 'MFK Karviná' },
+    { id: 'cesko/fk-pardubice', name: 'FK Pardubice' }
   ]
 };

@@ -1,5 +1,5 @@
+import { SoccerBotCountryCode2, SoccerBotCountryCode3 } from '../../../src/shared/countries';
 import {
-  SoccerBotCountry,
   SoccerBotFoot,
   SoccerBotPlayer,
   SoccerBotPositionGroup,
@@ -1601,7 +1601,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2018-01-22',
       contractExpires: '2024-06-30',
       marketValue: 6000000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '240536',
@@ -1614,7 +1618,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-12',
       contractExpires: '2026-06-30',
       marketValue: 2000000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '70625',
@@ -1627,7 +1635,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2017-01-01',
       contractExpires: '2022-06-30',
       marketValue: 50000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '213975',
@@ -1640,7 +1652,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2022-01-01',
       contractExpires: '2024-12-31',
       marketValue: 1500000,
-      country: SoccerBotCountry.UKRAINE
+      country: {
+        code2: SoccerBotCountryCode2.UA,
+        code3: SoccerBotCountryCode3.UKR,
+        databaseName: 'Ukraine'
+      }
     },
     {
       id: '585068',
@@ -1653,7 +1669,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-21',
       contractExpires: '2026-06-30',
       marketValue: 1200000,
-      country: SoccerBotCountry.SWEDEN
+      country: {
+        code2: SoccerBotCountryCode2.SE,
+        code3: SoccerBotCountryCode3.SWE,
+        databaseName: 'Sweden'
+      }
     },
     {
       id: '35699',
@@ -1666,7 +1686,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2018-01-19',
       contractExpires: '2022-06-30',
       marketValue: 1000000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '668557',
@@ -1679,7 +1703,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2022-01-05',
       contractExpires: '2026-12-31',
       marketValue: 750000,
-      country: SoccerBotCountry.UKRAINE
+      country: {
+        code2: SoccerBotCountryCode2.UA,
+        code3: SoccerBotCountryCode3.UKR,
+        databaseName: 'Ukraine'
+      }
     },
     {
       id: '263431',
@@ -1692,7 +1720,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-07-01',
       contractExpires: '2023-06-30',
       marketValue: 500000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '401475',
@@ -1705,7 +1737,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-08-11',
       contractExpires: '2025-06-30',
       marketValue: 3500000,
-      country: SoccerBotCountry.LIBERIA
+      country: {
+        code2: SoccerBotCountryCode2.LR,
+        code3: SoccerBotCountryCode3.LBR,
+        databaseName: 'Liberia'
+      }
     },
     {
       id: '129655',
@@ -1718,7 +1754,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2016-01-07',
       contractExpires: '2023-06-30',
       marketValue: 1800000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '500054',
@@ -1731,7 +1771,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2022-02-10',
       contractExpires: '2026-06-30',
       marketValue: 400000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '452607',
@@ -1744,7 +1788,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-01-05',
       contractExpires: '2025-06-30',
       marketValue: 6000000,
-      country: SoccerBotCountry.DENMARK
+      country: {
+        code2: SoccerBotCountryCode2.DK,
+        code3: SoccerBotCountryCode3.DNK,
+        databaseName: 'Denmark'
+      }
     },
     {
       id: '216278',
@@ -1757,7 +1805,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-07-01',
       contractExpires: '2026-06-30',
       marketValue: 7000000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '671542',
@@ -1770,7 +1822,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-01',
       contractExpires: undefined,
       marketValue: 2200000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '186380',
@@ -1783,7 +1839,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2017-07-01',
       contractExpires: '2023-06-30',
       marketValue: 1500000,
-      country: SoccerBotCountry.SLOVAKIA
+      country: {
+        code2: SoccerBotCountryCode2.SK,
+        code3: SoccerBotCountryCode3.SVK,
+        databaseName: 'Slovakia'
+      }
     },
     {
       id: '303440',
@@ -1796,7 +1856,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2020-01-01',
       contractExpires: '2023-06-30',
       marketValue: 750000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '147555',
@@ -1809,7 +1873,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-01-01',
       contractExpires: '2025-06-30',
       marketValue: 3500000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '179236',
@@ -1822,7 +1890,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-01-01',
       contractExpires: '2022-06-30',
       marketValue: 1000000,
-      country: SoccerBotCountry.IVORY_COAST
+      country: {
+        code2: SoccerBotCountryCode2.CI,
+        code3: SoccerBotCountryCode3.CIV,
+        databaseName: 'Ivory Coast'
+      }
     },
     {
       id: '422950',
@@ -1835,7 +1907,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-05',
       contractExpires: '2025-12-31',
       marketValue: 600000,
-      country: SoccerBotCountry.DENMARK
+      country: {
+        code2: SoccerBotCountryCode2.DK,
+        code3: SoccerBotCountryCode3.DNK,
+        databaseName: 'Denmark'
+      }
     },
     {
       id: '234153',
@@ -1848,7 +1924,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-01-01',
       contractExpires: '2023-06-30',
       marketValue: 3500000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '148372',
@@ -1861,7 +1941,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2019-07-04',
       contractExpires: undefined,
       marketValue: 7000000,
-      country: SoccerBotCountry.ROMANIA
+      country: {
+        code2: SoccerBotCountryCode2.RO,
+        code3: SoccerBotCountryCode3.ROU,
+        databaseName: 'Romania'
+      }
     },
     {
       id: '321195',
@@ -1874,7 +1958,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2020-08-06',
       contractExpires: '2024-06-30',
       marketValue: 2000000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '248393',
@@ -1887,7 +1975,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2018-07-21',
       contractExpires: '2023-06-30',
       marketValue: 7000000,
-      country: SoccerBotCountry.NIGERIA
+      country: {
+        code2: SoccerBotCountryCode2.NG,
+        code3: SoccerBotCountryCode3.NGA,
+        databaseName: 'Nigeria'
+      }
     },
     {
       id: '292779',
@@ -1900,7 +1992,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2020-01-01',
       contractExpires: '2026-06-30',
       marketValue: 5000000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '322800',
@@ -1913,7 +2009,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-01',
       contractExpires: '2024-06-30',
       marketValue: 1200000,
-      country: SoccerBotCountry.SERBIA
+      country: {
+        code2: SoccerBotCountryCode2.RS,
+        code3: SoccerBotCountryCode3.SRB,
+        databaseName: 'Serbia'
+      }
     },
     {
       id: '673382',
@@ -1926,7 +2026,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2022-01-21',
       contractExpires: '2026-12-31',
       marketValue: 500000,
-      country: SoccerBotCountry.NIGERIA
+      country: {
+        code2: SoccerBotCountryCode2.NG,
+        code3: SoccerBotCountryCode3.NGA,
+        databaseName: 'Nigeria'
+      }
     },
     {
       id: '178469',
@@ -1939,7 +2043,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-23',
       contractExpires: '2022-06-30',
       marketValue: 2500000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '108416',
@@ -1952,7 +2060,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2021-07-01',
       contractExpires: '2024-06-30',
       marketValue: 2000000,
-      country: SoccerBotCountry.SLOVAKIA
+      country: {
+        code2: SoccerBotCountryCode2.SK,
+        code3: SoccerBotCountryCode3.SVK,
+        databaseName: 'Slovakia'
+      }
     },
     {
       id: '81390',
@@ -1965,7 +2077,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2017-01-24',
       contractExpires: '2023-06-30',
       marketValue: 500000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     },
     {
       id: '666268',
@@ -1978,7 +2094,11 @@ export const TEAM_DATA: SoccerBotResponse<SoccerBotPlayer[]> = {
       joined: '2022-02-10',
       contractExpires: '2026-06-30',
       marketValue: 500000,
-      country: SoccerBotCountry.CZECH_REPUBLIC
+      country: {
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE,
+        databaseName: 'Czech Republic'
+      }
     }
   ]
 };

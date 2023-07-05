@@ -41,11 +41,11 @@ const fotbalunasDemo = async (): Promise<void> => {
 const eurofotbalDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Eurofotbal demo ⚽⚽⚽');
 
-  console.log(eurofotbal.leagueUrl('1-fotbalova-liga')); // CZE-1
-  console.log(await eurofotbal.league('1-fotbalova-liga'));
+  console.log(eurofotbal.leagueUrl('fortuna-liga-cz'));
+  console.log(await eurofotbal.league('fortuna-liga-cz'));
 
-  console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // Sparta Praha
-  console.log(await eurofotbal.team('cesko/sparta-praha'));
+  console.log(eurofotbal.teamUrl('cesko/slavia-praha'));
+  console.log(await eurofotbal.team('cesko/slavia-praha'));
 };
 
 const sportnetDemo = async (): Promise<void> => {

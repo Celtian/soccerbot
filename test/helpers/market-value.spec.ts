@@ -11,6 +11,10 @@ describe('coerceMarketValue', () => {
     expect(coerceMarketValue('€180Th.')).toEqual(180000);
   });
 
+  it('should return thousands new', () => {
+    expect(coerceMarketValue('€180k')).toEqual(180000);
+  });
+
   it('should return undefined', () => {
     expect(coerceMarketValue('xxx')).toEqual(undefined);
     expect(coerceMarketValue('')).toEqual(undefined);
