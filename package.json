@@ -15,6 +15,7 @@
     "gpr:setup": "npm run script gpr-setup",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "preinstall": "npx only-allow yarn",
+    "postinstall": "yarn prepare-source",
     "postversion": "git push && git push --follow-tags",
     "publish:beta": "yarn && yarn build && npm publish --folder dist --tag beta",
     "release:beta": "npm version prerelease -m \"chore(update): prelease %s β\"",
