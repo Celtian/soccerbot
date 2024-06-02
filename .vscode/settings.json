@@ -21,6 +21,5 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.eol": "\r\n",
   "files.encoding": "utf8",
-  "prettier.endOfLine": "lf",
-  "prettier.prettierPath": "./node_modules/prettier"
+  "prettier.endOfLine": "lf"
 }
