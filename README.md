@@ -14,7 +14,7 @@
 
 > Library for scraping soccer data from the internet
 
-## Install
+## 🛠️ Install
 
 _Nodejs 12 or higher need to be installed first_
 
@@ -28,7 +28,7 @@ or
 yarn add soccerbot
 ```
 
-## Quick start
+## 🚀 Quick start
 
 _Type this into your ts file._
 
@@ -61,7 +61,7 @@ sportnet.team('fk-inter-bratislava/tim/46770')
   .then(res => console.log(res));
 ```
 
-## Sources
+## 🛠️ Sources
 
 | Source            | Speed  | Stability | Coverage       |
 | ----------------- | ------ | --------- | -------------- |
@@ -73,9 +73,9 @@ sportnet.team('fk-inter-bratislava/tim/46770')
 
 _Note: Soccerway, Fotbalunas and sportnet is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average)._
 
-## License
+## 🪪 License
 
-Copyright &copy; 2021 - 2023 [Dominik Hladik](https://github.com/Celtian)
+Copyright &copy; 2021 - 2024 [Dominik Hladik](https://github.com/Celtian)
 
 All contents are licensed under the [MIT license].
 
