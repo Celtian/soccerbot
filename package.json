@@ -1,6 +1,6 @@
 {
   "name": "soccerbot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library for scraping soccer data from the internet",
   "scripts": {
     "start": "rimraf dist && tsc-watch --build tsconfig.es5.json --onSuccess 'yarn postbuild'",
