@@ -64,13 +64,13 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
       const tables = html.querySelectorAll(
         '.e-club-roster .mt-30 + .e-tables-table-overview__container-overflow > [role="table"]'
       );
-      if (headers.length !== tables.length) {
+      if (headers.length < 4) {
         return {
           ok: true,
           data: list
         };
       }
-      for (let i = 0; i < headers.length; i++) {
+      for (let i = 0; i < 4; i++) {
         const header = headers[i].text.trim();
         if (header === 'Brankáři' || header === 'Obránci' || header === 'Záložníci' || header === 'Útočníci') {
           const position = coercePositionGroup(header);
