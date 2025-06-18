@@ -35,7 +35,7 @@ export class SoccerBotFotbalunasClient extends SoccerBotClient {
   public async league(id: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
       const html = parse(await this.fetchPage(this.leagueUrl(id)));
-      const items = html.querySelectorAll('#content > div > div > table > tbody > tr');
+      const items = html.querySelectorAll('div.table-responsive > table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
         const link = item.querySelector('td > a');
@@ -62,7 +62,7 @@ export class SoccerBotFotbalunasClient extends SoccerBotClient {
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
       const html = parse(await this.fetchPage(this.teamUrl(id)));
-      const page = html.querySelector('#content > div > div > h3 > a');
+      const page = html.querySelector('section div > div > h3 > a');
       const list: SoccerBotPlayer[] = [];
       if (page) {
         const clubId = page
@@ -72,8 +72,7 @@ export class SoccerBotFotbalunasClient extends SoccerBotClient {
         if (clubId) {
           await sleep(this.sleepMs); // sleep for a moment because of rare limit
           const clubHtml = parse(await this.fetchPage(this.clubUrl(clubId)));
-          // const items = clubHtml.querySelectorAll('#content > div > div > table > tbody > tr');
-          const items = clubHtml.querySelectorAll('#content > div > div > table tr');
+          const items = clubHtml.querySelectorAll('section div > div > table tr');
           for (const item of items) {
             const link = item.querySelector('td:nth-child(2) > a');
             if (link) {
