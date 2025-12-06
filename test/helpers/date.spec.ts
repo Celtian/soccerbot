@@ -4,8 +4,8 @@ import { SoccerBotProvider } from '../../src/shared/interfaces';
 describe('coerceDate', () => {
   describe('transfermarkt', () => {
     it('should return correct value', () => {
-      expect(coerceDate('Oct 17, 1994 (26)', SoccerBotProvider.TRANSFERMARKT)).toEqual('1994-10-17');
-      expect(coerceDate('Oct 17, 1994', SoccerBotProvider.TRANSFERMARKT)).toEqual('1994-10-17');
+      expect(coerceDate('17/10/1994 (26)', SoccerBotProvider.TRANSFERMARKT)).toEqual('1994-10-17');
+      expect(coerceDate('17/10/1994', SoccerBotProvider.TRANSFERMARKT)).toEqual('1994-10-17');
     });
 
     it('should return undefined', () => {
