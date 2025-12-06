@@ -1,20 +1,5 @@
 import { SoccerBotProvider } from '../../shared/interfaces';
 
-const MONTH_SHORT: { [key: string]: number } = {
-  Jan: 1,
-  Feb: 2,
-  Mar: 3,
-  Apr: 4,
-  May: 5,
-  Jun: 6,
-  Jul: 7,
-  Aug: 8,
-  Sep: 9,
-  Oct: 10,
-  Nov: 11,
-  Dec: 12
-};
-
 const MONTH_LONG: { [key: string]: number } = {
   January: 1,
   February: 2,
@@ -69,10 +54,8 @@ export const coerceDate = (date: string, type: SoccerBotProvider): string => {
   let regExp: RegExp;
   switch (type) {
     case SoccerBotProvider.TRANSFERMARKT:
-      regExp = new RegExp(
-        '(?<month>(' + Object.keys(MONTH_SHORT).join('|') + '))\\s(?<day>\\d{1,2}),\\s(?<year>\\d{4})'
-      );
-      return corceDateByRegExp(date, regExp, MONTH_SHORT);
+      regExp = new RegExp('(?<day>\\d{1,2})/(?<month>\\d{1,2})/(?<year>\\d{4})');
+      return corceDateByRegExp(date, regExp, MONTH_NUMBER);
     case SoccerBotProvider.SOCCERWAY:
       regExp = new RegExp('(?<day>\\d{1,2})\\s(?<month>(' + Object.keys(MONTH_LONG).join('|') + '))\\s(?<year>\\d{4})');
       return corceDateByRegExp(date, regExp, MONTH_LONG);
