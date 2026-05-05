@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { SoccerBotSoccerwayClient } from '../../src/clients/soccerway';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/soccerway/league';
 import { PLAYER_DATA, PLAYER_HTML } from '../mocks/soccerway/player';
@@ -58,7 +59,7 @@ describe('SoccerBotSoccerwayClient', () => {
 
   describe('league', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(LEAGUE_HTML);
@@ -73,14 +74,14 @@ describe('SoccerBotSoccerwayClient', () => {
 
   describe('team', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(TEAM_HTML);
         });
       });
 
-      const handlePlayerSpy = jest.spyOn(SoccerBotSoccerwayClient.prototype as any, 'player');
+      const handlePlayerSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'player');
       handlePlayerSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(PLAYER_DATA);
@@ -95,7 +96,7 @@ describe('SoccerBotSoccerwayClient', () => {
 
   describe('player', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(PLAYER_HTML);

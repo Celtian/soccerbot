@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { SoccerBotTransfermarktClient } from '../../src/clients/transfermarkt';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/transfermarkt/league';
 import { TEAM_DATA, TEAM_HTML } from '../mocks/transfermarkt/team';
@@ -43,7 +44,7 @@ describe('SoccerBotTransfermarktClient', () => {
 
   describe('league', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotTransfermarktClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotTransfermarktClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(LEAGUE_HTML);
@@ -58,7 +59,7 @@ describe('SoccerBotTransfermarktClient', () => {
 
   describe('team', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotTransfermarktClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotTransfermarktClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(TEAM_HTML);
