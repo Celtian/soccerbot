@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { SoccerBotFotbalunasClient } from '../../src/clients/fotbalunas';
 import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/fotbalunas/league';
 import { CLUB_HTML, TEAM_DATA, TEAM_HTML } from '../mocks/fotbalunas/team';
@@ -35,7 +36,7 @@ describe('SoccerBotFotbalunasClient', () => {
 
   describe('league', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotFotbalunasClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotFotbalunasClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(LEAGUE_HTML);
@@ -50,7 +51,7 @@ describe('SoccerBotFotbalunasClient', () => {
 
   describe('team', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotFotbalunasClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotFotbalunasClient.prototype as any, 'fetchPage');
       handleSpy
         .mockImplementationOnce(() => {
           return new Promise((resolve) => {

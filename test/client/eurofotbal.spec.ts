@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { SoccerBotEurofotbalClient } from '../../src/clients/eurofotbal';
 import { TEAM_DATA, TEAM_HTML } from '../mocks/eurofotbal/team';
 
@@ -10,7 +11,7 @@ describe('SoccerBotEurofotbalClient', () => {
 
   describe('team', () => {
     beforeEach(() => {
-      const handleSpy = jest.spyOn(SoccerBotEurofotbalClient.prototype as any, 'fetchPage');
+      const handleSpy = vi.spyOn(SoccerBotEurofotbalClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(TEAM_HTML);
