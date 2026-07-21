@@ -12,6 +12,10 @@ describe('SoccerBotSportnetClient', () => {
     client = new SoccerBotSportnetClient(5);
   });
 
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   describe('leagueUrl', () => {
     it('should return correct value', () => {
       expect(client.leagueUrl('sfz/s/3528')).toEqual('https://sportnet.sme.sk/futbalnet/z/sfz/s/3528/tabulky/');
@@ -51,9 +55,11 @@ describe('SoccerBotSportnetClient', () => {
   });
 
   describe('league', () => {
+    let fetchPageSpy: ReturnType<typeof vi.spyOn>;
+
     beforeEach(() => {
-      const handleSpy = vi.spyOn(SoccerBotSportnetClient.prototype as any, 'fetchPage');
-      handleSpy.mockImplementation(() => {
+      fetchPageSpy = vi.spyOn(SoccerBotSportnetClient.prototype as any, 'fetchPage');
+      fetchPageSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(LEAGUE_HTML);
         });
@@ -63,17 +69,37 @@ describe('SoccerBotSportnetClient', () => {
     it('should return league', async () => {
       expect(await client.league('sfz/s/3528')).toEqual(LEAGUE_DATA);
     });
+
+    it('should skip unrelated table rows', async () => {
+      fetchPageSpy.mockResolvedValue(`
+        <table>
+          <tbody>
+            <tr><td>Unrelated table row</td></tr>
+            <tr><td><a href="/futbalnet/k/example-fc/tim/dospeli-m-a/">Example FC</a></td></tr>
+          </tbody>
+        </table>
+      `);
+
+      expect(await client.league('sfz/s/monacobet-liga')).toEqual({
+        ok: true,
+        data: [{ id: 'example-fc/tim/dospeli-m-a', name: 'Example FC' }]
+      });
+    });
   });
 
   describe('team', () => {
+    let fetchPageSpy: ReturnType<typeof vi.spyOn>;
+    let playerSpy: ReturnType<typeof vi.spyOn>;
+
     beforeEach(() => {
-      vi.spyOn(SoccerBotSportnetClient.prototype as any, 'player').mockImplementation(() => {
+      playerSpy = vi.spyOn(SoccerBotSportnetClient.prototype as any, 'player').mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(PLAYER_DATA);
         });
       });
 
-      vi.spyOn(SoccerBotSportnetClient.prototype as any, 'fetchPage')
+      fetchPageSpy = vi
+        .spyOn(SoccerBotSportnetClient.prototype as any, 'fetchPage')
         .mockImplementationOnce(() => {
           return new Promise((resolve) => {
             resolve(TEAM_HTML);
@@ -101,6 +127,14 @@ describe('SoccerBotSportnetClient', () => {
       const response = await client.team('fk-inter-bratislava/tim/46770');
       response.data = response.data.map((item) => ({ ...item, position: SoccerBotPositionGroup.GOALKEEPER }));
       expect(response).toEqual(data);
+    });
+
+    it('should return an empty team without player lookups', async () => {
+      fetchPageSpy.mockReset().mockResolvedValue('<p>Nepodarilo sa získať súpisku tímu!</p>');
+
+      expect(await client.team('fk-inter-bratislava-1/tim/dospeli-m-a')).toEqual({ ok: true, data: [] });
+      expect(fetchPageSpy).toHaveBeenCalledTimes(1);
+      expect(playerSpy).not.toHaveBeenCalled();
     });
   });
 

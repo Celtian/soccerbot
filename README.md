@@ -65,9 +65,9 @@ console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // show url
 eurofotbal.team('cesko/sparta-praha')
   .then(res => console.log(res));
 
-console.log(sportnet.teamUrl('fk-inter-bratislava/tim/46770')); // show url
+console.log(sportnet.teamUrl('fk-inter-bratislava-1/tim/dospeli-m-a')); // show url
 
-sportnet.team('fk-inter-bratislava/tim/46770')
+sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a')
   .then(res => console.log(res));
 ```
 

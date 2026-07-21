@@ -40,12 +40,19 @@ export class SoccerBotSportnetClient extends SoccerBotClient {
       const items = html.querySelectorAll('table > tbody > tr');
       const list: SoccerBotTeam[] = [];
       for (const item of items) {
-        const link = item.querySelector('td:nth-child(3) > a');
+        const link = item.querySelector('a[href^="/futbalnet/k/"]');
+        if (!link) {
+          continue;
+        }
+        const match = link
+          .getAttribute('href')
+          .trim()
+          .match(/^\/futbalnet\/k\/(?<id>.+?)\/?$/);
+        if (!match) {
+          continue;
+        }
         list.push({
-          id: link
-            .getAttribute('href')
-            .trim()
-            .match(/^\/futbalnet\/k\/\b(?<id>.*)\b(\/)?$/).groups.id,
+          id: match.groups.id,
           name: link.text.trim()
         });
       }
@@ -65,6 +72,12 @@ export class SoccerBotSportnetClient extends SoccerBotClient {
     try {
       const html = parse(await this.fetchPage(this.teamUrl(id)));
       const links = html.querySelectorAll('div:nth-child(2) > div.dropdown-body > a');
+      if (!links.length) {
+        return {
+          ok: true,
+          data: []
+        };
+      }
       const list: SoccerBotPlayer[] = [];
       const players = new Map<string, string>();
       for (const link of links) {

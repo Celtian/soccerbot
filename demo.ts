@@ -51,11 +51,11 @@ const eurofotbalDemo = async (): Promise<void> => {
 const sportnetDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Sportnet demo ⚽⚽⚽');
 
-  console.log(sportnet.leagueUrl('sfz/s/3528'));
-  console.log(await sportnet.league('sfz/s/3528'));
+  console.log(sportnet.leagueUrl('sfz/s/monacobet-liga'));
+  console.log(await sportnet.league('sfz/s/monacobet-liga'));
 
-  console.log(sportnet.teamUrl('fk-inter-bratislava/tim/46770'));
-  console.log(await sportnet.team('fk-inter-bratislava/tim/46770'));
+  console.log(sportnet.teamUrl('fk-inter-bratislava-1/tim/dospeli-m-a'));
+  console.log(await sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a'));
 
   console.log(sportnet.playerUrl('1306959'));
   console.log(await sportnet.player('1306959'));
