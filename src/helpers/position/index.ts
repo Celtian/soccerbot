@@ -1,4 +1,23 @@
-import { SoccerBotPositionGroup } from '../../shared/interfaces';
+import { SoccerBotPositionDetail, SoccerBotPositionGroup } from '../../shared/interfaces';
+
+const POSITION_DETAIL: Record<string, SoccerBotPositionDetail> = {
+  Goalkeeper: SoccerBotPositionDetail.GK,
+  Sweeper: SoccerBotPositionDetail.SW,
+  'Centre-Back': SoccerBotPositionDetail.CB,
+  'Left-Back': SoccerBotPositionDetail.LB,
+  'Right-Back': SoccerBotPositionDetail.RB,
+  'Defensive Midfield': SoccerBotPositionDetail.CDM,
+  'Central Midfield': SoccerBotPositionDetail.CM,
+  'Right Midfield': SoccerBotPositionDetail.RM,
+  'Left Midfield': SoccerBotPositionDetail.LM,
+  'Attacking Midfield': SoccerBotPositionDetail.CAM,
+  'Left Winger': SoccerBotPositionDetail.LW,
+  'Right Winger': SoccerBotPositionDetail.RW,
+  'Second Striker': SoccerBotPositionDetail.CF,
+  'Centre-Forward': SoccerBotPositionDetail.ST
+};
+
+export const coercePositionDetail = (position: string): SoccerBotPositionDetail => POSITION_DETAIL[position];
 
 export const coercePositionGroup = (position: string): SoccerBotPositionGroup => {
   if (['Goalkeeper', 'Brankář', 'Brankáři', 'Brankári'].includes(position)) {

@@ -5,6 +5,7 @@ import {
   SoccerBotSportnetClient,
   SoccerBotTransfermarktClient
 } from './clients';
+export { SoccerBotFoot, SoccerBotPositionDetail, SoccerBotPositionGroup } from './shared/interfaces';
 
 export const transfermarkt = new SoccerBotTransfermarktClient();
 export const soccerway = new SoccerBotSoccerwayClient();

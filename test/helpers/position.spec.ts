@@ -1,5 +1,41 @@
-import { coercePositionGroup } from '../../src/helpers/position';
-import { SoccerBotPositionGroup } from '../../src/shared/interfaces';
+import { SoccerBotFoot, SoccerBotPositionDetail, SoccerBotPositionGroup } from '../../src';
+import { coercePositionDetail, coercePositionGroup } from '../../src/helpers/position';
+
+describe('coercePositionDetail', () => {
+  it.each([
+    ['Goalkeeper', SoccerBotPositionDetail.GK],
+    ['Sweeper', SoccerBotPositionDetail.SW],
+    ['Centre-Back', SoccerBotPositionDetail.CB],
+    ['Left-Back', SoccerBotPositionDetail.LB],
+    ['Right-Back', SoccerBotPositionDetail.RB],
+    ['Defensive Midfield', SoccerBotPositionDetail.CDM],
+    ['Central Midfield', SoccerBotPositionDetail.CM],
+    ['Right Midfield', SoccerBotPositionDetail.RM],
+    ['Left Midfield', SoccerBotPositionDetail.LM],
+    ['Attacking Midfield', SoccerBotPositionDetail.CAM],
+    ['Left Winger', SoccerBotPositionDetail.LW],
+    ['Right Winger', SoccerBotPositionDetail.RW],
+    ['Second Striker', SoccerBotPositionDetail.CF],
+    ['Centre-Forward', SoccerBotPositionDetail.ST]
+  ])('should map %s to %s', (position, expected) => {
+    expect(coercePositionDetail(position)).toEqual(expected);
+  });
+
+  it.each(['Defender', 'Midfielder', 'Forward', 'Attacker', 'xxx', '', null, undefined])(
+    'should return undefined for %s',
+    (position) => {
+      expect(coercePositionDetail(position)).toEqual(undefined);
+    }
+  );
+
+  it('should export the enum from the package root', () => {
+    expect(SoccerBotFoot.RIGHT).toEqual('RIGHT');
+    expect(SoccerBotPositionDetail.GK).toEqual('GK');
+    expect(SoccerBotPositionDetail.RCB).toEqual('RCB');
+    expect(SoccerBotPositionDetail.ST).toEqual('ST');
+    expect(SoccerBotPositionGroup.GOALKEEPER).toEqual('GOALKEEPER');
+  });
+});
 
 describe('coercePositionGroup', () => {
   it('should return goalkeeper', () => {

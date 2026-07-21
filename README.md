@@ -71,6 +71,15 @@ sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a')
   .then(res => console.log(res));
 ```
 
+Transfermarkt players also include an optional FIFA-style detailed position:
+
+```typescript
+import { SoccerBotPositionDetail, transfermarkt } from 'soccerbot';
+
+const response = await transfermarkt.team('62');
+const centreBacks = response.data?.filter((player) => player.positionDetail === SoccerBotPositionDetail.CB);
+```
+
 ## 🛠️ Sources
 
 | Source            | Speed  | Stability | Coverage       |
