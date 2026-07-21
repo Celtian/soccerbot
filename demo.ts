@@ -41,8 +41,8 @@ const fotbalunasDemo = async (): Promise<void> => {
 const eurofotbalDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Eurofotbal demo ⚽⚽⚽');
 
-  console.log(eurofotbal.leagueUrl('fortuna-liga-cz'));
-  console.log(await eurofotbal.league('fortuna-liga-cz'));
+  console.log(eurofotbal.leagueUrl('chance-liga'));
+  console.log(await eurofotbal.league('chance-liga'));
 
   console.log(eurofotbal.teamUrl('cesko/slavia-praha'));
   console.log(await eurofotbal.team('cesko/slavia-praha'));
