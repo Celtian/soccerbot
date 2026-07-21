@@ -3,3 +3,4 @@ export * from './fotbalunas';
 export * from './soccerway';
 export * from './sportnet';
 export * from './transfermarkt';
+export * from './worldfootball';

@@ -11,6 +11,7 @@ const POSITION_DETAIL: Record<string, SoccerBotPositionDetail> = {
   'Right Midfield': SoccerBotPositionDetail.RM,
   'Left Midfield': SoccerBotPositionDetail.LM,
   'Attacking Midfield': SoccerBotPositionDetail.CAM,
+  'Mediocentro ofensivo': SoccerBotPositionDetail.CAM,
   'Left Winger': SoccerBotPositionDetail.LW,
   'Right Winger': SoccerBotPositionDetail.RW,
   'Second Striker': SoccerBotPositionDetail.CF,
@@ -20,10 +21,12 @@ const POSITION_DETAIL: Record<string, SoccerBotPositionDetail> = {
 export const coercePositionDetail = (position: string): SoccerBotPositionDetail => POSITION_DETAIL[position];
 
 export const coercePositionGroup = (position: string): SoccerBotPositionGroup => {
-  if (['Goalkeeper', 'Brankář', 'Brankáři', 'Brankári'].includes(position)) {
+  if (['Goalkeeper', 'Brankář', 'Brankáři', 'Brankári', 'Portero'].includes(position)) {
     return SoccerBotPositionGroup.GOALKEEPER;
   } else if (
-    ['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce', 'Obránci', 'Obrancovia'].includes(position)
+    ['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce', 'Obránci', 'Obrancovia', 'Defensa'].includes(
+      position
+    )
   ) {
     return SoccerBotPositionGroup.DEFENDER;
   } else if (
@@ -34,13 +37,24 @@ export const coercePositionGroup = (position: string): SoccerBotPositionGroup =>
       'Left Midfield',
       'Attacking Midfield',
       'Midfielder',
+      'Mediocampista',
+      'Mediocentro ofensivo',
       'Záložník',
       'Záložníci'
     ].includes(position)
   ) {
     return SoccerBotPositionGroup.MIDFIELDER;
   } else if (
-    ['Left Winger', 'Right Winger', 'Centre-Forward', 'Forward', 'Attacker', 'Útočník', 'Útočníci'].includes(position)
+    [
+      'Left Winger',
+      'Right Winger',
+      'Centre-Forward',
+      'Forward',
+      'Attacker',
+      'Útočník',
+      'Útočníci',
+      'Atacante'
+    ].includes(position)
   ) {
     return SoccerBotPositionGroup.ATTACKER;
   }

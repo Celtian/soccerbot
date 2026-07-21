@@ -32,43 +32,48 @@ yarn add soccerbot
 
 _Type this into your ts file._
 
-```terminal
-import { soccerway, transfermarkt, fotbalunas, eurofotbal, sportnet } from 'soccerbot';
+```typescript
+import { soccerway, transfermarkt, fotbalunas, eurofotbal, sportnet, worldfootball } from 'soccerbot';
 
 console.log(soccerway.leagueUrl('czech-republic/chance-liga/standings/bNFMkskm')); // show url
 
-soccerway.league('czech-republic/chance-liga/standings/bNFMkskm')
-  .then(res => console.log(res));
+soccerway.league('czech-republic/chance-liga/standings/bNFMkskm').then((res) => console.log(res));
 
 console.log(soccerway.teamUrl('slavia-prague/viXGgnyB')); // show url
 
-soccerway.team('slavia-prague/viXGgnyB')
-  .then(res => console.log(res));
+soccerway.team('slavia-prague/viXGgnyB').then((res) => console.log(res));
 
 console.log(soccerway.playerUrl('kolar-ondrej/xfBGcS1U')); // show url
 
-soccerway.player('kolar-ondrej/xfBGcS1U')
-  .then(res => console.log(res));
+soccerway.player('kolar-ondrej/xfBGcS1U').then((res) => console.log(res));
 
 console.log(transfermarkt.teamUrl('62')); // show url
 
-transfermarkt.team('62')
-  .then(res => console.log(res));
+transfermarkt.team('62').then((res) => console.log(res));
 
 console.log(fotbalunas.teamUrl('62')); // show url
 
-fotbalunas.team('62')
-  .then(res => console.log(res));
+fotbalunas.team('62').then((res) => console.log(res));
 
 console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // show url
 
-eurofotbal.team('cesko/sparta-praha')
-  .then(res => console.log(res));
+eurofotbal.team('cesko/sparta-praha').then((res) => console.log(res));
 
 console.log(sportnet.teamUrl('fk-inter-bratislava-1/tim/dospeli-m-a')); // show url
 
-sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a')
-  .then(res => console.log(res));
+sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a').then((res) => console.log(res));
+
+console.log(worldfootball.leagueUrl('co7093/mexico-lp---serie-b')); // show url
+
+worldfootball.league('co7093/mexico-lp---serie-b').then((res) => console.log(res));
+
+console.log(worldfootball.teamUrl('te237557/artesanos-metepec')); // show squad url
+
+worldfootball.team('te237557/artesanos-metepec').then((res) => console.log(res));
+
+console.log(worldfootball.playerUrl('pe599828/oscar-altamirano')); // show url
+
+worldfootball.player('pe599828/oscar-altamirano').then((res) => console.log(res));
 ```
 
 Transfermarkt players also include an optional FIFA-style detailed position:
@@ -89,12 +94,13 @@ const centreBacks = response.data?.filter((player) => player.positionDetail === 
 | **fotbalunas**    | ⚽     | ⚽⚽⚽    | Czech Republic |
 | **eurofotbal**    | ⚽⚽   | ⚽⚽      | Europe         |
 | **sportnet**      | ⚽     | ⚽        | Slovakia       |
+| **worldfootball** | ⚽⚽   | ⚽        | World          |
 
-_Note: Soccerway, Fotbalunas and sportnet is taking data from multiple pages, so it takes longer period of time. The reason is to prevent rare limit (30 sec on average)._
+_Note: Soccerway, Fotbalunas and sportnet take data from multiple pages, so they need more time. WorldFootball uses its HEIM:SPIEL sister site as a fallback when the primary site returns a Cloudflare challenge._
 
 ## 🪪 License
 
-Copyright &copy; 2021 - 2025 [Dominik Hladik](https://github.com/Celtian)
+Copyright &copy; 2021 - 2026 [Dominik Hladik](https://github.com/Celtian)
 
 All contents are licensed under the [MIT license].
 

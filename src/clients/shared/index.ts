@@ -23,7 +23,7 @@ export abstract class SoccerBotClient {
 
   public abstract team(id: string, season?: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>>;
 
-  protected async fetchPage(url: string): Promise<string> {
+  protected async fetchPage(url: string, silent: boolean = false): Promise<string> {
     try {
       const headers = {
         'User-Agent': this.userAgents[Math.floor(Math.random() * this.userAgents.length)]
@@ -34,7 +34,9 @@ export abstract class SoccerBotClient {
       }
       return await response.text();
     } catch (e) {
-      console.error(e);
+      if (!silent) {
+        console.error(e);
+      }
       return 'Error';
     }
   }

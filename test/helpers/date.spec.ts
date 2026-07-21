@@ -61,4 +61,10 @@ describe('coerceDate', () => {
       expect(coerceDate(undefined, SoccerBotProvider.SPORTNET)).toEqual(undefined);
     });
   });
+
+  describe('worldfootball', () => {
+    it('should return correct value', () => {
+      expect(coerceDate('02.04.2002 | 24 Years', SoccerBotProvider.WORLDFOOTBALL)).toEqual('2002-04-02');
+    });
+  });
 });

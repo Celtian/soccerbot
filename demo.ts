@@ -1,5 +1,5 @@
 import { argv } from 'process';
-import { eurofotbal, fotbalunas, soccerway, sportnet, transfermarkt } from './src';
+import { eurofotbal, fotbalunas, soccerway, sportnet, transfermarkt, worldfootball } from './src';
 
 const selector = argv[2];
 
@@ -61,6 +61,19 @@ const sportnetDemo = async (): Promise<void> => {
   console.log(await sportnet.player('1306959'));
 };
 
+const worldfootballDemo = async (): Promise<void> => {
+  console.log('⚽⚽⚽ WorldFootball demo ⚽⚽⚽');
+
+  console.log(worldfootball.leagueUrl('co7093/mexico-lp---serie-b')); // Mexico LP - Serie B
+  console.log(await worldfootball.league('co7093/mexico-lp---serie-b'));
+
+  console.log(worldfootball.teamUrl('te237557/artesanos-metepec')); // Artesanos Metepec squad
+  console.log(await worldfootball.team('te237557/artesanos-metepec'));
+
+  console.log(worldfootball.playerUrl('pe599828/oscar-altamirano')); // Oscar Altamirano
+  console.log(await worldfootball.player('pe599828/oscar-altamirano'));
+};
+
 // tslint:disable-next-line: no-shadowed-variable
 const main = async (selector: string): Promise<void> => {
   switch (selector) {
@@ -79,12 +92,16 @@ const main = async (selector: string): Promise<void> => {
     case 'sportnet':
       await sportnetDemo();
       break;
+    case 'worldfootball':
+      await worldfootballDemo();
+      break;
     default:
       await transfermarktDemo();
       await soccerwayDemo();
       await fotbalunasDemo();
       await eurofotbalDemo();
       await sportnetDemo();
+      await worldfootballDemo();
       break;
   }
 };

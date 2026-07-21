@@ -13,6 +13,7 @@ describe('coercePositionDetail', () => {
     ['Right Midfield', SoccerBotPositionDetail.RM],
     ['Left Midfield', SoccerBotPositionDetail.LM],
     ['Attacking Midfield', SoccerBotPositionDetail.CAM],
+    ['Mediocentro ofensivo', SoccerBotPositionDetail.CAM],
     ['Left Winger', SoccerBotPositionDetail.LW],
     ['Right Winger', SoccerBotPositionDetail.RW],
     ['Second Striker', SoccerBotPositionDetail.CF],
@@ -43,6 +44,7 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Brankář')).toEqual(SoccerBotPositionGroup.GOALKEEPER);
     expect(coercePositionGroup('Brankáři')).toEqual(SoccerBotPositionGroup.GOALKEEPER);
     expect(coercePositionGroup('Brankári')).toEqual(SoccerBotPositionGroup.GOALKEEPER);
+    expect(coercePositionGroup('Portero')).toEqual(SoccerBotPositionGroup.GOALKEEPER);
   });
 
   it('should return defender', () => {
@@ -53,6 +55,7 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Obránce')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Obránci')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Obrancovia')).toEqual(SoccerBotPositionGroup.DEFENDER);
+    expect(coercePositionGroup('Defensa')).toEqual(SoccerBotPositionGroup.DEFENDER);
   });
 
   it('should return midfielder', () => {
@@ -64,6 +67,8 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Midfielder')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Záložník')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Záložníci')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
+    expect(coercePositionGroup('Mediocampista')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
+    expect(coercePositionGroup('Mediocentro ofensivo')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
   });
 
   it('should return attacker', () => {
@@ -74,6 +79,7 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Attacker')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Útočník')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Útočníci')).toEqual(SoccerBotPositionGroup.ATTACKER);
+    expect(coercePositionGroup('Atacante')).toEqual(SoccerBotPositionGroup.ATTACKER);
   });
 
   it('should return undefined', () => {

@@ -77,4 +77,14 @@ describe('coerceCountry', () => {
       expect(coerceCountry('999999', SoccerBotProvider.SPORTNET)).toEqual(undefined);
     });
   });
+
+  describe('worldfootball', () => {
+    it('should match provider country IDs', () => {
+      expect(coerceCountry('133', SoccerBotProvider.WORLDFOOTBALL)).toEqual({
+        databaseName: 'Mexico',
+        code2: SoccerBotCountryCode2.MX,
+        code3: SoccerBotCountryCode3.MEX
+      });
+    });
+  });
 });

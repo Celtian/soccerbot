@@ -14,6 +14,8 @@ const findCountry = (value: string, type: SoccerBotProvider): SoccerBotCountryDa
       return COUNTRY.find((i) => i.eurofotbal === value);
     case SoccerBotProvider.SPORTNET:
       return COUNTRY.find((i) => i.sportnet === value);
+    case SoccerBotProvider.WORLDFOOTBALL:
+      return COUNTRY.find((i) => Number(i.worldfootball) === Number(value));
     default:
       return undefined;
   }

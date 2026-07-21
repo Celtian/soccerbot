@@ -86,6 +86,7 @@ export interface SoccerBotCountryData {
   soccerway: string;
   eurofotbal: string;
   sportnet: string;
+  worldfootball: string;
 }
 
 export const COUNTRY: SoccerBotCountryData[] = [
@@ -98,7 +99,8 @@ ${jsonData
     transfermarkt: '${country.transfermarkt.replace("'", "\\'")}',
     soccerway: '${country.soccerway.replace("'", "\\'")}',
     eurofotbal: '${country.eurofotbal.replace("'", "\\'")}',
-    sportnet: '${country.sportnet.replace("'", "\\'")}'
+    sportnet: '${country.sportnet.replace("'", "\\'")}',
+    worldfootball: '${country.worldfootball.replace("'", "\\'")}'
   }`
   )
   .join(',\n')}
