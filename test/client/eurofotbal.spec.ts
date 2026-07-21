@@ -72,5 +72,11 @@ describe('SoccerBotEurofotbalClient', () => {
         expect(result.data).toContainEqual(expect.objectContaining({ id: 'ondrej-kolar-32017', name: 'Ondřej Kolář' }));
       }
     });
+
+    it('should return an empty team when roster sections are missing', async () => {
+      vi.spyOn(SoccerBotEurofotbalClient.prototype as any, 'fetchPage').mockResolvedValue('<html></html>');
+
+      expect(await client.team('cesko/slavia-praha')).toEqual({ ok: true, data: [] });
+    });
   });
 });

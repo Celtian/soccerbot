@@ -4,6 +4,11 @@ import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/soccerway/league';
 import { PLAYER_DATA, PLAYER_HTML } from '../mocks/soccerway/player';
 import { TEAM_DATA, TEAM_HTML } from '../mocks/soccerway/team';
 
+vi.mock('../../src/helpers', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../../src/helpers')>()),
+  sleep: vi.fn().mockResolvedValue(undefined)
+}));
+
 describe('SoccerBotSoccerwayClient', () => {
   let client: SoccerBotSoccerwayClient;
 
@@ -78,6 +83,12 @@ describe('SoccerBotSoccerwayClient', () => {
         expect(result.data).toContainEqual({ id: 'slavia-prague/viXGgnyB', name: 'Slavia Prague' });
       }
     });
+
+    it('should return an error when the league feed is missing', async () => {
+      vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage').mockResolvedValue('<html></html>');
+
+      expect((await client.league('czech-republic/chance-liga/standings/bNFMkskm')).ok).toBe(false);
+    });
   });
 
   describe('team', () => {
@@ -107,7 +118,7 @@ describe('SoccerBotSoccerwayClient', () => {
       expect(handlePlayerSpy).toHaveBeenCalledTimes(48);
       expect(handlePlayerSpy).toHaveBeenCalledWith('kolar-ondrej/xfBGcS1U');
       if (TEAM_DATA.ok) {
-        expect(handlePlayerSpy.mock.calls.map(([id]) => id)).toEqual(TEAM_DATA.data.map(({ id }) => id));
+        expect(handlePlayerSpy.mock.calls.map(([id]: [string]) => id)).toEqual(TEAM_DATA.data.map(({ id }) => id));
       }
     });
   });

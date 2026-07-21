@@ -5,6 +5,10 @@ import { LEAGUE_DATA, LEAGUE_HTML } from '../mocks/sportnet/league';
 import { PLAYER_DATA, PLAYER_HTML } from '../mocks/sportnet/player';
 import { TEAM_COMPETITION_1_HTML, TEAM_COMPETITION_2_HTML, TEAM_HTML } from '../mocks/sportnet/team';
 
+vi.mock('../../src/helpers/shared', () => ({
+  sleep: vi.fn().mockResolvedValue(undefined)
+}));
+
 describe('SoccerBotSportnetClient', () => {
   let client: SoccerBotSportnetClient;
 
@@ -75,6 +79,7 @@ describe('SoccerBotSportnetClient', () => {
         <table>
           <tbody>
             <tr><td>Unrelated table row</td></tr>
+            <tr><td><a href="/futbalnet/k/">Malformed team link</a></td></tr>
             <tr><td><a href="/futbalnet/k/example-fc/tim/dospeli-m-a/">Example FC</a></td></tr>
           </tbody>
         </table>
