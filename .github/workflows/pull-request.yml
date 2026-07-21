@@ -1,6 +1,10 @@
 name: 🐛 Test feature branch
 'on': pull_request
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   install-and-test:
     name: 🛠️ Install & Test
@@ -13,7 +17,8 @@ jobs:
       - name: 🗜️ Setup node version
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version-file: .nvmrc
+          cache: yarn
           registry-url: 'https://registry.npmjs.org'
 
       - name: 🛠️ Install
@@ -21,6 +26,9 @@ jobs:
 
       - name: 📦 Build
         run: yarn build
+
+      - name: 🧹 Run lint
+        run: yarn lint
 
       - name: 🧪 Run tests
         run: yarn test --coverage --run

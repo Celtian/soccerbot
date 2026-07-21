@@ -3,13 +3,13 @@
     "target": "es2019",
     "lib": ["dom"],
     "types": ["node", "vitest/globals"],
-    "baseUrl": "./src",
     "esModuleInterop": true,
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strictNullChecks": false,
     "sourceMap": false,
     "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
@@ -17,8 +17,7 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "downlevelIteration": true
+    "resolveJsonModule": true
   },
   "include": ["src"],
   "exclude": ["dist/**/*", "*/tests/**/*"]
