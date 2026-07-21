@@ -8,10 +8,8 @@
     "moduleResolution": "bundler",
     "strictNullChecks": false,
     "sourceMap": false,
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "noEmit": true,
     "strict": true,
-    "declaration": true,
     "skipLibCheck": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -19,6 +17,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["src"],
+  "include": ["src", "demo.ts"],
   "exclude": ["dist/**/*", "*/tests/**/*"]
 }
