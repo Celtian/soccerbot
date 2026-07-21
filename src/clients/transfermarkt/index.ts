@@ -4,7 +4,7 @@ import { coerceDate } from '../../helpers/date';
 import { coerceFoot } from '../../helpers/foot';
 import { coerceMarketValue } from '../../helpers/market-value';
 import { coerceHeight, coerceJerseyNumber } from '../../helpers/number';
-import { coercePositionGroup } from '../../helpers/position';
+import { coercePositionDetail, coercePositionGroup } from '../../helpers/position';
 import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient } from '../shared';
 
@@ -61,6 +61,7 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
       for (const item of items) {
         // const link = item.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td.hauptlink > a');
         const link = item.querySelector('td.posrela > table tr:nth-child(1) > td.hauptlink > a');
+        const position = item.querySelector('td:nth-child(2) > table tr:nth-child(2) > td')?.text?.trim();
         const flagSrc = item
           .querySelector('td:nth-child(4) > img:nth-child(1)')
           ?.getAttribute('src')
@@ -73,10 +74,8 @@ export class SoccerBotTransfermarktClient extends SoccerBotClient {
             ?.match(/\/(\S+)\/profil\/spieler\/(?<id>\d+)$/)?.groups?.id,
           name: link?.text?.trim(),
           jerseyNumber: coerceJerseyNumber(item.querySelector('td:nth-child(1) > div.rn_nummer')?.text?.trim()),
-          // position: coercePositionGroup(item.querySelector('td:nth-child(2) > table > tbody > tr:nth-child(2) > td')?.text?.trim()),
-          position: coercePositionGroup(
-            item.querySelector('td:nth-child(2) > table tr:nth-child(2) > td')?.text?.trim()
-          ),
+          position: coercePositionGroup(position),
+          positionDetail: coercePositionDetail(position),
           birthdate: coerceDate(item.querySelector('td:nth-child(3)')?.text?.trim(), SoccerBotProvider.TRANSFERMARKT),
           height: coerceHeight(item.querySelector('td:nth-child(5)')?.text?.trim()),
           foot: coerceFoot(item.querySelector('td:nth-child(6)')?.text?.trim()),

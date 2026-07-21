@@ -18,14 +18,14 @@ const transfermarktDemo = async (): Promise<void> => {
 const soccerwayDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Soccerway demo ⚽⚽⚽');
 
-  console.log(soccerway.leagueUrl('r59164', '20202021')); // CZE-1 - season 2020 - 2021
-  console.log(await soccerway.league('r59164', '20202021'));
+  console.log(soccerway.leagueUrl('czech-republic/chance-liga/standings/bNFMkskm')); // CZE-1
+  console.log(await soccerway.league('czech-republic/chance-liga/standings/bNFMkskm'));
 
-  console.log(soccerway.teamUrl('533')); // Slavia Prague - current season
-  console.log(await soccerway.team('533'));
+  console.log(soccerway.teamUrl('slavia-prague/viXGgnyB')); // Slavia Prague - current season
+  console.log(await soccerway.team('slavia-prague/viXGgnyB'));
 
-  console.log(soccerway.playerUrl('193498')); // player
-  console.log(await soccerway.player('193498'));
+  console.log(soccerway.playerUrl('kolar-ondrej/xfBGcS1U')); // Ondrej Kolar
+  console.log(await soccerway.player('kolar-ondrej/xfBGcS1U'));
 };
 
 const fotbalunasDemo = async (): Promise<void> => {
@@ -41,8 +41,8 @@ const fotbalunasDemo = async (): Promise<void> => {
 const eurofotbalDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Eurofotbal demo ⚽⚽⚽');
 
-  console.log(eurofotbal.leagueUrl('fortuna-liga-cz'));
-  console.log(await eurofotbal.league('fortuna-liga-cz'));
+  console.log(eurofotbal.leagueUrl('chance-liga'));
+  console.log(await eurofotbal.league('chance-liga'));
 
   console.log(eurofotbal.teamUrl('cesko/slavia-praha'));
   console.log(await eurofotbal.team('cesko/slavia-praha'));
@@ -51,11 +51,11 @@ const eurofotbalDemo = async (): Promise<void> => {
 const sportnetDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Sportnet demo ⚽⚽⚽');
 
-  console.log(sportnet.leagueUrl('sfz/s/3528'));
-  console.log(await sportnet.league('sfz/s/3528'));
+  console.log(sportnet.leagueUrl('sfz/s/monacobet-liga'));
+  console.log(await sportnet.league('sfz/s/monacobet-liga'));
 
-  console.log(sportnet.teamUrl('fk-inter-bratislava/tim/46770'));
-  console.log(await sportnet.team('fk-inter-bratislava/tim/46770'));
+  console.log(sportnet.teamUrl('fk-inter-bratislava-1/tim/dospeli-m-a'));
+  console.log(await sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a'));
 
   console.log(sportnet.playerUrl('1306959'));
   console.log(await sportnet.player('1306959'));

@@ -11,31 +11,29 @@ describe('SoccerBotSoccerwayClient', () => {
     client = new SoccerBotSoccerwayClient(5);
   });
 
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   describe('leagueUrl', () => {
     it('should return correct value', () => {
-      expect(client.leagueUrl('r59164', '20202021')).toEqual(
-        'https://int.soccerway.com/national/country-slug/team-slug/20202021/regular-season/r59164/tables/'
+      expect(client.leagueUrl('czech-republic/chance-liga/standings/bNFMkskm')).toEqual(
+        'https://www.soccerway.com/czech-republic/chance-liga/standings/bNFMkskm/standings/overall/'
       );
     });
 
     it('should return undefined', () => {
-      expect(client.leagueUrl(undefined, '20202021')).toEqual(undefined);
-      expect(client.leagueUrl('r59164', undefined)).toEqual(undefined);
-      expect(client.leagueUrl(undefined, undefined)).toEqual(undefined);
-
-      expect(client.leagueUrl(null, '20202021')).toEqual(undefined);
-      expect(client.leagueUrl('r59164', null)).toEqual(undefined);
-      expect(client.leagueUrl(null, null)).toEqual(undefined);
-
-      expect(client.leagueUrl('', '20202021')).toEqual(undefined);
-      expect(client.leagueUrl('r59164', '')).toEqual(undefined);
-      expect(client.leagueUrl('', '')).toEqual(undefined);
+      expect(client.leagueUrl(undefined)).toEqual(undefined);
+      expect(client.leagueUrl(null)).toEqual(undefined);
+      expect(client.leagueUrl('')).toEqual(undefined);
     });
   });
 
   describe('teamUrl', () => {
     it('should return correct value', () => {
-      expect(client.teamUrl('533')).toEqual('https://int.soccerway.com/teams/country-slug/team-slug/533/squad/');
+      expect(client.teamUrl('slavia-prague/viXGgnyB')).toEqual(
+        'https://www.soccerway.com/team/slavia-prague/viXGgnyB/squad/'
+      );
     });
 
     it('should return undefined', () => {
@@ -47,7 +45,9 @@ describe('SoccerBotSoccerwayClient', () => {
 
   describe('playerUrl', () => {
     it('should return correct value', () => {
-      expect(client.playerUrl('193498')).toEqual('https://int.soccerway.com/players/player-slug/193498/');
+      expect(client.playerUrl('kolar-ondrej/xfBGcS1U')).toEqual(
+        'https://www.soccerway.com/player/kolar-ondrej/xfBGcS1U/'
+      );
     });
 
     it('should return undefined', () => {
@@ -68,11 +68,21 @@ describe('SoccerBotSoccerwayClient', () => {
     });
 
     it('should return league', async () => {
-      expect(await client.league('r59164', '20202021')).toEqual(LEAGUE_DATA);
+      const result = await client.league('czech-republic/chance-liga/standings/bNFMkskm');
+
+      expect(result).toEqual(LEAGUE_DATA);
+      expect(result.ok).toBe(true);
+      if (result.ok) {
+        expect(result.data).toHaveLength(16);
+        expect(new Set(result.data.map(({ id }) => id)).size).toBe(16);
+        expect(result.data).toContainEqual({ id: 'slavia-prague/viXGgnyB', name: 'Slavia Prague' });
+      }
     });
   });
 
   describe('team', () => {
+    let handlePlayerSpy: ReturnType<typeof vi.spyOn>;
+
     beforeEach(() => {
       const handleSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'fetchPage');
       handleSpy.mockImplementation(() => {
@@ -81,16 +91,24 @@ describe('SoccerBotSoccerwayClient', () => {
         });
       });
 
-      const handlePlayerSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'player');
-      handlePlayerSpy.mockImplementation(() => {
+      handlePlayerSpy = vi.spyOn(SoccerBotSoccerwayClient.prototype as any, 'player');
+      handlePlayerSpy.mockImplementation((id: string) => {
         return new Promise((resolve) => {
-          resolve(PLAYER_DATA);
+          resolve({
+            ok: true,
+            data: { id }
+          });
         });
       });
     });
 
     it('should return team', async () => {
-      expect(await client.team('533')).toEqual(TEAM_DATA);
+      expect(await client.team('slavia-prague/viXGgnyB')).toEqual(TEAM_DATA);
+      expect(handlePlayerSpy).toHaveBeenCalledTimes(48);
+      expect(handlePlayerSpy).toHaveBeenCalledWith('kolar-ondrej/xfBGcS1U');
+      if (TEAM_DATA.ok) {
+        expect(handlePlayerSpy.mock.calls.map(([id]) => id)).toEqual(TEAM_DATA.data.map(({ id }) => id));
+      }
     });
   });
 
@@ -105,7 +123,7 @@ describe('SoccerBotSoccerwayClient', () => {
     });
 
     it('should return player', async () => {
-      expect(await client.player('193498')).toEqual(PLAYER_DATA);
+      expect(await client.player('kolar-ondrej/xfBGcS1U')).toEqual(PLAYER_DATA);
     });
   });
 });

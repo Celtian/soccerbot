@@ -10,7 +10,6 @@ pkg.devDependencies = {};
 pkg.main = 'es5/index.js';
 pkg.module = 'es6/index.js';
 pkg.sideEffects = false;
-pkg.engines.npm = undefined;
 
 writeFileSync(join(__dirname, '..', 'dist', 'package.json'), JSON.stringify(pkg, null, 2));
 console.log('File package.json modified:', pkg);

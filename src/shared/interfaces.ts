@@ -12,6 +12,37 @@ export enum SoccerBotPositionGroup {
   ATTACKER = 'ATTACKER'
 }
 
+export enum SoccerBotPositionDetail {
+  GK = 'GK',
+  SW = 'SW',
+  LWB = 'LWB',
+  LB = 'LB',
+  LCB = 'LCB',
+  CB = 'CB',
+  RCB = 'RCB',
+  RB = 'RB',
+  RWB = 'RWB',
+  LDM = 'LDM',
+  CDM = 'CDM',
+  RDM = 'RDM',
+  LM = 'LM',
+  LCM = 'LCM',
+  CM = 'CM',
+  RCM = 'RCM',
+  RM = 'RM',
+  LAM = 'LAM',
+  CAM = 'CAM',
+  RAM = 'RAM',
+  LW = 'LW',
+  LF = 'LF',
+  CF = 'CF',
+  RF = 'RF',
+  RW = 'RW',
+  LS = 'LS',
+  ST = 'ST',
+  RS = 'RS'
+}
+
 export interface SoccerBotResponse<T> {
   ok: boolean;
   data?: T;
@@ -36,6 +67,7 @@ export interface SoccerBotPlayer {
   lastName?: string;
   jerseyNumber?: number;
   position?: SoccerBotPositionGroup;
+  positionDetail?: SoccerBotPositionDetail;
   birthdate?: string;
   height?: number;
   weight?: number;

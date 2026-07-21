@@ -17,7 +17,7 @@ export class SoccerBotEurofotbalClient extends SoccerBotClient {
     if (!id) {
       return undefined;
     }
-    return `${BASE_URL}/${id}`;
+    return `${BASE_URL}/${id}/tabulky/`;
   }
 
   public teamUrl(id: string): string {

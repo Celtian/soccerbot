@@ -35,9 +35,19 @@ _Type this into your ts file._
 ```terminal
 import { soccerway, transfermarkt, fotbalunas, eurofotbal, sportnet } from 'soccerbot';
 
-console.log(soccerway.teamUrl('533')); // show url
+console.log(soccerway.leagueUrl('czech-republic/chance-liga/standings/bNFMkskm')); // show url
 
-soccerway.team('533')
+soccerway.league('czech-republic/chance-liga/standings/bNFMkskm')
+  .then(res => console.log(res));
+
+console.log(soccerway.teamUrl('slavia-prague/viXGgnyB')); // show url
+
+soccerway.team('slavia-prague/viXGgnyB')
+  .then(res => console.log(res));
+
+console.log(soccerway.playerUrl('kolar-ondrej/xfBGcS1U')); // show url
+
+soccerway.player('kolar-ondrej/xfBGcS1U')
   .then(res => console.log(res));
 
 console.log(transfermarkt.teamUrl('62')); // show url
@@ -55,10 +65,19 @@ console.log(eurofotbal.teamUrl('cesko/sparta-praha')); // show url
 eurofotbal.team('cesko/sparta-praha')
   .then(res => console.log(res));
 
-console.log(sportnet.teamUrl('fk-inter-bratislava/tim/46770')); // show url
+console.log(sportnet.teamUrl('fk-inter-bratislava-1/tim/dospeli-m-a')); // show url
 
-sportnet.team('fk-inter-bratislava/tim/46770')
+sportnet.team('fk-inter-bratislava-1/tim/dospeli-m-a')
   .then(res => console.log(res));
+```
+
+Transfermarkt players also include an optional FIFA-style detailed position:
+
+```typescript
+import { SoccerBotPositionDetail, transfermarkt } from 'soccerbot';
+
+const response = await transfermarkt.team('62');
+const centreBacks = response.data?.filter((player) => player.positionDetail === SoccerBotPositionDetail.CB);
 ```
 
 ## 🛠️ Sources

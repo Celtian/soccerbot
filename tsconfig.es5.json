@@ -2,10 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "target": "ES5",
+    "target": "ES2018",
     "declaration": true,
+    "noEmit": false,
     "outDir": "./dist/es5",
-    "moduleResolution": "node",
+    "rootDir": "./src",
     "lib": ["ES2020", "DOM"]
   },
   "include": ["src/**/*"]
