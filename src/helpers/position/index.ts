@@ -20,7 +20,9 @@ export const coercePositionGroup = (position: string): SoccerBotPositionGroup =>
     ].includes(position)
   ) {
     return SoccerBotPositionGroup.MIDFIELDER;
-  } else if (['Left Winger', 'Right Winger', 'Centre-Forward', 'Attacker', 'Útočník', 'Útočníci'].includes(position)) {
+  } else if (
+    ['Left Winger', 'Right Winger', 'Centre-Forward', 'Forward', 'Attacker', 'Útočník', 'Útočníci'].includes(position)
+  ) {
     return SoccerBotPositionGroup.ATTACKER;
   }
   return undefined;

@@ -34,6 +34,7 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Left Winger')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Right Winger')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Centre-Forward')).toEqual(SoccerBotPositionGroup.ATTACKER);
+    expect(coercePositionGroup('Forward')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Attacker')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Útočník')).toEqual(SoccerBotPositionGroup.ATTACKER);
     expect(coercePositionGroup('Útočníci')).toEqual(SoccerBotPositionGroup.ATTACKER);

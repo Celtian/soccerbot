@@ -19,6 +19,7 @@ describe('coerceDate', () => {
   describe('soccerway', () => {
     it('should return correct value', () => {
       expect(coerceDate('4 March 1993', SoccerBotProvider.SOCCERWAY)).toEqual('1993-03-04');
+      expect(coerceDate('Age: 31 (17.10.1994)', SoccerBotProvider.SOCCERWAY)).toEqual('1994-10-17');
     });
 
     it('should return undefined', () => {

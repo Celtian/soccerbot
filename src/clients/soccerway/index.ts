@@ -1,10 +1,10 @@
 import parse from 'node-html-parser';
-import { coerceCountry, coerceDate, coerceFoot, coercePositionGroup, sleep } from '../../helpers';
-import { coerceHeight, coerceJerseyNumber, coerceMinutesPlayed, coerceWeight } from '../../helpers/number';
+import { coerceCountry, coerceDate, coercePositionGroup, sleep } from '../../helpers';
+import { coerceJerseyNumber, coerceMinutesPlayed } from '../../helpers/number';
 import { SoccerBotPlayer, SoccerBotProvider, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 import { SoccerBotClient, UserAgents } from '../shared';
 
-const BASE_URL = 'https://int.soccerway.com';
+const BASE_URL = 'https://www.soccerway.com';
 
 export class SoccerBotSoccerwayClient extends SoccerBotClient {
   protected userAgents: UserAgents[] = [
@@ -20,46 +20,61 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
     super();
   }
 
-  public leagueUrl(id: string, season: string): string {
-    if (!id || !season) {
+  public leagueUrl(id: string): string {
+    if (!id) {
       return undefined;
     }
-    return `${BASE_URL}/national/country-slug/team-slug/${season}/regular-season/${id}/tables/`;
+    return `${BASE_URL}/${id}/standings/overall/`;
   }
 
   public teamUrl(id: string): string {
     if (!id) {
       return undefined;
     }
-    return `${BASE_URL}/teams/country-slug/team-slug/${id}/squad/`;
+    return `${BASE_URL}/team/${id}/squad/`;
   }
 
   public playerUrl(id: string): string {
     if (!id) {
       return undefined;
     }
-    return `${BASE_URL}/players/player-slug/${id}/`;
+    return `${BASE_URL}/player/${id}/`;
   }
 
-  public async league(id: string, season: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
+  public async league(id: string): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
     try {
-      const url = this.leagueUrl(id, season);
-      const html = parse(await this.fetchPage(url));
-      const items = html.querySelectorAll('table[data-round_id].detailed-table > tbody > tr');
-      const list: SoccerBotTeam[] = [];
-      for (const item of items) {
-        const link = item.querySelector('td.text.team.large-link > a');
-        list.push({
-          id: link
-            .getAttribute('href')
-            .trim()
-            .match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id,
-          name: link.text.trim()
-        });
+      const page = await this.fetchPage(this.leagueUrl(id));
+      const feed = page.match(/data:\s*`(?<data>SA÷[^`]+)`/s)?.groups?.data;
+      if (!feed) {
+        throw new Error('Soccerway league feed was not found');
       }
+
+      const teams = new Map<string, SoccerBotTeam>();
+      for (const event of feed.split('¬~AA÷').slice(1)) {
+        const fields = new Map<string, string>();
+        for (const field of event.split('¬')) {
+          const separator = field.indexOf('÷');
+          if (separator > 0) {
+            fields.set(field.slice(0, separator), field.slice(separator + 1));
+          }
+        }
+
+        for (const [idKey, nameKey, slugKey] of [
+          ['PX', 'AE', 'WU'],
+          ['PY', 'AF', 'WV']
+        ]) {
+          const teamId = fields.get(idKey);
+          const name = fields.get(nameKey);
+          const slug = fields.get(slugKey);
+          if (teamId && name && slug && !teams.has(teamId)) {
+            teams.set(teamId, { id: `${slug}/${teamId}`, name });
+          }
+        }
+      }
+
       return {
         ok: true,
-        data: list
+        data: [...teams.values()]
       };
     } catch (error) {
       return {
@@ -72,16 +87,18 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
   public async team(id: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>> {
     try {
       const html = parse(await this.fetchPage(this.teamUrl(id)));
-      const items = html.querySelectorAll('table[data-season_id] > tbody > tr');
+      const items = html.querySelectorAll('#overall-all-table .lineupTable__row');
       const list: SoccerBotPlayer[] = [];
       for (const item of items) {
-        const link = item.querySelector('td.name.large-link > a');
+        const link = item.querySelector('.lineupTable__cell--name');
         const id = link
           .getAttribute('href')
           .trim()
-          .match(/^(.*)\/(?<id>\d+)(\/)?$/).groups.id;
-        const jerseyNumber = coerceJerseyNumber(item.querySelector('td.shirtnumber')?.text?.trim());
-        const minutesPlayed = coerceMinutesPlayed(item.querySelector('td.game-minutes')?.text?.trim());
+          .match(/^\/player\/(?<id>[^/]+\/[^/]+)\/?$/).groups.id;
+        const jerseyNumber = coerceJerseyNumber(item.querySelector('.lineupTable__cell--jersey')?.text?.trim());
+        const minutesPlayed = coerceMinutesPlayed(
+          item.querySelector('.lineupTable__cell--minutesPlayed')?.text?.trim()
+        );
         await sleep(this.sleepMs); // sleep for a moment because of rare limit
         const player = await this.player(id);
         list.push({
@@ -107,28 +124,24 @@ export class SoccerBotSoccerwayClient extends SoccerBotClient {
     try {
       const url = this.playerUrl(id);
       const html = parse(await this.fetchPage(url));
-      const data = html.querySelector('.block_player_passport > div > div > div.yui-u.first > div.clearfix');
-      const firstName = data.querySelector('[data-first_name="first_name"]')?.text?.trim();
-      const lastName = data.querySelector('[data-last_name="last_name"]')?.text?.trim();
+      const data = html.querySelector('#player-profile-heading');
+      const name = data.querySelector('h2')?.text?.trim();
+      const [firstName, ...lastNameParts] = name.split(/\s+/);
+      const lastName = lastNameParts.join(' ');
+      const age = data
+        .querySelectorAll('.playerInfoItem')
+        .find((item) => item.text.trim().startsWith('Age:'))
+        ?.text?.trim();
       return {
         ok: true,
         data: {
           id,
-          name: `${firstName} ${lastName}`,
+          name,
           firstName,
           lastName,
-          country: coerceCountry(
-            data.querySelector('[data-nationality="nationality"]')?.text?.trim(),
-            SoccerBotProvider.SOCCERWAY
-          ),
-          birthdate: coerceDate(
-            data.querySelector('[data-date_of_birth="date_of_birth"]')?.text?.trim(),
-            SoccerBotProvider.SOCCERWAY
-          ),
-          position: coercePositionGroup(data.querySelector('[data-position="position"]')?.text?.trim()),
-          height: coerceHeight(data.querySelector('[data-height="height"]')?.text?.trim()),
-          weight: coerceWeight(data.querySelector('[data-weight="weight"]')?.text?.trim()),
-          foot: coerceFoot(data.querySelector('[data-foot="foot"]')?.text?.trim())
+          country: coerceCountry(data.querySelector('[itemprop="name"]')?.text?.trim(), SoccerBotProvider.SOCCERWAY),
+          birthdate: coerceDate(age, SoccerBotProvider.SOCCERWAY),
+          position: coercePositionGroup(data.querySelector('.playerTeam > span')?.text?.trim())
         }
       };
     } catch (error) {

@@ -26,6 +26,11 @@ describe('coerceCountry', () => {
         code2: SoccerBotCountryCode2.AF,
         code3: SoccerBotCountryCode3.AFG
       });
+      expect(coerceCountry('Czech Republic', SoccerBotProvider.SOCCERWAY)).toEqual({
+        databaseName: 'Czech Republic',
+        code2: SoccerBotCountryCode2.CZ,
+        code3: SoccerBotCountryCode3.CZE
+      });
     });
 
     it('should return undefined', () => {

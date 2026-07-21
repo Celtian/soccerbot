@@ -18,14 +18,14 @@ const transfermarktDemo = async (): Promise<void> => {
 const soccerwayDemo = async (): Promise<void> => {
   console.log('⚽⚽⚽ Soccerway demo ⚽⚽⚽');
 
-  console.log(soccerway.leagueUrl('r59164', '20202021')); // CZE-1 - season 2020 - 2021
-  console.log(await soccerway.league('r59164', '20202021'));
+  console.log(soccerway.leagueUrl('czech-republic/chance-liga/standings/bNFMkskm')); // CZE-1
+  console.log(await soccerway.league('czech-republic/chance-liga/standings/bNFMkskm'));
 
-  console.log(soccerway.teamUrl('533')); // Slavia Prague - current season
-  console.log(await soccerway.team('533'));
+  console.log(soccerway.teamUrl('slavia-prague/viXGgnyB')); // Slavia Prague - current season
+  console.log(await soccerway.team('slavia-prague/viXGgnyB'));
 
-  console.log(soccerway.playerUrl('193498')); // player
-  console.log(await soccerway.player('193498'));
+  console.log(soccerway.playerUrl('kolar-ondrej/xfBGcS1U')); // Ondrej Kolar
+  console.log(await soccerway.player('kolar-ondrej/xfBGcS1U'));
 };
 
 const fotbalunasDemo = async (): Promise<void> => {

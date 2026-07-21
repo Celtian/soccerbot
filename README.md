@@ -35,9 +35,19 @@ _Type this into your ts file._
 ```terminal
 import { soccerway, transfermarkt, fotbalunas, eurofotbal, sportnet } from 'soccerbot';
 
-console.log(soccerway.teamUrl('533')); // show url
+console.log(soccerway.leagueUrl('czech-republic/chance-liga/standings/bNFMkskm')); // show url
 
-soccerway.team('533')
+soccerway.league('czech-republic/chance-liga/standings/bNFMkskm')
+  .then(res => console.log(res));
+
+console.log(soccerway.teamUrl('slavia-prague/viXGgnyB')); // show url
+
+soccerway.team('slavia-prague/viXGgnyB')
+  .then(res => console.log(res));
+
+console.log(soccerway.playerUrl('kolar-ondrej/xfBGcS1U')); // show url
+
+soccerway.player('kolar-ondrej/xfBGcS1U')
   .then(res => console.log(res));
 
 console.log(transfermarkt.teamUrl('62')); // show url
