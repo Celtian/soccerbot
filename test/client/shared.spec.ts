@@ -14,8 +14,8 @@ class TestClient extends SoccerBotClient {
     return { ok: true, data: [] };
   }
 
-  public getPage(url: string, silent?: boolean): Promise<string> {
-    return this.fetchPage(url, silent);
+  public getPage(url: string, silent?: boolean, userAgent?: UserAgents): Promise<string> {
+    return this.fetchPage(url, silent, userAgent);
   }
 }
 
@@ -42,6 +42,18 @@ describe('SoccerBotClient', () => {
     await expect(client.getPage('https://example.com')).resolves.toBe('<html>Success</html>');
     expect(fetchMock).toHaveBeenCalledWith('https://example.com', {
       headers: { 'User-Agent': UserAgents.Windows1 }
+    });
+  });
+
+  it('should fetch a page with the requested user agent', async () => {
+    fetchMock.mockResolvedValue({
+      status: 200,
+      text: vi.fn().mockResolvedValue('<html>Success</html>')
+    } as any);
+
+    await expect(client.getPage('https://example.com', true, UserAgents.Ipod)).resolves.toBe('<html>Success</html>');
+    expect(fetchMock).toHaveBeenCalledWith('https://example.com', {
+      headers: { 'User-Agent': UserAgents.Ipod }
     });
   });
 

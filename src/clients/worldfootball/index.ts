@@ -1,4 +1,3 @@
-import { connect } from 'node:http2';
 import parse, { HTMLElement } from 'node-html-parser';
 import {
   coerceCountry,
@@ -16,11 +15,10 @@ import {
   SoccerBotResponse,
   SoccerBotTeam
 } from '../../shared/interfaces';
-import { SoccerBotClient } from '../shared';
+import { SoccerBotClient, UserAgents } from '../shared';
 
 const BASE_URL = 'https://www.worldfootball.net';
 const FALLBACK_BASE_URL = 'https://www.livefutbol.com';
-const FALLBACK_USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/114.0.0.0 Safari/537.36';
 
 export class SoccerBotWorldFootballClient extends SoccerBotClient {
   public leagueUrl(id: string, season?: string): string {
@@ -172,7 +170,7 @@ export class SoccerBotWorldFootballClient extends SoccerBotClient {
     }
 
     const fallbackUrl = url.replace(BASE_URL, FALLBACK_BASE_URL);
-    const fallbackPage = await this.fetchPageHttp2(fallbackUrl);
+    const fallbackPage = await this.fetchPage(fallbackUrl, true, UserAgents.Ipod);
     if (this.isBlockedPage(fallbackPage)) {
       throw new Error(`WorldFootball and fallback requests failed for url: ${url}`);
     }
@@ -185,71 +183,6 @@ export class SoccerBotWorldFootballClient extends SoccerBotClient {
     }
     const content = page.toLowerCase();
     return content.includes('<title>just a moment...</title>') || content.includes('cf-mitigated');
-  }
-
-  private fetchPageHttp2(url: string): Promise<string> {
-    const target = new URL(url);
-    const client = connect(target.origin);
-
-    return new Promise((resolve, reject) => {
-      let body = '';
-      let status = 0;
-      let complete = false;
-
-      const finish = (error?: Error): void => {
-        if (complete) {
-          return;
-        }
-        complete = true;
-        client.close();
-        if (error) {
-          reject(error);
-        } else {
-          resolve(body);
-        }
-      };
-
-      client.on('error', (error) => finish(error));
-
-      const request = client.request({
-        ':method': 'GET',
-        ':path': `${target.pathname}${target.search}`,
-        ':scheme': target.protocol.slice(0, -1),
-        ':authority': target.host,
-        'user-agent': FALLBACK_USER_AGENT,
-        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'accept-language': 'en-US,en;q=0.9',
-        'accept-encoding': 'identity',
-        'cache-control': 'no-cache',
-        pragma: 'no-cache',
-        'upgrade-insecure-requests': '1',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'none',
-        'sec-fetch-user': '?1'
-      });
-
-      request.setEncoding('utf8');
-      request.on('response', (headers) => {
-        status = Number(headers[':status']);
-      });
-      request.on('data', (chunk: string) => {
-        body += chunk;
-      });
-      request.on('end', () => {
-        if (status < 200 || status >= 300) {
-          finish(new Error(`Bad response ${status} for url: ${url}`));
-        } else {
-          finish();
-        }
-      });
-      request.on('error', (error) => finish(error));
-      request.setTimeout(30000, () => {
-        request.close();
-        finish(new Error(`Request timed out for url: ${url}`));
-      });
-      request.end();
-    });
   }
 
   private entityId(link: HTMLElement, entity: 'teams' | 'person', prefix: 'te' | 'pe'): string {

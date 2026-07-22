@@ -23,10 +23,10 @@ export abstract class SoccerBotClient {
 
   public abstract team(id: string, season?: string): Promise<SoccerBotResponse<SoccerBotPlayer[]>>;
 
-  protected async fetchPage(url: string, silent: boolean = false): Promise<string> {
+  protected async fetchPage(url: string, silent: boolean = false, userAgent?: UserAgents): Promise<string> {
     try {
       const headers = {
-        'User-Agent': this.userAgents[Math.floor(Math.random() * this.userAgents.length)]
+        'User-Agent': userAgent || this.userAgents[Math.floor(Math.random() * this.userAgents.length)]
       };
       const response = await fetch(url, { headers });
       if (response.status >= 400 && response.status < 600) {

@@ -1,6 +1,7 @@
 import { vi } from 'vitest';
 import { worldfootball } from '../../src';
 import { SoccerBotWorldFootballClient } from '../../src/clients';
+import { UserAgents } from '../../src/clients/shared';
 import { SoccerBotCountryCode2, SoccerBotCountryCode3 } from '../../src/shared/countries';
 import { SoccerBotPositionDetail, SoccerBotPositionGroup } from '../../src/shared/interfaces';
 import { LEAGUE_HTML, PLAYER_HTML, TEAM_HTML } from '../mocks/worldfootball';
@@ -121,18 +122,25 @@ describe('SoccerBotWorldFootballClient', () => {
     });
   });
 
-  it('should retry a Cloudflare challenge through the mirror over HTTP/2', async () => {
+  it('should retry a Cloudflare challenge through the mirror', async () => {
     const fetchPageSpy = vi
       .spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage')
-      .mockResolvedValue('<html><head><title>Just a moment...</title></head></html>');
-    const fetchPageHttp2Spy = vi
-      .spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPageHttp2')
-      .mockResolvedValue(PLAYER_HTML);
+      .mockResolvedValueOnce('<html><head><title>Just a moment...</title></head></html>')
+      .mockResolvedValueOnce(PLAYER_HTML);
 
     expect((await client.player('pe599828/oscar-altamirano')).ok).toBe(true);
-    expect(fetchPageSpy).toHaveBeenCalledOnce();
-    expect(fetchPageSpy).toHaveBeenCalledWith('https://www.worldfootball.net/person/pe599828/oscar-altamirano/', true);
-    expect(fetchPageHttp2Spy).toHaveBeenCalledWith('https://www.livefutbol.com/person/pe599828/oscar-altamirano/');
+    expect(fetchPageSpy).toHaveBeenCalledTimes(2);
+    expect(fetchPageSpy).toHaveBeenNthCalledWith(
+      1,
+      'https://www.worldfootball.net/person/pe599828/oscar-altamirano/',
+      true
+    );
+    expect(fetchPageSpy).toHaveBeenNthCalledWith(
+      2,
+      'https://www.livefutbol.com/person/pe599828/oscar-altamirano/',
+      true,
+      UserAgents.Ipod
+    );
   });
 
   it('should return an error for malformed provider HTML', async () => {
@@ -144,11 +152,11 @@ describe('SoccerBotWorldFootballClient', () => {
   });
 
   it('should return an error when both sources fail', async () => {
-    vi.spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage').mockResolvedValue('Error');
-    vi.spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPageHttp2').mockRejectedValue(
-      new Error('HTTP/2 fallback failed')
-    );
+    const fetchPageSpy = vi
+      .spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage')
+      .mockResolvedValue('Error');
 
     expect((await client.player('pe599828/oscar-altamirano')).ok).toBe(false);
+    expect(fetchPageSpy).toHaveBeenCalledTimes(2);
   });
 });
