@@ -33,6 +33,9 @@ describe('SoccerBotTransfermarktClient', () => {
   describe('teamUrl', () => {
     it('should return correct value', () => {
       expect(client.teamUrl('533')).toEqual('https://www.transfermarkt.com/slug/kader/verein/533/plus/1');
+      expect(client.teamUrl('533', '2018')).toEqual(
+        'https://www.transfermarkt.com/slug/kader/verein/533/plus/1?saison_id=2018'
+      );
     });
 
     it('should return undefined', () => {
