@@ -4,7 +4,7 @@ import { SoccerBotWorldFootballClient } from '../../src/clients';
 import { UserAgents } from '../../src/clients/shared';
 import { SoccerBotCountryCode2, SoccerBotCountryCode3 } from '../../src/shared/countries';
 import { SoccerBotPositionDetail, SoccerBotPositionGroup } from '../../src/shared/interfaces';
-import { LEAGUE_HTML, PLAYER_HTML, TEAM_HTML } from '../mocks/worldfootball';
+import { ANSELMO_AVILA_HTML, LEAGUE_HTML, PLAYER_HTML, TEAM_HTML } from '../mocks/worldfootball';
 
 describe('SoccerBotWorldFootballClient', () => {
   let client: SoccerBotWorldFootballClient;
@@ -109,6 +109,72 @@ describe('SoccerBotWorldFootballClient', () => {
     });
   });
 
+  it('should enrich squad players from their profile pages', async () => {
+    vi.spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage').mockImplementation(async (url: string) => {
+      if (url.includes('/teams/')) {
+        return TEAM_HTML;
+      }
+      if (url.includes('/person/pe1079681/anselmo-avila/')) {
+        return ANSELMO_AVILA_HTML;
+      }
+      return 'Error';
+    });
+
+    const result = await client.team('te237557/artesanos-metepec');
+
+    expect(result.ok).toBe(true);
+    expect(result.data).toContainEqual(
+      expect.objectContaining({
+        id: 'pe1079681/anselmo-avila',
+        name: 'Anselmo Ávila',
+        firstName: 'Anselmo',
+        lastName: 'Ávila',
+        position: SoccerBotPositionGroup.DEFENDER,
+        height: 186,
+        weight: 71
+      })
+    );
+  });
+
+  it('should limit concurrent profile requests', async () => {
+    const extraPlayers = `
+      <tr class="entry odd">
+        <td class="team_person-shirtnumber">6</td>
+        <td class="person-name"><a href="/person/pe1000001/test-player-one/">Test Player One</a></td>
+        <td class="country-name"><a href="/cy133/mexico/">Mexico</a></td>
+        <td class="person-birthday">01.01.2001</td>
+      </tr>
+      <tr class="entry even">
+        <td class="team_person-shirtnumber">7</td>
+        <td class="person-name"><a href="/person/pe1000002/test-player-two/">Test Player Two</a></td>
+        <td class="country-name"><a href="/cy133/mexico/">Mexico</a></td>
+        <td class="person-birthday">02.02.2002</td>
+      </tr>`;
+    const teamHtml = TEAM_HTML.replace(
+      '<tr><th class="role">Director técnico</th></tr>',
+      `${extraPlayers}
+          <tr><th class="role">Director técnico</th></tr>`
+    );
+    vi.spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage').mockResolvedValue(teamHtml);
+
+    let activeRequests = 0;
+    let maxConcurrentRequests = 0;
+    const playerSpy = vi.spyOn(client, 'player').mockImplementation(async () => {
+      activeRequests += 1;
+      maxConcurrentRequests = Math.max(maxConcurrentRequests, activeRequests);
+      await new Promise((resolve) => setTimeout(resolve, 10));
+      activeRequests -= 1;
+      return { ok: false, errors: new Error('Profile unavailable') };
+    });
+
+    const result = await client.team('te237557/artesanos-metepec');
+
+    expect(result.ok).toBe(true);
+    expect(result.data).toHaveLength(5);
+    expect(playerSpy).toHaveBeenCalledTimes(5);
+    expect(maxConcurrentRequests).toBe(4);
+  });
+
   it('should parse a rich person profile', async () => {
     vi.spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage').mockResolvedValue(PLAYER_HTML);
 
@@ -125,6 +191,31 @@ describe('SoccerBotWorldFootballClient', () => {
         birthdate: '2002-04-02',
         height: 172,
         weight: 70,
+        country: {
+          databaseName: 'Mexico',
+          code2: SoccerBotCountryCode2.MX,
+          code3: SoccerBotCountryCode3.MEX
+        }
+      }
+    });
+  });
+
+  it('should use the current career position when the profile facts omit it', async () => {
+    vi.spyOn(SoccerBotWorldFootballClient.prototype as any, 'fetchPage').mockResolvedValue(ANSELMO_AVILA_HTML);
+
+    expect(await client.player('pe1079681/anselmo-avila')).toEqual({
+      ok: true,
+      data: {
+        id: 'pe1079681/anselmo-avila',
+        name: 'Anselmo Ávila',
+        firstName: 'Anselmo',
+        lastName: 'Ávila',
+        jerseyNumber: 14,
+        position: SoccerBotPositionGroup.DEFENDER,
+        positionDetail: undefined,
+        birthdate: '2004-03-03',
+        height: 186,
+        weight: 71,
         country: {
           databaseName: 'Mexico',
           code2: SoccerBotCountryCode2.MX,
