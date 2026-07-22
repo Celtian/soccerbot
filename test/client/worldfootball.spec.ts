@@ -82,6 +82,18 @@ describe('SoccerBotWorldFootballClient', () => {
           }
         },
         {
+          id: 'pe1079681/anselmo-avila',
+          name: 'Anselmo Ávila',
+          jerseyNumber: 14,
+          position: SoccerBotPositionGroup.DEFENDER,
+          birthdate: '2004-03-03',
+          country: {
+            databaseName: 'Mexico',
+            code2: SoccerBotCountryCode2.MX,
+            code3: SoccerBotCountryCode3.MEX
+          }
+        },
+        {
           id: 'pe599828/oscar-altamirano',
           name: 'Oscar Altamirano',
           jerseyNumber: 5,

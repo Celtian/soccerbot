@@ -5,14 +5,21 @@ export const TEAM_HTML = `<!doctype html>
     <div class="hs-block hs-persons">
       <table>
         <tbody>
-          <tr><th class="role">Portero</th></tr>
+          <tr><th class="role">Goalkeeper</th></tr>
           <tr class="entry odd">
             <td class="team_person-shirtnumber">23</td>
             <td class="person-name"><a href="/person/pe1801229/victor-alvarez/">Víctor Álvarez</a></td>
             <td class="country-name"><a href="/cy133/mexico/"><img title="México">México</a></td>
             <td class="person-birthday">05.03.2003</td>
           </tr>
-          <tr><th class="role">Mediocampista</th></tr>
+          <tr><th class="role">Defence</th></tr>
+          <tr class="entry even">
+            <td class="team_person-shirtnumber">14</td>
+            <td class="person-name"><a href="/person/pe1079681/anselmo-avila/">Anselmo Ávila</a></td>
+            <td class="country-name"><a href="/cy133/mexico/"><img title="México">México</a></td>
+            <td class="person-birthday">03.03.2004</td>
+          </tr>
+          <tr><th class="role">Midfield</th></tr>
           <tr class="entry even">
             <td class="team_person-shirtnumber">5</td>
             <td class="person-name"><a href="/person/pe599828/oscar-altamirano/">Oscar Altamirano</a></td>

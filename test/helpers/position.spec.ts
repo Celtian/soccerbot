@@ -51,6 +51,7 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Centre-Back')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Left-Back')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Right-Back')).toEqual(SoccerBotPositionGroup.DEFENDER);
+    expect(coercePositionGroup('Defence')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Defender')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Obránce')).toEqual(SoccerBotPositionGroup.DEFENDER);
     expect(coercePositionGroup('Obránci')).toEqual(SoccerBotPositionGroup.DEFENDER);
@@ -64,6 +65,7 @@ describe('coercePositionGroup', () => {
     expect(coercePositionGroup('Right Midfield')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Left Midfield')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Attacking Midfield')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
+    expect(coercePositionGroup('Midfield')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Midfielder')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Záložník')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
     expect(coercePositionGroup('Záložníci')).toEqual(SoccerBotPositionGroup.MIDFIELDER);
