@@ -14,6 +14,7 @@ describe('SoccerBotWorldFootballClient', () => {
   });
 
   afterEach(() => {
+    vi.useRealTimers();
     vi.restoreAllMocks();
   });
 
@@ -137,6 +138,8 @@ describe('SoccerBotWorldFootballClient', () => {
   });
 
   it('should limit concurrent profile requests', async () => {
+    vi.useFakeTimers();
+
     const extraPlayers = `
       <tr class="entry odd">
         <td class="team_person-shirtnumber">6</td>
@@ -167,7 +170,9 @@ describe('SoccerBotWorldFootballClient', () => {
       return { ok: false, errors: new Error('Profile unavailable') };
     });
 
-    const result = await client.team('te237557/artesanos-metepec');
+    const resultPromise = client.team('te237557/artesanos-metepec');
+    await vi.runAllTimersAsync();
+    const result = await resultPromise;
 
     expect(result.ok).toBe(true);
     expect(result.data).toHaveLength(5);
