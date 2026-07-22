@@ -6,7 +6,8 @@ import {
   coerceJerseyNumber,
   coercePositionDetail,
   coercePositionGroup,
-  coerceWeight
+  coerceWeight,
+  sleep
 } from '../../helpers';
 import {
   SoccerBotPlayer,
@@ -19,6 +20,8 @@ import { SoccerBotClient, UserAgents } from '../shared';
 
 const BASE_URL = 'https://www.worldfootball.net';
 const FALLBACK_BASE_URL = 'https://www.livefutbol.com';
+const PROFILE_BATCH_SIZE = 4;
+const PROFILE_BATCH_DELAY_MS = 250;
 
 export class SoccerBotWorldFootballClient extends SoccerBotClient {
   public leagueUrl(id: string, season?: string): string {
@@ -106,9 +109,35 @@ export class SoccerBotWorldFootballClient extends SoccerBotClient {
         });
       }
 
+      const data: SoccerBotPlayer[] = [];
+      for (let index = 0; index < list.length; index += PROFILE_BATCH_SIZE) {
+        const batch = await Promise.all(
+          list.slice(index, index + PROFILE_BATCH_SIZE).map(async (teamPlayer) => {
+            const profile = await this.player(teamPlayer.id);
+            if (!profile.ok) {
+              return teamPlayer;
+            }
+            return {
+              ...teamPlayer,
+              ...profile.data,
+              name: profile.data.name ?? teamPlayer.name,
+              jerseyNumber: profile.data.jerseyNumber ?? teamPlayer.jerseyNumber,
+              position: profile.data.position ?? teamPlayer.position,
+              birthdate: profile.data.birthdate ?? teamPlayer.birthdate,
+              country: profile.data.country ?? teamPlayer.country
+            };
+          })
+        );
+        data.push(...batch);
+
+        if (index + PROFILE_BATCH_SIZE < list.length) {
+          await sleep(PROFILE_BATCH_DELAY_MS);
+        }
+      }
+
       return {
         ok: true,
-        data: list
+        data
       };
     } catch (error) {
       return {
@@ -130,7 +159,9 @@ export class SoccerBotWorldFootballClient extends SoccerBotClient {
       const firstName = header.querySelector('.person-firstname')?.text?.trim();
       const lastName = header.querySelector('.person-lastname')?.text?.trim();
       const name = [firstName, lastName].filter(Boolean).join(' ') || undefined;
-      const position = profile.querySelector('dd.person-position')?.text?.trim();
+      const position =
+        profile.querySelector('dd.person-position')?.text?.trim() ||
+        html.querySelector('.hs-career tbody tr.entry .role-name')?.text?.trim();
 
       return {
         ok: true,

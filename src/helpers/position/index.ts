@@ -24,9 +24,17 @@ export const coercePositionGroup = (position: string): SoccerBotPositionGroup =>
   if (['Goalkeeper', 'Brankář', 'Brankáři', 'Brankári', 'Portero'].includes(position)) {
     return SoccerBotPositionGroup.GOALKEEPER;
   } else if (
-    ['Centre-Back', 'Left-Back', 'Right-Back', 'Defender', 'Obránce', 'Obránci', 'Obrancovia', 'Defensa'].includes(
-      position
-    )
+    [
+      'Centre-Back',
+      'Left-Back',
+      'Right-Back',
+      'Defence',
+      'Defender',
+      'Obránce',
+      'Obránci',
+      'Obrancovia',
+      'Defensa'
+    ].includes(position)
   ) {
     return SoccerBotPositionGroup.DEFENDER;
   } else if (
@@ -36,6 +44,7 @@ export const coercePositionGroup = (position: string): SoccerBotPositionGroup =>
       'Right Midfield',
       'Left Midfield',
       'Attacking Midfield',
+      'Midfield',
       'Midfielder',
       'Mediocampista',
       'Mediocentro ofensivo',
