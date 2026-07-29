@@ -49,6 +49,9 @@ describe('SoccerBotSportnetClient', () => {
   describe('playerUrl', () => {
     it('should return correct value', () => {
       expect(client.playerUrl('1306959')).toEqual('https://api.futbalnet.sk/persons/1306959');
+      expect(client.playerUrl('5d657e1986dc8b723830f531')).toEqual(
+        'https://api.sportnet.online/v1/users/5d657e1986dc8b723830f531'
+      );
     });
 
     it('should return undefined', () => {
@@ -141,12 +144,61 @@ describe('SoccerBotSportnetClient', () => {
       expect(fetchPageSpy).toHaveBeenCalledTimes(1);
       expect(playerSpy).not.toHaveBeenCalled();
     });
+
+    it('should parse the current roster markup directly from the team page', async () => {
+      fetchPageSpy.mockReset().mockResolvedValue(`
+        <section>
+          <div>
+            <p>Brankári</p>
+            <a href="/futbalnet/clen/5d657e1986dc8b723830f531/adrian-slancik/">Adrián Slančík</a>
+          </div>
+          <div>
+            <p>Obrancovia</p>
+            <a href="/futbalnet/clen/5d6585ad86dc8b7238326618/lukas-jendrek/">Lukáš Jendrek</a>
+          </div>
+          <div>
+            <p>Tréner</p>
+            <a href="/futbalnet/clen/5d65417e86dc8b72382557d2/marek-petrus/">Marek Petruš</a>
+          </div>
+        </section>
+      `);
+      playerSpy
+        .mockResolvedValueOnce({
+          ok: true,
+          data: { id: '5d657e1986dc8b723830f531', name: 'Adrián Slančík' }
+        })
+        .mockResolvedValueOnce({
+          ok: true,
+          data: { id: '5d6585ad86dc8b7238326618', name: 'Lukáš Jendrek' }
+        });
+
+      expect(await client.team('mfk-tatran-liptovsky-mikulas/tim/dospeli-m-a')).toEqual({
+        ok: true,
+        data: [
+          {
+            id: '5d657e1986dc8b723830f531',
+            name: 'Adrián Slančík',
+            position: SoccerBotPositionGroup.GOALKEEPER
+          },
+          {
+            id: '5d6585ad86dc8b7238326618',
+            name: 'Lukáš Jendrek',
+            position: SoccerBotPositionGroup.DEFENDER
+          }
+        ]
+      });
+      expect(fetchPageSpy).toHaveBeenCalledTimes(1);
+      expect(playerSpy).toHaveBeenNthCalledWith(1, '5d657e1986dc8b723830f531');
+      expect(playerSpy).toHaveBeenNthCalledWith(2, '5d6585ad86dc8b7238326618');
+    });
   });
 
   describe('player', () => {
+    let fetchPageSpy: ReturnType<typeof vi.spyOn>;
+
     beforeEach(() => {
-      const handleSpy = vi.spyOn(SoccerBotSportnetClient.prototype as any, 'fetchPage');
-      handleSpy.mockImplementation(() => {
+      fetchPageSpy = vi.spyOn(SoccerBotSportnetClient.prototype as any, 'fetchPage');
+      fetchPageSpy.mockImplementation(() => {
         return new Promise((resolve) => {
           resolve(PLAYER_HTML);
         });
@@ -155,6 +207,34 @@ describe('SoccerBotSportnetClient', () => {
 
     it('should return player', async () => {
       expect(await client.player('1306959')).toEqual(PLAYER_DATA);
+    });
+
+    it('should return a player from the current Sportnet API', async () => {
+      fetchPageSpy.mockResolvedValue(
+        JSON.stringify({
+          _id: '5d657e1986dc8b723830f531',
+          name: 'Adrián',
+          surname: 'Slančík',
+          citizenship: 'SVK',
+          birthyear: 1999
+        })
+      );
+
+      expect(await client.player('5d657e1986dc8b723830f531')).toEqual({
+        ok: true,
+        data: {
+          id: '5d657e1986dc8b723830f531',
+          firstName: 'Adrián',
+          lastName: 'Slančík',
+          name: 'Adrián Slančík',
+          birthdate: undefined,
+          country: {
+            databaseName: 'Slovakia',
+            code2: 'SK',
+            code3: 'SVK'
+          }
+        }
+      });
     });
   });
 });

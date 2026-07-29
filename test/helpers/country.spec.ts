@@ -76,6 +76,14 @@ describe('coerceCountry', () => {
       expect(coerceCountry('', SoccerBotProvider.SPORTNET)).toEqual(undefined);
       expect(coerceCountry('999999', SoccerBotProvider.SPORTNET)).toEqual(undefined);
     });
+
+    it('should accept the current Sportnet citizenship code', () => {
+      expect(coerceCountry('SVK', SoccerBotProvider.SPORTNET)).toEqual({
+        databaseName: 'Slovakia',
+        code2: SoccerBotCountryCode2.SK,
+        code3: SoccerBotCountryCode3.SVK
+      });
+    });
   });
 
   describe('worldfootball', () => {
