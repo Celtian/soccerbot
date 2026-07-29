@@ -3,6 +3,10 @@ description: Set code coverage report to PR
 runs:
   using: composite
   steps:
+    - name: Find PR
+      id: finder
+      uses: jwalton/gh-find-current-pr@v1
+
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       with:
@@ -17,12 +21,8 @@ runs:
         thresholds: '60 80'
 
     - name: Add Coverage PR Comment
-      uses: marocchino/sticky-pull-request-comment@v2
+      uses: marocchino/sticky-pull-request-comment@v3
       with:
-        number: ${{ steps.finder.outputs.pr }}
+        number: ${{ steps.finder.outputs.number }}
         recreate: true
         path: code-coverage-results.md
-
-    - name: Find PR
-      id: finder
-      uses: jwalton/gh-find-current-pr@v1
