@@ -9,20 +9,20 @@ types live in `src/shared`, and general data-normalization helpers live in `src/
 ## Development environment
 
 - Use the Node.js version from `.nvmrc` (Node 24).
-- Use Yarn Classic 1.22.22. Keep `yarn.lock` in sync with `package.json`.
-- Install dependencies with `yarn install --frozen-lockfile` when the lockfile should not change.
+- Use Bun 1.3.14. Keep `bun.lock` in sync with `package.json`.
+- Install dependencies with `bun ci` when the lockfile should not change.
 - Do not edit generated files in `dist` or coverage output in `coverage`.
 
 ## Common commands
 
-- `yarn build` compiles the ES2019 and ES5 distributions.
-- `yarn lint` runs ESLint.
-- `yarn test` runs the Vitest test suite.
-- `yarn test --coverage --run` matches the CI coverage command.
-- `yarn demo` runs `demo.ts`.
+- `bun run build` compiles the ES2019 and ES5 distributions.
+- `bun run lint` runs ESLint.
+- `bun run test` runs the Vitest test suite.
+- `bun run test --coverage --run` matches the CI coverage command.
+- `bun run demo` runs `demo.ts`.
 
 Before handing off a change, run the smallest relevant tests and then, when practical, run
-`yarn lint`, `yarn test`, and `yarn build`.
+`bun run lint`, `bun run test`, and `bun run build`.
 
 ## Code and test conventions
 
