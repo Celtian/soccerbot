@@ -1,1 +1,1 @@
-quick-commitlint "$1"
+bunx --no-install quick-commitlint "$1"
