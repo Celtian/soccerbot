@@ -16,7 +16,7 @@
 
 ## 🛠️ Install
 
-_Nodejs 12 or higher need to be installed first_
+_Node.js >=24 and <26 must be installed first_
 
 ```terminal
 npm install soccerbot
@@ -25,7 +25,7 @@ npm install soccerbot
 or
 
 ```terminal
-yarn add soccerbot
+bun add soccerbot
 ```
 
 ## 🚀 Quick start

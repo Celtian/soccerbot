@@ -1,8 +1,34 @@
-name: Install Dependencies
-description: Install dependencies from the frozen Yarn lockfile
+name: Get & Cache Dependencies
+description: Get dependencies via Bun and cache them
+inputs:
+  caching:
+    description: Whether to cache dependencies or not
+    required: false
+    default: 'true'
+outputs:
+  used-cache:
+    description: Whether the cache was used
+    value: ${{ steps.cache.outputs.cache-hit }}
 runs:
   using: composite
   steps:
+    - name: Cache dependencies
+      if: inputs.caching == 'true'
+      id: cache
+      uses: actions/cache@v5
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-bun-
+          ${{ runner.os }}-
+
     - name: Install
-      run: yarn install --frozen-lockfile
+      if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
+      run: bun ci
+      shell: bash
+
+    - name: Postinstall
+      if: steps.cache.outputs.cache-hit == 'true' && inputs.caching == 'true'
+      run: bun run postinstall
       shell: bash
