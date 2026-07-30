@@ -1,9 +1,6 @@
-import fetch from 'cross-fetch';
 import { vi } from 'vitest';
 import { SoccerBotClient, UserAgents } from '../../src/clients/shared';
 import { SoccerBotPlayer, SoccerBotResponse, SoccerBotTeam } from '../../src/shared/interfaces';
-
-vi.mock('cross-fetch', () => ({ default: vi.fn() }));
 
 class TestClient extends SoccerBotClient {
   public async league(): Promise<SoccerBotResponse<SoccerBotTeam[]>> {
@@ -20,15 +17,17 @@ class TestClient extends SoccerBotClient {
 }
 
 describe('SoccerBotClient', () => {
-  const fetchMock = vi.mocked(fetch);
+  const fetchMock = vi.fn<typeof globalThis.fetch>();
   let client: TestClient;
 
   beforeEach(() => {
     client = new TestClient();
     fetchMock.mockReset();
+    vi.stubGlobal('fetch', fetchMock);
   });
 
   afterEach(() => {
+    vi.unstubAllGlobals();
     vi.restoreAllMocks();
   });
 

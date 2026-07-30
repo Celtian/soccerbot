@@ -1,4 +1,3 @@
-import fetch from 'cross-fetch';
 import { SoccerBotPlayer, SoccerBotResponse, SoccerBotTeam } from '../../shared/interfaces';
 
 // see: https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome
@@ -28,7 +27,7 @@ export abstract class SoccerBotClient {
       const headers = {
         'User-Agent': userAgent || this.userAgents[Math.floor(Math.random() * this.userAgents.length)]
       };
-      const response = await fetch(url, { headers });
+      const response = await globalThis.fetch(url, { headers });
       if (response.status >= 400 && response.status < 600) {
         throw new Error(`Bad response ${response.status} for url: ${url}`);
       }
